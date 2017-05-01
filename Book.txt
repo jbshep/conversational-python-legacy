@@ -5,3 +5,10 @@ tableofcontents
 preface.md
 mainmatter:
 ch1_basicio_types.md
+ch2_cond.md
+ch3_loops.md
+ch4_funcs.md
+ch5_lists.md
+ch6_files_excepts.md
+ch7_dicts.md
+ch8_classes.md
