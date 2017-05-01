@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="utf-8"?>
+        <!DOCTYPE html>
+
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <title>Chapter 1</title>
+          <link rel="stylesheet" href="styles/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="styles/softcover.css" type="text/css" />
+          <link rel="stylesheet" href="styles/epub.css" type="text/css" />
+          <link rel="stylesheet" href="styles/custom.css" type="text/css"/>
+          <link rel="stylesheet" href="styles/custom_epub.css" type="text/css"/>
+          <link rel="stylesheet" type="application/vnd.adobe-page-template+xml" href="styles/page-template.xpgt" />
+        </head>
+
+        <body>
+          
+      <div id="cha-basicio_types" class="chapter"><h1><a href="ch1_basicio_types_fragment.xhtml#cha-basicio_types" class="heading hyperref"><span class="number">Chapter 1 </span>Basic I/O, Statements, Expressions, Variables, and Types</a></h1>
+</div>
+<div id="sec-getting_started" class="section"><h2><a href="ch1_basicio_types_fragment.xhtml#sec-getting_started" class="heading hyperref"><span class="number">1.1 </span>Getting set up to program</a></h2>
+<p class="noindent">Computers consist of hardware and software.<span class="intersentencespace"></span> Hardware is the physical stuff you
+can hold in your hands, like memory, disks, keyboards, etc.<span class="intersentencespace"></span> Software tells the
+hardware what to do.<span class="intersentencespace"></span> In this book, we’re going to learn how to create software.<span class="intersentencespace"></span> Creating software is called <em>programming</em> or <em>coding</em>.<span class="intersentencespace"></span> When coding, we give the
+computer instructions for it to do.</p>
+<p>Typically, hardware consists of a bunch of electrical circuits.<span class="intersentencespace"></span> Instructions
+for controlling the circuits is called <em>machine code</em> (which is basically a
+bunch of 1’s and 0’s that tell the computer which electrical circuits to turn on
+and off… beep beep boop boop).<span class="intersentencespace"></span> However, we will not need to learn machine
+code or worry about electrical circuits.<span class="intersentencespace"></span> We will write code that looks
+something more like normal human language, and then we will use another software
+program called a <em>compiler</em> or an <em>interpreter</em> to translate our nice, readable
+code into machine code that will control the hardware.<span class="intersentencespace"></span> Nice, eh?</p>
+<p>The code we write will be written in a high-level programming language named
+<em>Python</em>.<span class="intersentencespace"></span> Although programming languages might look technical, they are more
+human reader-friendly than the hardware’s machine code language.<span class="intersentencespace"></span> <a href="ch1_basicio_types_fragment.xhtml#fig-interp" class="hyperref">Figure <span class="ref">1.1</span></a> shows the relationship between Python language code, the
+interpreter, and the hardware.</p>
+<div class="center figure" id="fig-interp">
+<div class="graphics image"><img src="images/ch1/interp.jpg" alt="images/ch1/interp" /></div><div class="caption"><span class="header">Figure 1.1: </span><span class="description">Code translated by an interpreter to hardware
+language
+</span></div></div>
+<p>To get started programming in Python, we will need to install two software
+programs on our computer.<span class="intersentencespace"></span> These programs will help us to write our own
+programs.<span class="intersentencespace"></span> One is the Python interpreter.<span class="intersentencespace"></span> The other is named <em>Thonny</em>.<span class="intersentencespace"></span> Thonny
+will give us a window in which to type our code, and then Thonny will hand our
+code to the Python interpreter so that we can run our program.</p>
+<p>FIXME installation of Python and Thonny will go here.</p>
+</div>
+<div id="sec-print" class="section"><h2><a href="ch1_basicio_types_fragment.xhtml#sec-print" class="heading hyperref"><span class="number">1.2 </span>The <code>print</code> statement</a></h2>
+<p class="noindent">You are now ready to start typing <em>statements</em> into the file <code>hello.py</code>.<span class="intersentencespace"></span> These
+statements will make up a program.<span class="intersentencespace"></span> Each statement gives the computer an
+instruction.<span class="intersentencespace"></span> A statement might tell the computer to put something on the screen
+(which is called “printing”), it might prompt the user to type something, or it
+might tell the computer to remember some information so that we can recall it
+and use it later in the program, etc.</p>
+<p>Any time from here forward that you click the play button in Thonny, Thonny will
+hand your statements to the Python interpreter.<span class="intersentencespace"></span> The Python interpreter will
+take each statement, one at a time, and change the statement into machine code
+(again, 1’s and 0’s… beep beep boop boop).<span class="intersentencespace"></span> If any of your statements put
+words or numbers on the screen, those will show up in the Python Shell window.</p>
+<p>Let’s try to write a program that makes some text show up in the Shell
+window.</p>
+<p>So, let’s type the following into your new <strong>hello.py</strong> file.</p>
+<div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+</pre></div></div>
+<p>Run your program by pressing the play button.</p>
+<p>What do you see?<span class="intersentencespace"></span> You should see in your Python Shell window the word <code>Hello</code>
+on a separate line.<span class="intersentencespace"></span> If you don’t, ask your friendly neighborhood programmer for
+help.</p>
+<p>Cool.<span class="intersentencespace"></span> Why does this work, and can we break it and learn something in the
+process?<span class="intersentencespace"></span> The <code>print</code> statement allows us to put words and numbers on the
+screen, that is, in the Python Shell window.<span class="intersentencespace"></span> You type print, and then in
+parentheses, you put what you want to appear on-screen.<span class="intersentencespace"></span> What are those double
+quotes doing there?<span class="intersentencespace"></span> Let’s get rid of them and then run the program to see what
+happens.<span class="intersentencespace"></span> Replace your code with this:</p>
+<div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">Hello</span><span class="p">)</span>
+</pre></div></div>
+<p>Notice the double quotes are gone.<span class="intersentencespace"></span> Run your program using play button again.</p>
+<p>Oh no!<span class="intersentencespace"></span> We’ve broken our computer!<span class="intersentencespace"></span> Well, not really.<span class="intersentencespace"></span> The word <code>print</code> means
+something to Python–it’s part of the language–but <code>Hello</code> doesn’t mean
+anything to Python.<span class="intersentencespace"></span> The double quotes tell Python to actually print the text
+“Hello” onto the screen.</p>
+<p>Let’s delete the one line we have in our file, and replace it with the following
+three lines.</p>
+<div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"How are you?"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Goodbye."</span><span class="p">)</span>
+</pre></div></div>
+<p>Run your code again and you will see these three lines appear on-screen in
+order.</p>
+<p>What if you change the order of the statements?</p>
+<div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Goodbye."</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"How are you?"</span><span class="p">)</span>
+</pre></div></div>
+<p>Notice we switched the order of the last two statements.<span class="intersentencespace"></span> Python will only
+execute your statements in the order you give them.<span class="intersentencespace"></span> Consider the following
+analogy: programs are to computers as recipes are to cooking.<span class="intersentencespace"></span> The order of the
+statements matter just like the order of steps in a recipe matter.</p>
+</div>
+<div id="sec-input" class="section"><h2><a href="ch1_basicio_types_fragment.xhtml#sec-input" class="heading hyperref"><span class="number">1.3 </span>The <code>input</code> statement</a></h2>
+<p class="noindent">Okay, change our code again.<span class="intersentencespace"></span> Delete the three lines you have so far and then
+add one new one.</p>
+<div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"Hello, Steve."</span><span class="p">)</span>
+</pre></div></div>
+<p>This code attempts to make our program more personalized, but it makes the bold
+(and unfortunate) assumption that the user’s name will always be Steve.<span class="intersentencespace"></span> What if
+we wanted to ask users what their names are, and then greet the user by name?<span class="intersentencespace"></span> How many statements would we need?<span class="intersentencespace"></span> We would need two: 1.)<span class="intersentencespace"></span> to ask for the name,
+and 2.)<span class="intersentencespace"></span> to greet the person using that name.<span class="intersentencespace"></span> Here’s a good first attempt.</p>
+<div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Hello, name."</span><span class="p">)</span>
+</pre></div></div>
+<p>What do you see?<span class="intersentencespace"></span> The code does ask for the user’s name (that’s good), but it
+does not give the user the ability to type anything in (that’s bad).</p>
+<p>Let’s introduce a new type of statement called <code>input</code>.<span class="intersentencespace"></span> All programs take
+<em>input</em> from the user (possibly from the keyboard, a mouse, or something else)
+and produce <em>output</em> (usually information is <em>printed</em> to the screen, but the
+information could be placed elsewhere, too, like placed in a file or sent over
+the Internet to a Web site or something).<span class="intersentencespace"></span> The <code>input</code> statement will allow the
+user to type something in.</p>
+<p>Let’s try this.<span class="intersentencespace"></span> Change the first <code>print</code> statement to an <code>input</code> statement.</p>
+<div class="code"><div class="highlight"><pre><span class="nb">input</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Hello, name."</span><span class="p">)</span>
+</pre></div></div>
+<p>Run this code.<span class="intersentencespace"></span> What happens?</p>
+<p>Cool!<span class="intersentencespace"></span> The user (you) can now type in your name.<span class="intersentencespace"></span> But, then the program fails to
+address the person (you, again) using that name.<span class="intersentencespace"></span> Bummer.</p>
+<p>We need to make the program remember the person’s name in the first statement so
+that it can be used later in the second statement.</p>
+<p>Let’s change the first statement from this</p>
+<div class="code"><div class="highlight"><pre><span class="nb">input</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
+</pre></div></div>
+<p>to this</p>
+<div class="code"><div class="highlight"><pre><span class="n">firstname</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
+</pre></div></div>
+<p>See the difference?<span class="intersentencespace"></span> We’ve put <code>firstname =</code> in front of the input command.</p>
+<p>Here’s how it works.<span class="intersentencespace"></span> The <code>input</code> command retrieves the text the user types in
+from the keyboard.<span class="intersentencespace"></span> Then, we must <em>store</em> it somewhere so that we can use it
+later in the program.<span class="intersentencespace"></span> The word <code>firstname</code> is a <em>variable</em>.<span class="intersentencespace"></span> Variables are kind
+of like Post-It notes for the computer to help it remember numbers and text that
+are important to us.<span class="intersentencespace"></span> <em>Variables</em> store <em>values</em>.</p>
+<p>We can choose to name the variable almost whatever we want.<span class="intersentencespace"></span> There are some
+rules for what you can and can’t name a variable.<span class="intersentencespace"></span> Variables must start with a
+letter or an underscore (_).<span class="intersentencespace"></span> After that, they can include any letters,
+numbers, or underscores, but no other symbols.<span class="intersentencespace"></span> Variables cannot have spaces in
+their name.<span class="intersentencespace"></span> You also cannot name a variable one of the <em>reserved words</em> in
+Python.<span class="intersentencespace"></span> That is, there are commands that mean something to Python, like <code>if</code> or
+<code>while</code>.<span class="intersentencespace"></span> Always name the variable so that you’ll remember its name.<span class="intersentencespace"></span> Instead of</p>
+<div class="code"><div class="highlight"><pre><span class="n">firstname</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
+</pre></div></div>
+<p>We could have typed</p>
+<div class="code"><div class="highlight"><pre><span class="n">dudename</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
+</pre></div></div>
+<p>or</p>
+<div class="code"><div class="highlight"><pre><span class="n">awesomename</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
+</pre></div></div>
+<p>but for now we’ll stick with</p>
+<div class="code"><div class="highlight"><pre><span class="n">firstname</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
+</pre></div></div>
+<p>Now, what about the second line?<span class="intersentencespace"></span> It’s still</p>
+<div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"Hello, name."</span><span class="p">)</span>
+</pre></div></div>
+<p>We need to use the variable <code>firstname</code> to retrieve the value we stored.<span class="intersentencespace"></span> Change
+the print line to this</p>
+<div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"Hello,"</span><span class="p">,</span> <span class="n">firstname</span><span class="p">)</span>
+</pre></div></div>
+<p>Run it.<span class="intersentencespace"></span> Voila!<span class="intersentencespace"></span> It works!</p>
+<p>Now, instead of putting one thing inside the parentheses after the word <code>print</code>,
+we’re listing two things, separated by a comma.<span class="intersentencespace"></span> The first is a text string
+<code>"Hello,"</code>.<span class="intersentencespace"></span> The second is the variable that stores the name.<span class="intersentencespace"></span> Print will print
+both of those things, separated by a space.</p>
+<p>What if we don’t want spaces between the things we print?<span class="intersentencespace"></span> We’ll get to that
+later, too.</p>
+<p>Awesome.<span class="intersentencespace"></span> Try some stuff.<span class="intersentencespace"></span> Try to break your code.<span class="intersentencespace"></span> Don’t worry, you can always
+change your code back.<span class="intersentencespace"></span> Our code so far should look like the code in
+<a href="ch1_basicio_types_fragment.xhtml#code-input1" class="hyperref">Listing <span class="ref">1.1</span></a>.</p>
+<div class="codelisting" id="code-input1"><div class="heading"><span class="number">Listing 1.1</span> 
+
+<span class="description"></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="n">firstname</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="k">print</span><span class="p">(</span><span class="s">"Hello,"</span><span class="p">,</span> <span class="n">firstname</span><span class="p">)</span>
+</pre></div></div></div><p>Sometimes in this book we will show code snippets like we had been previously.<span class="intersentencespace"></span> Other times, if we want to show a series of statements in context, we will use a
+listing like we did above.<span class="intersentencespace"></span> The listings will typically have line numbers before
+each code statement so that we can draw attention to individual statements if we
+wish.</p>
+<p>Let’s learn by breaking things.<span class="intersentencespace"></span> In <a href="ch1_basicio_types_fragment.xhtml#code-input1" class="hyperref">Listing <span class="ref">1.1</span></a>, change the second
+line by removing <code>first</code> from the variable name.<span class="intersentencespace"></span> The code should now read</p>
+<div class="code"><div class="highlight"><pre><span class="n">firstname</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Hello,"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</pre></div></div>
+<p>Run this code.<span class="intersentencespace"></span> What happens?<span class="intersentencespace"></span> Why do you think this happens?</p>
+<p>Once you create a variable named <code>firstname</code>, it’s called <code>firstname</code> for the
+duration of the program.<span class="intersentencespace"></span> In the first line, we’re creating <code>firstname</code>.<span class="intersentencespace"></span> Then,
+in the second line, we try to use a variable called <code>name</code>, but there is no such
+variable called <code>name</code>.<span class="intersentencespace"></span> Python rightly vomits red text all over the screen.</p>
+<p>It would be like if your name was Jorge and I tried to get your attention by
+yelling “Hey, Betty!”<span class="intersentencespace"></span> You wouldn’t know I was trying to get your attention.</p>
+<p>Let’s try one more thing.<span class="intersentencespace"></span> Let’s go back to our original code in
+<a href="ch1_basicio_types_fragment.xhtml#code-input1" class="hyperref">Listing <span class="ref">1.1</span></a>.</p>
+<p>Change the variable <code>firstname</code> in the second line by capitalizing the first letter.<span class="intersentencespace"></span> In other words, change <code>firstname</code> to <code>Firstname</code>, like this.</p>
+<div class="code"><div class="highlight"><pre><span class="n">firstname</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Hello,"</span><span class="p">,</span> <span class="n">Firstname</span><span class="p">)</span>
+</pre></div></div>
+<p>Now run it and see what happens.<span class="intersentencespace"></span> You get an error, don’t you?<span class="intersentencespace"></span> <code>Firstname</code> and
+<code>firstname</code> are different variables.<span class="intersentencespace"></span> Python is a <em>case-sensitive</em> language.<span class="intersentencespace"></span> So
+we don’t make mistakes with mixing uppercase and lowercase in Python, we
+typically stick to lowercase.</p>
+<p>Remember how I said variable names can’t have spaces in them?<span class="intersentencespace"></span> Let’s try it
+anyway.<span class="intersentencespace"></span> What if we changed <code>firstname</code> to <code>first name</code>?</p>
+<div class="code"><div class="highlight"><pre><span class="n">first</span> <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Hello,"</span><span class="p">,</span> <span class="n">first</span> <span class="n">name</span><span class="p">)</span>
+</pre></div></div>
+<p>Run it and watch our program crash and burn.<span class="intersentencespace"></span> It’s a good things computers don’t
+have feelings because ours would probably be feeling rather abused right now.</p>
+<p>Notice that each time we tried to “break” our code, we ended up with different
+program errors.<span class="intersentencespace"></span> Pay attention to what the errors say.<span class="intersentencespace"></span> At first, the errors look
+like “tech-ese” but eventually you’ll learn to make sense of them, and it will
+help you in correcting your programs.</p>
+<p>One cool thing about programming is it will give you a keener eye, and you’ll
+notice details and mistakes a lot better in other avenues of your life.<span class="intersentencespace"></span> Well,
+we’ll hope so anyway.</p>
+</div>
+<div id="sec-asgn_stmts" class="section"><h2><a href="ch1_basicio_types_fragment.xhtml#sec-asgn_stmts" class="heading hyperref"><span class="number">1.4 </span>Assignment statements</a></h2>
+<p class="noindent">As it turns out, we now know a lot about Python even though we likely don’t
+realize it.<span class="intersentencespace"></span> We know three kinds of statements.</p>
+<ol>
+<li><code>print</code> statements
+</li>
+<li><code>input</code> statements
+</li>
+<li><em>assignment</em> statements
+</li></ol>
+<p>An assignment statement is a statement that creates or updates the value of a
+variable.<span class="intersentencespace"></span> Our input statement in the previous example was also an assignment
+statement because it created the variable named <code>firstname</code>.</p>
+<p>Let’s look at more examples of assignment statements.<span class="intersentencespace"></span> Consider the following.<span class="intersentencespace"></span> I live on an acreage, and we have a barn where cats tend to gather.<span class="intersentencespace"></span> We didn’t
+have to buy any cats; they just show up.<span class="intersentencespace"></span> It’s good they are around because they
+eat mice and we don’t like mice.</p>
+<p>Suppose we want to store the number of cats we have in our barn at any given
+time, and suppose we currently have six cats.<span class="intersentencespace"></span> To store this information in a
+Python variable, we would type the following.</p>
+<div class="code"><div class="highlight"><pre><span class="n">cats</span> <span class="o">=</span> <span class="mi">6</span>
+</pre></div></div>
+<p>To experiment with what’s happening here, let’s add two more lines so that your
+code now looks like <a href="ch1_basicio_types_fragment.xhtml#code-cats" class="hyperref">Listing <span class="ref">1.2</span></a>.</p>
+<div class="codelisting" id="code-cats"><div class="heading"><span class="number">Listing 1.2</span> 
+
+<span class="description"></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="n">cats</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="lineno">2</span> <span class="k">print</span><span class="p">(</span><span class="n">cats</span><span class="p">)</span>
+<span class="lineno">3</span> <span class="k">print</span><span class="p">(</span><span class="s">"cats"</span><span class="p">)</span>
+</pre></div></div></div><p>Can you guess what will happen when you run this code?<span class="intersentencespace"></span> It is very important to
+be able to read code line by line to figure out in your mind what will happen.<span class="intersentencespace"></span> Later on, when you’re programming and something doesn’t work right, you’ll need
+to look at your code line by line to make sure that it makes logical sense.<span class="intersentencespace"></span> This code will print</p>
+<div class="code"><div class="highlight"><pre><span class="go">6</span>
+<span class="go">cats</span>
+</pre></div></div>
+<p>There are two print statements in <a href="ch1_basicio_types_fragment.xhtml#code-cats" class="hyperref">Listing <span class="ref">1.2</span></a>.<span class="intersentencespace"></span> Since there are two
+print statements, we can reasonably assume there will be two lines that appear
+on the screen.<span class="intersentencespace"></span> The first statement makes a new variable named <code>cats</code> and
+assigns it the value <code>6</code>.<span class="intersentencespace"></span> The second statement prints the value stored in cats.<span class="intersentencespace"></span> The third statement prints the text string “cats” since there are double quotes
+around it.</p>
+<p>If we hadn’t created the variable <code>cats</code> before printing the value of <code>cats</code>,
+Python would have puked red text again saying that it doesn’t know what <code>cats</code>
+is.</p>
+<p>It’s worth noting that the first statement line <code>cats = 6</code> does not print
+anything to the screen.<span class="intersentencespace"></span> It’s just an assignment statement.<span class="intersentencespace"></span> It’s only job is to
+<em>define</em> a new variable.<span class="intersentencespace"></span> It does not print anything.<span class="intersentencespace"></span> Only <code>print</code> statements
+actually print anything on the Python Shell window.</p>
+<p>Okay, let’s try to break things again!<span class="intersentencespace"></span> What happens if we switch the order of
+<code>cats</code> and the number <code>6</code> in the first line of <a href="ch1_basicio_types_fragment.xhtml#code-cats" class="hyperref">Listing <span class="ref">1.2</span></a>, like
+this.</p>
+<div class="code"><div class="highlight"><pre><span class="mi">6</span> <span class="o">=</span> <span class="n">cats</span>
+</pre></div></div>
+<p>Run it.<span class="intersentencespace"></span> Kablooey!<span class="intersentencespace"></span> Now we’ve learned a rule about assignment statements.<span class="intersentencespace"></span> Think
+of the = sign as being more like a left arrow <span class="inline_math"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax_SVG" id="MathJax-Element-1-Frame" tabindex="0" style="font-size: 100%; display: inline-block;"><img src="images/texmath/018fb0c490975c36d92ca14db30606b0101e1e88.png" alt="epub/OEBPS/images/texmath/018fb0c490975c36d92ca14db30606b0101e1e88" style="height:0.8302799999999999em; vertical-align:-0.113629752em;" /></span></span>.<span class="intersentencespace"></span> When we write
+<code>cats = 6</code>, we can think of it like <code>cats</code> <span class="inline_math"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax_SVG" id="MathJax-Element-2-Frame" tabindex="0" style="font-size: 100%; display: inline-block;"><img src="images/texmath/018fb0c490975c36d92ca14db30606b0101e1e88.png" alt="epub/OEBPS/images/texmath/018fb0c490975c36d92ca14db30606b0101e1e88" style="height:0.8302799999999999em; vertical-align:-0.113629752em;" /></span></span> <code>6</code> in that the
+value <code>6</code> is being assigned to the new variable <code>cats</code>.<span class="intersentencespace"></span> You cannot change the
+order of <code>cats</code> and <code>6</code>.</p>
+<p>See?<span class="intersentencespace"></span> Computers are picky.</p>
+<p>So, on the left-hand side of the equals sign in an assignment statement, we can
+give the name of a variable.<span class="intersentencespace"></span> If the variable doesn’t exist, it is created brand
+new.<span class="intersentencespace"></span> If the variable does already exist, the value of the variable is updated
+(or, overwritten – update and overwrite are synonymous).<span class="intersentencespace"></span> So what can we put on
+the right-hand side of the equals?</p>
+<p>On the right-hand side, we can put any <em>expression</em> that produces a value.<span class="intersentencespace"></span> Here
+are some examples of expressions.</p>
+<ul>
+<li><code>6</code>
+</li>
+<li><code>2 + 4</code>
+</li>
+<li><code>6 * 1</code>
+</li>
+<li><code>8 - 2</code>
+</li>
+<li><code>12 / 2</code>
+</li>
+<li><code>12 – (3 * 2)</code>
+</li></ul>
+<p>The asterisk (<code>*</code>) or star does multiplication.<span class="intersentencespace"></span> The forward slash (<code>/</code>)
+performs division.<span class="intersentencespace"></span> The double forward slash (<code>//</code>) performs whole number
+division by dropping the remainder.<span class="intersentencespace"></span> For example, <code>5 // 2</code> produces the value
+<code>2</code>.<span class="intersentencespace"></span> The percent (<code>%</code>) gives us the remainder.<span class="intersentencespace"></span> This operation is also known as
+the modulus, or simply mod.<span class="intersentencespace"></span> For example, <code>5 % 2</code> produces the value <code>1</code>.</p>
+<p>The <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>//</code>, and <code>%</code> are known as <em>operators</em>.<span class="intersentencespace"></span> Operators take
+two expressions (which produce values) and produces a new value.<span class="intersentencespace"></span> Parentheses
+can be used to group expressions much like we do in mathematics.<span class="intersentencespace"></span> Also as in
+mathematics, operators have precedence.<span class="intersentencespace"></span> Expressions produce a value by
+evaluating the expression left-to-right while performing parenthetical
+expressions first, then multiplication and division, and finally addition and
+subtraction.</p>
+<p>Just for the heck of it, we could re-write the assignment statement <code>cats = 6</code>
+as</p>
+<div class="code"><div class="highlight"><pre><span class="n">cats</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">-</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div></div>
+<p>To recap, the left-hand side (abbreviated <em>LHS</em>) of an assignment statement is
+the name of a variable.<span class="intersentencespace"></span> The variable will either be created (that is, defined)
+if it doesn’t already exist or updated (that is, overwritten) depending on
+whether the variable existed previously.<span class="intersentencespace"></span> The right-hand side (abbreviated
+<em>RHS</em>) is an expression that, when evaluated by Python, produces a value.</p>
+<p>With all this in mind, let’s try something.<span class="intersentencespace"></span> What happens when you change our
+code so that it looks like <a href="ch1_basicio_types_fragment.xhtml#code-cats_plus1" class="hyperref">Listing <span class="ref">1.3</span></a>.</p>
+<div class="codelisting" id="code-cats_plus1"><div class="heading"><span class="number">Listing 1.3</span> 
+
+<span class="description"></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="n">cats</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="lineno">2</span> <span class="n">cats</span> <span class="o">=</span> <span class="n">cats</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="lineno">3</span> <span class="k">print</span><span class="p">(</span><span class="s">"You have"</span><span class="p">,</span> <span class="n">cats</span><span class="p">,</span> <span class="s">"cats."</span><span class="p">)</span>
+</pre></div></div></div><p>Remember how assignment statements work.<span class="intersentencespace"></span> They work in two steps.</p>
+<ol>
+<li>We determine the value produced on the RHS.
+</li>
+<li>That value is assigned to the variable on the LHS.
+</li></ol>
+<p>What is the value on the RHS of <code>cats = cats + 1</code>?<span class="intersentencespace"></span> When we reach this
+statement, <code>cats</code> is <code>6</code>.<span class="intersentencespace"></span> Thus, <code>cats + 1</code> is the same as <code>6 + 1</code>, which is
+<code>7</code>.<span class="intersentencespace"></span> Therefore, the assignment statement <code>cats = cats + 1</code> is essentially the
+same as saying <code>cats = 7</code>.</p>
+<p>We can visualize how this assignment statement is <em>evaluated</em> in
+<a href="ch1_basicio_types_fragment.xhtml#fig-cats_eval" class="hyperref">Figure <span class="ref">1.2</span></a>.</p>
+<div class="center figure" id="fig-cats_eval">
+<div class="graphics image"><img src="images/ch1/cats_eval.png" alt="images/ch1/cats_eval" /></div><div class="caption"><span class="header">Figure 1.2: </span><span class="description">Evaluating an assignment
+statement
+</span></div></div>
+<p>Remember, the equals sign performs assignment of the value produced by the RHS
+to the variable on the LHS. Therefore, the equals sign is more like a left
+arrow that the mathematical equals sign that says “the thing on the LHS and the
+thing on the RHS have the same value.”<span class="intersentencespace"></span> The fact that you can type <code>x = x + 1</code>
+in Python looks yucky to mathematicians.<span class="intersentencespace"></span> Poor, poor mathematicians…</p>
+<p>We will say more about the relationship between values, expressions, and
+statements in the next section.</p>
+</div>
+<div id="cid6" class="section"><h2><a href="ch1_basicio_types_fragment.xhtml#cid6" class="heading hyperref"><span class="number">1.5 </span>Values, types, expressions, and statements</a></h2>
+<p class="noindent">Let’s modify the code example from the previous section.<span class="intersentencespace"></span> It is, after all,
+silly because you start with a fixed number of cats when, in fact, we could
+start with any number of cats.<span class="intersentencespace"></span> Let’s ask users for how many cats they have in
+their barn.<span class="intersentencespace"></span> Then, our program should calculate the number of cats they’ll have
+in the barn in a month’s time.<span class="intersentencespace"></span> For the sake of argument, let’s suppose the
+number of cats will increase by 4.</p>
+<p>A running program that solves this problem would look like this on the Python
+Shell window.</p>
+<div class="code"><div class="highlight"><pre><span class="go">How many cats do you have? 10</span>
+<span class="go">In a month's time, you will have 14 cats!</span>
+</pre></div></div>
+<p>The 10 at the end of the first line is typed in by the user, as an example.<span class="intersentencespace"></span> Can
+you write this program?<span class="intersentencespace"></span> Give it a try.<span class="intersentencespace"></span> You know how to write code to get input
+from the user.<span class="intersentencespace"></span> You know how to produce output.<span class="intersentencespace"></span> You know how to create
+variables and perform calculations using expressions.<span class="intersentencespace"></span> Try to write this
+program.</p>
+<p>(One attempt at a solution follows, but try to shield your eyes and don’t look
+at it right away.<span class="intersentencespace"></span> You won’t learn very well if you don’t try and fail every now
+and then.)</p>
+<p><a href="ch1_basicio_types_fragment.xhtml#code-cats_typeerror" class="hyperref">Listing <span class="ref">1.4</span></a> shows an attempt that you might have made.</p>
+<div class="codelisting" id="code-cats_typeerror"><div class="heading"><span class="number">Listing 1.4</span> 
+
+<span class="description"></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="n">cats</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"How many cats do you have? "</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="n">cats</span> <span class="o">=</span> <span class="n">cats</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="lineno">3</span> <span class="k">print</span><span class="p">(</span><span class="s">"In a month's time, you will have"</span><span class="p">,</span> <span class="n">cats</span><span class="p">,</span> <span class="s">"cats."</span><span class="p">)</span>
+</pre></div></div></div><p>This seems reasonable and logical, but it doesn’t work!<span class="intersentencespace"></span> You end up with an
+error.<span class="intersentencespace"></span> Let’s take a very close look at the error.<span class="intersentencespace"></span> It’s very important to
+understand how to read error messages.<span class="intersentencespace"></span> If you know how, they often tell you
+exactly what’s wrong.</p>
+<div class="code"><div class="highlight"><pre><span class="go">Traceback (most recent call last):</span>
+<span class="go">  File "/Users/shep/cs1/code/cats.py", line 2, in &lt;module&gt;</span>
+<span class="go">    cats = cats + 4</span>
+<span class="go">TypeError: Can't convert 'int' object to str implicitly</span>
+</pre></div></div>
+<p>The error states that the problem is on line 2 of your code.<span class="intersentencespace"></span> That’s helpful,
+but keep in mind line 2 is only where the error was detected.<span class="intersentencespace"></span> It’s possible
+that what caused the error occurred earlier in the code than line 2.</p>
+<p>Note what the error message says: “Can’t convert ‘int’ object to str
+implicitly.”<span class="intersentencespace"></span> What does this mean?<span class="intersentencespace"></span> In order to understand what it means, we
+need to revisit some of the concepts we touched on in <a href="ch1_basicio_types_fragment.xhtml#sec-asgn_stmts" class="hyperref">Section <span class="ref">1.4</span></a>.</p>
+<p>A <em>statement</em> can consist of one or more expressions.<span class="intersentencespace"></span> An <em>expression</em> is a
+piece of code that produces a <em>value</em>.<span class="intersentencespace"></span> Every value has a <em>type</em>.<span class="intersentencespace"></span> Consider the
+following example.</p>
+<div class="code"><div class="highlight"><pre><span class="n">carrots</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div></div>
+<p>This is one assignment statement whose right-hand side (RHS) consists of two
+expressions.<span class="intersentencespace"></span> The first expression is</p>
+<div class="code"><div class="highlight"><pre><span class="mi">7</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div></div>
+<p><code>7</code> and <code>3</code> are values known as <em>integers</em>, which is just a fancy word for
+“whole number.”<span class="intersentencespace"></span> In Python, an integer is called an <code>int</code>, for short.<span class="intersentencespace"></span> <code>7</code> is a
+value and its type is <code>int</code>.<span class="intersentencespace"></span> <code>3</code> is value and its type is <code>int</code>.<span class="intersentencespace"></span> Since <code>7</code> is
+an <code>int</code> and <code>3</code> is an <code>int</code>, adding them together gives us the value <code>10</code>,
+which is also an <code>int</code>.<span class="intersentencespace"></span> Thus, the following table describes what we know about
+this expression.</p>
+<table class="tabular"><tbody><tr class="top_border bottom_border"><td class="left_border align_left right_border">Expression</td>
+<td class="align_left right_border">Value</td>
+<td class="align_left right_border">Type</td>
+</tr><tr class="bottom_border"><td class="left_border align_left right_border"><code>7+3</code></td>
+<td class="align_left right_border"><code>10</code></td>
+<td class="align_left right_border">int</td>
+</tr></tbody></table>
+<p>Remember, an expression is a piece of code that produces a value.<span class="intersentencespace"></span> Every value
+has a type.</p>
+<p>Say it again: an expression produces a value, and every value has a type.</p>
+<p>If you’re not sure what the type of an expression is, you can find out by typing
+the expression into the Python Shell.<span class="intersentencespace"></span> If I entered <code>7 + 3</code>, the Python Shell
+would output <code>10</code>.<span class="intersentencespace"></span> If I entered <code>type(7 + 3)</code>, the Python Shell would output
+<code>"&lt;class ’int’&gt;"</code>.<span class="intersentencespace"></span> Try out the type command to see what different expressions and
+different values have as their type.<span class="intersentencespace"></span> Try <code>type(7)</code>, <code>type(7.52)</code>, and
+<code>type("Hello")</code>.</p>
+<p>The next expression for us to consider in our current example is <code>(7 + 3) * 2</code>.<span class="intersentencespace"></span> We can see from this expression that expressions can consist of other
+expressions.<span class="intersentencespace"></span> We already know that <code>7 + 3</code> is an expression whose value is <code>10</code>
+and whose type is <code>int</code>.<span class="intersentencespace"></span> Thus, we can determine the following about this
+expression.</p>
+<table class="tabular"><tbody><tr class="top_border bottom_border"><td class="left_border align_left right_border">Expression</td>
+<td class="align_left right_border">Value</td>
+<td class="align_left right_border">Type</td>
+</tr><tr class="bottom_border"><td class="left_border align_left right_border"><code>(7+3)*2</code></td>
+<td class="align_left right_border"><code>20</code></td>
+<td class="align_left right_border">int</td>
+</tr></tbody></table>
+<p>From this, we can determine that the variable <code>carrots</code> will have as its value
+<code>20</code> and its type will be <code>int</code>.</p>
+<p>There is another number type named <code>float</code>.<span class="intersentencespace"></span> Floats are used to represent
+numbers that have a fractional part.<span class="intersentencespace"></span> The value <code>5.2</code> is an example of a float.<span class="intersentencespace"></span> Float values can be expressed in scientific notation as well.<span class="intersentencespace"></span> The value <code>3e2</code>
+is equivalent to <span class="inline_math"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax_SVG" id="MathJax-Element-3-Frame" tabindex="0" style="font-size: 100%; display: inline-block;"><img src="images/texmath/56680d55666b0f3416c4b2682c00f0caf13479fa.png" alt="epub/OEBPS/images/texmath/56680d55666b0f3416c4b2682c00f0caf13479fa" style="height:1.24287em; vertical-align:-0.113629752em;" /></span></span>, which is <span class="inline_math"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax_SVG" id="MathJax-Element-4-Frame" tabindex="0" style="font-size: 100%; display: inline-block;"><img src="images/texmath/c1dd56d4bb94b0d5f510130e2800507653631e53.png" alt="epub/OEBPS/images/texmath/c1dd56d4bb94b0d5f510130e2800507653631e53" style="height:1.00725em; vertical-align:-0.113629752em;" /></span></span>, for example.<span class="intersentencespace"></span> The value
+after the <code>e</code> is the power of ten to which we multiply the first number.</p>
+<p>Any time we type a specific value like <code>5</code> or <code>5.25</code> in a program, we call that
+value a <em>literal</em>.<span class="intersentencespace"></span> That is, <code>5.25</code> is a float literal because it is “literally”
+the value <code>5.25</code>.<span class="intersentencespace"></span> It’s important to have the word “literal” in your programmer
+vocabulary.</p>
+<p>Now let us consider a different example, shown in <a href="ch1_basicio_types_fragment.xhtml#code-firstlast" class="hyperref">Listing <span class="ref">1.5</span></a>.</p>
+<div class="codelisting" id="code-firstlast"><div class="heading"><span class="number">Listing 1.5</span> 
+
+<span class="description"></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="n">firstname</span> <span class="o">=</span> <span class="s">"Kanye"</span>
+<span class="lineno">2</span> <span class="n">lastname</span> <span class="o">=</span> <span class="s">"West"</span>
+<span class="lineno">3</span> <span class="n">fullname</span> <span class="o">=</span> <span class="n">firstname</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">lastname</span>
+</pre></div></div></div><p>These three statements all involve text values.<span class="intersentencespace"></span> Text values have a special type
+called <em>string</em>.<span class="intersentencespace"></span> In Python, a string is called a <code>str</code> for short.<span class="intersentencespace"></span> If, in the
+Python Shell, I were to enter <code>type("Kanye")</code>, I would see the output <code>&lt;class
+’str’&gt;</code>.<span class="intersentencespace"></span> If I entered the first statement <code>firstname = "Kanye"</code> and then
+afterwards entered <code>type(firstname)</code>, I would see the output <code>&lt;class ’str’&gt;</code>.</p>
+<p>There are four expressions in these three statements.<span class="intersentencespace"></span> They are shown in the
+following table.</p>
+<table class="tabular"><tbody><tr class="top_border bottom_border"><td class="left_border align_left right_border">Expression</td>
+<td class="align_left right_border">Value</td>
+<td class="align_left right_border">Type</td>
+</tr><tr><td class="left_border align_left right_border"><code>"Kanye"</code></td>
+<td class="align_left right_border"><code>"Kanye"</code></td>
+<td class="align_left right_border"><code>str</code></td>
+</tr><tr><td class="left_border align_left right_border"><code>"West"</code></td>
+<td class="align_left right_border"><code>"West"</code></td>
+<td class="align_left right_border"><code>str</code></td>
+</tr><tr><td class="left_border align_left right_border"><code>firstname + " "</code></td>
+<td class="align_left right_border"><code>"Kanye "</code></td>
+<td class="align_left right_border"><code>str</code></td>
+</tr><tr class="bottom_border"><td class="left_border align_left right_border"><code>firstname + " " + lastname</code></td>
+<td class="align_left right_border"><code>"Kanye West"</code></td>
+<td class="align_left right_border"><code>str</code></td>
+</tr></tbody></table>
+<p>Some operators can work on strings, too.<span class="intersentencespace"></span> When we use the plus (+) on two string
+values, it “smashes” the two strings together to form a new string.<span class="intersentencespace"></span> Here, we
+are taking the first name and putting a space on the end of it.<span class="intersentencespace"></span> Then, we are
+appending the last name onto that new string that consists of the first name and
+trailing space.<span class="intersentencespace"></span> There is a geeky name for “smashing” two strings together to
+make a new string, and that name is <em>concatenation</em>.<span class="intersentencespace"></span> We would say that the plus (+)
+<em>concatenates</em> two strings.</p>
+<p>Remember, an expression is a piece of code that produces a value.<span class="intersentencespace"></span> Every value
+has a type.<span class="intersentencespace"></span> Every variable has a value and a type.</p>
+<p>When we write a string literal, we always put quotes around it.<span class="intersentencespace"></span> The quotes are
+not part of the string value, however.<span class="intersentencespace"></span> In other words, if I write <code>"abc"</code>, I
+know <code>"abc"</code> is a string literal, and I know the quotes are not a part of the
+string’s value.<span class="intersentencespace"></span> Also, we can use either double quotes (<code>"</code>) or single quotes (<code>’</code>)
+as long as they match one another.<span class="intersentencespace"></span> That is, we can write <code>"cheese"</code> or
+<code>’cheese’</code> but not <code>’cheese"</code>.</p>
+<p>Types and values are tremendously important in Python, and this is illustrated
+by our problematic code from earlier in this section.<span class="intersentencespace"></span> Recall
+<a href="ch1_basicio_types_fragment.xhtml#code-cats_typeerror" class="hyperref">Listing <span class="ref">1.4</span></a>, which is shown again below:</p>
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="n">cats</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"How many cats do you have? "</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="n">cats</span> <span class="o">=</span> <span class="n">cats</span> <span class="o">+</span> <span class="mi">4</span>
+<span class="lineno">3</span> <span class="k">print</span><span class="p">(</span><span class="s">"In a month's time, you will have"</span><span class="p">,</span> <span class="n">cats</span><span class="p">,</span> <span class="s">"cats."</span><span class="p">)</span>
+</pre></div></div>
+<p>When we ran this code, we got an error on line 2 that told us
+“<span style="color: red">Can’t convert ’int’ object to str implicitly.</span>” When line 2
+tries to do the plus operation, it gets confused because <code>4</code> is an <code>int</code> and it
+thinks that <code>cats</code> is a <code>str</code> rather than an <code>int</code>.<span class="intersentencespace"></span> Think about it.<span class="intersentencespace"></span> Can you
+guess why?<span class="intersentencespace"></span> Look back at line 2.<span class="intersentencespace"></span> Look back at line 1.</p>
+<p>The <code>input</code> command in line 1 retrieves characters entered from the keyboard.<span class="intersentencespace"></span> These characters could be letters, symbols, and/or numbers.<span class="intersentencespace"></span> Since the value
+placed into <code>cats</code> by <code>input</code> could be any of these things, the type of the
+value <code>input</code> gives us is <code>str</code>.<span class="intersentencespace"></span> Suppose the user typed a <code>5</code> at the prompt
+“How many cats do you have?”<span class="intersentencespace"></span> The initial value of the variable cats will be the
+<code>str</code> value <code>"5"</code> rather than the <code>int</code> value <code>5</code>.</p>
+<p>It doesn’t make sense to Python to add a string and an integer.<span class="intersentencespace"></span> After all, what
+is reasonable to assume about the type and value of an expression like <code>"Hello" +
+32</code>?<span class="intersentencespace"></span> In the above example, we need to convert <code>cats</code> from a string to an
+integer so that we can treat <code>cats</code> as an integer.<span class="intersentencespace"></span> Let us add a new line of
+code after the <code>input</code> statement in <a href="ch1_basicio_types_fragment.xhtml#code-cats_cast" class="hyperref">Listing <span class="ref">1.6</span></a> at line 2.</p>
+<div class="codelisting" id="code-cats_cast"><div class="heading"><span class="number">Listing 1.6</span> 
+
+<span class="description"></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="n">cats</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"How many cats do you have? "</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="hll"><span class="n">cats</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cats</span><span class="p">)</span>
+</span><span class="lineno">3</span> <span class="n">cats</span> <span class="o">=</span> <span class="n">cats</span> <span class="o">+</span> <span class="mi">4</span>			
+<span class="lineno">4</span> <span class="k">print</span><span class="p">(</span><span class="s">"In a month’s time, you will have"</span><span class="p">,</span> <span class="n">cats</span><span class="p">,</span> <span class="s">"cats."</span><span class="p">)</span>
+</pre></div></div></div><p>The <code>int</code> command converts the string value stored in <code>cats</code> to an integer, and
+then it overwrites the value of <code>cats</code> to this new <code>int</code> value.<span class="intersentencespace"></span> Converting a
+value from one type to another is called <em>casting</em>.</p>
+<p>When we write code, it is bound to have errors we need to correct.<span class="intersentencespace"></span> Sometimes,
+those errors make the program crash and we see an actual error message in
+<span style="color: red">red text</span> on the screen.<span class="intersentencespace"></span> Other times, however, we don’t get a
+nice error message.<span class="intersentencespace"></span> Instead, the program appears to behave erroneously.<span class="intersentencespace"></span> Erroneous code is called a <em>bug</em>, and it is up to us to “debug” the program.</p>
+<p>FIXME At some point, we’ll have a nice detour in this box about the origin of
+the term “debug.” It’s an amusing historical tale.<span class="intersentencespace"></span> For now, read this:
+http://www.wired.com/2013/12/googles-doodle-honors-grace-hopper-and-entomology/</p>
+<p>Let’s practice detecting and fixing bugs.<span class="intersentencespace"></span> We’ll again use
+<a href="ch1_basicio_types_fragment.xhtml#code-cats_typeerror" class="hyperref">Listing <span class="ref">1.4</span></a> as our starting point, only this time instead
+of adding <code>4</code> to the number of cats, we will double the number of cats by
+multiplying by <code>2</code>.<span class="intersentencespace"></span> After all, when it comes to feral barn cats, this is a more
+accurate representation of what happens to cat populations.<span class="intersentencespace"></span> Consider our new
+<a href="ch1_basicio_types_fragment.xhtml#code-cats_mult" class="hyperref">Listing <span class="ref">1.7</span></a>.</p>
+<div class="codelisting" id="code-cats_mult"><div class="heading"><span class="number">Listing 1.7</span> 
+
+<span class="description"></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="n">cats</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"How many cats do you have? "</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="hll"><span class="n">cats</span> <span class="o">=</span> <span class="n">cats</span> <span class="o">*</span> <span class="mi">2</span>		
+</span><span class="lineno">3</span> <span class="k">print</span><span class="p">(</span><span class="s">"In a month’s time, you will have"</span><span class="p">,</span> <span class="n">cats</span><span class="p">,</span> <span class="s">"cats."</span><span class="p">)</span>
+</pre></div></div></div><p>Note that we forgot to cast <code>cats</code> to be an <code>int</code>.<span class="intersentencespace"></span> We might expect this
+program to have a <code>TypeError</code> since it doesn’t make sense to multiply a string
+and an integer.<span class="intersentencespace"></span> In fact, this is not what happens.<span class="intersentencespace"></span> Type <code>3</code> for the number of
+cats.<span class="intersentencespace"></span> What happens?</p>
+<p><code>33</code> cats?!<span class="intersentencespace"></span> Good grief!<span class="intersentencespace"></span> As it turns out, Python allows string values to be
+repeated using the asterisk/star (<code>*</code>) operator.<span class="intersentencespace"></span> Instead of performing <code>3 * 2</code>,
+the expression we’ve inadvertently performed is <code>"3" * 2</code>, which is the same as
+<code>"3" + "3"</code>, which is the same as <code>"33"</code>.<span class="intersentencespace"></span> If we properly cast <code>cats</code> to an
+<code>int</code> before multiplying, we get the proper result and we have “debugged” the
+program.</p>
+<p>It is important to understand what operators are available to us.<span class="intersentencespace"></span> Tables <a href="ch1_basicio_types_fragment.xhtml#tbl-arith_ops" class="hyperref"><span class="ref">1.1</span></a> and <a href="ch1_basicio_types_fragment.xhtml#tbl-str_ops" class="hyperref"><span class="ref">1.2</span></a> provide a more comprehensive
+list of these operators and their function.</p>
+<div id="tbl-arith_ops" class="table"><table class="tabular">
+<tbody><tr class="top_border bottom_border"><td class="left_border align_right right_border">Operator</td>
+<td class="align_left right_border">Usage</td>
+</tr><tr><td class="left_border align_right right_border"><code>+</code></td>
+<td class="align_left right_border">Addition</td>
+</tr><tr><td class="left_border align_right right_border"><code>-</code></td>
+<td class="align_left right_border">Subtraction</td>
+</tr><tr><td class="left_border align_right right_border"><code>*</code></td>
+<td class="align_left right_border">Multiplication</td>
+</tr><tr><td class="left_border align_right right_border"><code>/</code></td>
+<td class="align_left right_border">Division</td>
+</tr><tr><td class="left_border align_right right_border"><code>//</code></td>
+<td class="align_left right_border">Integer division - Returns the whole number result only from division.<span class="intersentencespace"></span> Example: <code>5 // 2</code> gives us <code>2</code> rather than <code>2.5</code>.<span class="intersentencespace"></span></td>
+</tr><tr><td class="left_border align_right right_border"><code>%</code></td>
+<td class="align_left right_border">Modulus, or mod - Returns the remainder from division.<span class="intersentencespace"></span> Example: <code>5 % 2</code> gives us <code>1</code> since <code>5</code> divided by <code>2</code> is <code>2</code> remainder <code>1</code></td>
+</tr><tr class="bottom_border"><td class="left_border align_right right_border"><code>**</code></td>
+<td class="align_left right_border">Exponentiation - Returns the result of raising a number to a power.<span class="intersentencespace"></span> Example: <code>2 ** 3</code> gives us <code>8</code></td>
+</tr></tbody></table><div class="caption"><span class="header">Table 1.1: </span><span class="description">Arithmetic operators
+</span></div></div>
+<div id="tbl-str_ops" class="table"><table class="tabular">
+<tbody><tr class="top_border bottom_border"><td class="left_border align_right right_border">Operator</td>
+<td class="align_left right_border">Usage</td>
+</tr><tr><td class="left_border align_right right_border"><code>+</code></td>
+<td class="align_left right_border">Concatenation</td>
+</tr><tr><td class="left_border align_right right_border"></td>
+<td class="align_left right_border"><code class="tt">Example</code>: <code>"ab" + "cd"</code> gives us <code>"abcd"</code></td>
+</tr><tr><td class="left_border align_right right_border"><code>*</code></td>
+<td class="align_left right_border">Repetition</td>
+</tr><tr><td class="left_border align_right right_border"></td>
+<td class="align_left right_border"><code class="tt">Example</code>: <code>"-" * 5</code> gives us <code>"-----"</code></td>
+</tr><tr><td class="left_border align_right right_border"><code>%</code></td>
+<td class="align_left right_border">Formatting</td>
+</tr><tr><td class="left_border align_right right_border"></td>
+<td class="align_left right_border">The string format operator allows us to insert one string value into the middle of another string, which is known as the format string.<span class="intersentencespace"></span> The format string can contain any number of format specifiers, which are placeholders for the values to be inserted.<span class="intersentencespace"></span> See <a href="ch1_basicio_types_fragment.xhtml#tbl-str_fmts" class="hyperref">Table <span class="ref">1.3</span></a> for a list of format specifier examples.<span class="intersentencespace"></span></td>
+</tr><tr><td class="left_border align_right right_border"></td>
+<td class="align_left right_border"><code class="tt">Example 1</code>:</td>
+</tr><tr><td class="left_border align_right right_border"></td>
+<td class="align_left right_border">Suppose we have a variable <code>forks</code> that contains the integer value <code>5</code>.<span class="intersentencespace"></span></td>
+</tr><tr><td class="left_border align_right right_border"></td>
+<td class="align_left right_border"><code>"There are %d forks on the table." % forks</code></td>
+</tr><tr><td class="left_border align_right right_border"></td>
+<td class="align_left right_border">would produce the string <code>"There are 5 forks on the table."</code></td>
+</tr><tr><td class="left_border align_right right_border"></td>
+<td class="align_left right_border"><code class="tt">Example 2</code>:</td>
+</tr><tr><td class="left_border align_right right_border"></td>
+<td class="align_left right_border">Suppose we have two variables <code>first</code> and <code>last</code> that contain string values <code>"Bob"</code> and <code>"Barker"</code>.<span class="intersentencespace"></span></td>
+</tr><tr><td class="left_border align_right right_border"></td>
+<td class="align_left right_border"><code>"Hi, %s %s." % (first, last)</code></td>
+</tr><tr><td class="left_border align_right right_border"></td>
+<td class="align_left right_border">would produce the string <code>"Hi, Bob Barker."</code> Note that if we have multiple values to be inserted into the format string, we enclose them in parentheses and separate them with commas.<span class="intersentencespace"></span></td>
+</tr><tr><td class="left_border align_right right_border"></td>
+<td class="align_left right_border"><code class="tt">Example 3</code>:</td>
+</tr><tr><td class="left_border align_right right_border"></td>
+<td class="align_left right_border">Suppose we have a variable <code>ch</code> that contains a single character <code>‘!’</code></td>
+</tr><tr><td class="left_border align_right right_border"></td>
+<td class="align_left right_border"><code>"OMG%c%c%c" % (ch, ch, ch)</code></td>
+</tr><tr class="bottom_border"><td class="left_border align_right right_border"></td>
+<td class="align_left right_border">would produce the string <code>"OMG!!!”</code>.<span class="intersentencespace"></span></td>
+</tr></tbody></table><div class="caption"><span class="header">Table 1.2: </span><span class="description">String operators
+</span></div></div>
+<div id="tbl-str_fmts" class="table"><table class="tabular">
+<tbody><tr class="top_border bottom_border"><td class="left_border align_right right_border">Specifier</td>
+<td class="align_left right_border">Description</td>
+</tr><tr><td class="left_border align_right right_border"><code>%d</code></td>
+<td class="align_left right_border">the value to be inserted is an integer</td>
+</tr><tr><td class="left_border align_right right_border"><code>%5d</code></td>
+<td class="align_left right_border">the value is aligned to the right across a 5-character column</td>
+</tr><tr><td class="left_border align_right right_border"><code>%-5d</code></td>
+<td class="align_left right_border">the value is aligned to the left across a 5-character column</td>
+</tr><tr><td class="left_border align_right right_border"><code>%f</code></td>
+<td class="align_left right_border">the value to be inserted is a float</td>
+</tr><tr><td class="left_border align_right right_border"><code>%10.2f</code></td>
+<td class="align_left right_border">the value to be inserted is a float aligned to the right across a 10-character column, and we should use two decimal places after the decimal point only</td>
+</tr><tr><td class="left_border align_right right_border"><code>%s</code></td>
+<td class="align_left right_border">the value to be inserted is a string</td>
+</tr><tr><td class="left_border align_right right_border"><code>%10s</code></td>
+<td class="align_left right_border">the value is aligned to the right across a 10-character column</td>
+</tr><tr><td class="left_border align_right right_border"><code>%-10s</code></td>
+<td class="align_left right_border">the value is aligned to the left across a 10-character column</td>
+</tr><tr class="bottom_border"><td class="left_border align_right right_border"><code>%c</code></td>
+<td class="align_left right_border">the value to be inserted is a single character</td>
+</tr></tbody></table><div class="caption"><span class="header">Table 1.3: </span><span class="description">String format specifiers
+</span></div></div>
+</div>
+<div id="sec-call_funcs" class="section"><h2><a href="ch1_basicio_types_fragment.xhtml#sec-call_funcs" class="heading hyperref"><span class="number">1.6 </span>Calling functions</a></h2>
+<p class="noindent">In <a href="ch1_basicio_types_fragment.xhtml#sec-asgn_stmts" class="hyperref">Section <span class="ref">1.4</span></a>, we identified the three types of statements
+that we knew at that point.</p>
+<ol>
+<li><code>print</code> statements
+</li>
+<li><code>input</code> statements
+</li>
+<li><em>assignment</em> statements
+</li></ol>
+<p>We have since learned about other statements.<span class="intersentencespace"></span> For example, we can use <code>type</code> to
+determine the type of an expression or <code>int</code> to cast a <code>str</code> to an <code>int</code>.<span class="intersentencespace"></span> We
+have also been using the word <em>command</em> to refer to words like <code>print</code>, <code>input</code>,
+and <code>type</code> that seem to have important meaning to Python.<span class="intersentencespace"></span> In fact, these
+commands are actually called <em>functions</em>.<span class="intersentencespace"></span> It’s important to learn to speak like
+a programmer when you are writing code, so we will call them functions from here
+forward.</p>
+<p>You’ll note that in this book, we try to steer clear of technical terms until we
+reach an appropriate time to introduce them.<span class="intersentencespace"></span> This seems to be a better approach
+than throwing every possible technical term at you right away and then expect
+you to memorize them without any context whatsoever.</p>
+<p>So, let’s practice speaking like programmers.</p>
+<table class="tabular"><tbody><tr class="top_border bottom_border"><td class="left_border align_left right_border">Instead of…</td>
+<td class="align_left right_border">Programmers would say…</td>
+</tr><tr><td class="left_border align_left right_border"><em>use</em> a function</td>
+<td class="align_left right_border"><em>call</em> a function</td>
+</tr><tr class="bottom_border"><td class="left_border align_left right_border">function <em>produces</em> a value</td>
+<td class="align_left right_border">function <em>returns</em> a value</td>
+</tr></tbody></table>
+<p>Consider the following code.</p>
+<div class="code"><div class="highlight"><pre><span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Do you wish to continue (y/n)? "</span><span class="p">)</span>
+</pre></div></div>
+<p>Programmers would say they are <em>calling</em> the input function, and the input
+function will <em>return</em> a string value.</p>
+<p>All functions return a value, even something like <code>print</code>.<span class="intersentencespace"></span> Just for fun
+(wheee!), type the following into the Python Shell window.</p>
+<div class="code"><div class="highlight"><pre><span class="n">var</span> <span class="o">=</span> <span class="k">print</span><span class="p">(</span><span class="s">"Hello."</span><span class="p">)</span>
+</pre></div></div>
+<p>Now, type <code>var</code> in the Shell window and press ENTER. Hmm, normally when we type
+the name of a variable or we type an expression into the Python Shell window, it
+tells us its value.<span class="intersentencespace"></span> We get nothing.<span class="intersentencespace"></span> Type the expression <code>type(var)</code> into the
+Shell.<span class="intersentencespace"></span> Aha!<span class="intersentencespace"></span> The variable <code>var</code> has a special type called <code>NoneType</code>.<span class="intersentencespace"></span> Every
+function call is an expression that returns some value, even if at least that
+value belongs to <code>NoneType</code>.</p>
+<p>Okay, it makes sense to have <code>int</code>, <code>float</code>, and <code>str</code> because it’s easy to
+think of whole and fractional numbers and text values, but why does <code>NoneType</code>
+exist?<span class="intersentencespace"></span> We’re really not ready for the answer yet, but rest assured we’ll cover
+it eventually.<span class="intersentencespace"></span> The short answer is that seasoned Python programmers can use
+<code>NoneType</code> to make their code really easy to read in some circumstances.<span class="intersentencespace"></span> Stay
+tuned.</p>
+<p>We can now simplify the list of statements we know about to these.</p>
+<ol>
+<li>function call statements
+</li>
+<li>assignment statements
+</li></ol>
+<p>From now on, we will refer to things like <code>print</code>, <code>input</code>, and <code>type</code> as
+functions rather than as commands.<span class="intersentencespace"></span> Note that assignment statements can have
+function calls in them, like <code>name = input("What is your name?<span class="intersentencespace"></span> ")</code>.<span class="intersentencespace"></span> This
+statement is an assignment statement, and the RHS is a function call.</p>
+<p>The expressions that are placed between the parentheses after the function’s
+name are called <em>arguments</em>.<span class="intersentencespace"></span> Some functions take no arguments, some functions
+take one argument, and some other functions can take several arguments.<span class="intersentencespace"></span> Arguments are separated with commas.<span class="intersentencespace"></span> Arguments tell the function how to do its
+job.<span class="intersentencespace"></span> The code in <a href="ch1_basicio_types_fragment.xhtml#code-age_inc" class="hyperref">Listing <span class="ref">1.8</span></a> shows different examples of how to
+call functions with differing numbers of arguments.</p>
+<div class="codelisting" id="code-age_inc"><div class="heading"><span class="number">Listing 1.8</span> 
+
+<span class="description"></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your age? "</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+<span class="lineno">3</span> <span class="n">age</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="lineno">4</span> <span class="k">print</span><span class="p">(</span><span class="s">"In one year, you will be"</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s">"years old."</span><span class="p">)</span>
+</pre></div></div></div><p>Lines 1 and 2 demonstrate calling a function with one argument.<span class="intersentencespace"></span> Line 4 has
+three arguments.<span class="intersentencespace"></span> The first is a string value, the second is a string variable,
+and the third is another string value.</p>
+<p>Because functions return values, we can call one function and immediately give
+its return value to another function.<span class="intersentencespace"></span> Look at lines 1 and 2 in
+<a href="ch1_basicio_types_fragment.xhtml#code-age_inc" class="hyperref">Listing <span class="ref">1.8</span></a> again.<span class="intersentencespace"></span> Since casting can be performed on any
+expression, we could do both the <code>input</code> and the <code>int</code> cast on one line, like
+this.</p>
+<div class="code"><div class="highlight"><pre><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"What is your age? "</span><span class="p">))</span>
+</pre></div></div>
+<p>The <code>input</code> function is called first, and the result returned by <code>input</code> is then given to <code>int</code>, which casts the result from a string to an integer.<span class="intersentencespace"></span> Students are often puzzled by what appears to be “double right parentheses” at the end of the above statement.<span class="intersentencespace"></span> Note that the last right parenthesis matches the left parenthesis for <code>int</code>, and the next to last right parenthesis matches the left parenthesis for <code>input</code>.<span class="intersentencespace"></span> This is shown visually in <a href="ch1_basicio_types_fragment.xhtml#fig-match_parens" class="hyperref">Figure <span class="ref">1.3</span></a>.</p>
+<div class="center figure" id="fig-match_parens">
+<div class="graphics image"><img src="images/ch1/match_parens.png" alt="images/ch1/match_parens" /></div><div class="caption"><span class="header">Figure 1.3: </span><span class="description">Use of arrows to showing matching parentheses
+</span></div></div>
+<p>If the user were to type <code>18</code>, the code above would be executed and “transformed” through the steps shown in <a href="ch1_basicio_types_fragment.xhtml#fig-stmt_exec" class="hyperref">Figure <span class="ref">1.4</span></a>.</p>
+<div class="center figure" id="fig-stmt_exec">
+<div class="graphics image"><img src="images/ch1/stmt_exec.png" alt="images/ch1/stmt_exec" /></div><div class="caption"><span class="header">Figure 1.4: </span><span class="description">Statement execution
+</span></div></div>
+<p>Just for fun (again: whee!!), let’s change line 4 of <a href="ch1_basicio_types_fragment.xhtml#code-age_inc" class="hyperref">Listing <span class="ref">1.8</span></a> and try out the string formatting operator (<code>%</code>).<span class="intersentencespace"></span> Instead of this,</p>
+<div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"In one year, you will be"</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s">"years old."</span><span class="p">)</span>
+</pre></div></div>
+<p>We could do this:</p>
+<div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"In one year, you will be </span><span class="si">%d</span><span class="s"> years old."</span> <span class="o">%</span> <span class="n">age</span><span class="p">)</span>
+</pre></div></div>
+<p>Here, the value of <code>age</code> gets inserted into the format string in place of the
+<code>%d</code>.<span class="intersentencespace"></span> There is no advantage to one way or the other, per se.<span class="intersentencespace"></span> There will be
+lots of ways to write code, though you should try to write code so that is
+<em>readable</em>.<span class="intersentencespace"></span> If you write code that is easy to read, it will be easier to
+change.<span class="intersentencespace"></span> Some programmers like the second way because it is easy to see the
+format of what the output will be, and it can be easier to control where the
+spaces go in the output.</p>
+<p>There is another way to do string formatting in Python that is newer and is now
+preferred as of Python 3.5.<span class="intersentencespace"></span> We will introduce it later in the book.<span class="intersentencespace"></span> However,
+we show this method for string formatting since this is an introductory computer
+science textbook, and this “style” of string formatting is one you’d encounter
+in other programming languages (e.g., C, Java, etc.).</p>
+<p>To review, we started with four lines of code.</p>
+<div class="code"><div class="highlight"><pre><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your age? "</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"In one year, you will be"</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s">"years old."</span><span class="p">)</span>
+</pre></div></div>
+<p>Then, we “tweaked” the code so that, ultimately, it looked like this.</p>
+<div class="code"><div class="highlight"><pre><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"What is your age? "</span><span class="p">))</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"In one year, you will be </span><span class="si">%d</span><span class="s"> years old."</span> <span class="o">%</span> <span class="n">age</span><span class="p">)</span>
+</pre></div></div>
+<p>As you program, you will develop your own coding style.<span class="intersentencespace"></span> You will want to decide
+which of the two blocks of code (or a combination of them) looks the most
+readable to you.</p>
+</div>
+<div id="sec-comments" class="section"><h2><a href="ch1_basicio_types_fragment.xhtml#sec-comments" class="heading hyperref"><span class="number">1.7 </span>Comments</a></h2>
+<p class="noindent">As we go forward in learning Python, our programs will get longer and more
+intricate.<span class="intersentencespace"></span> It may be helpful to annotate our code with short comments to remind
+us what our code does.<span class="intersentencespace"></span> <a href="ch1_basicio_types_fragment.xhtml#code-age_w_comments" class="hyperref">Listing <span class="ref">1.9</span></a> shows a (somewhat
+silly) example.</p>
+<div class="codelisting" id="code-age_w_comments"><div class="heading"><span class="number">Listing 1.9</span> 
+
+<span class="description"></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="c"># Get the user’s age.</span>
+<span class="lineno">2</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your age? "</span><span class="p">)</span>
+<span class="lineno">3</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span> <span class="c"># Tell the user his or her age one year from now.</span>
+<span class="lineno">6</span> <span class="n">age</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="lineno">7</span> <span class="k">print</span><span class="p">(</span><span class="s">"In one year, you will be"</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s">"years old."</span><span class="p">)</span>
+</pre></div></div></div><p>The lines that start with a <code>#</code> symbol are called comments.<span class="intersentencespace"></span> Any line that
+starts with <code>#</code> will be ignored by the Python interpreter.<span class="intersentencespace"></span> Those lines are only
+for the programmer to read.<span class="intersentencespace"></span> Again, this is a somewhat silly example because our
+code is relatively simple and probably does not require comments.</p>
+<p>Programmers will also use comments at the beginning of a code file to document
+what the program does.<span class="intersentencespace"></span> Here is an example (see <a href="ch1_basicio_types_fragment.xhtml#code-comment_hdr" class="hyperref">Listing <span class="ref">1.10</span></a>).</p>
+<div class="codelisting" id="code-comment_hdr"><div class="heading"><span class="number">Listing 1.10:</span> 
+
+<span class="description">A header comment at the top of a code file</span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="c"># Program: tictactoe.py</span>
+<span class="c"># Programmer: Susan McConnell</span>
+<span class="c"># Description:</span>
+<span class="c">#   This program allows users to play Tic Tac Toe against</span>
+<span class="c">#   a computer opponent.  Users choose the row and column</span>
+<span class="c">#   to place their ‘X’ or ‘O’ on the game grid in each turn.</span>
+</pre></div></div></div><p>Because placing a <code>#</code> symbol at the start of a line hides the code from Python,
+another use of comments is to hide old code.<span class="intersentencespace"></span> Sometimes, we want to save old
+code without deleting it.<span class="intersentencespace"></span> This can occur when we’re not sure if new code we’re
+trying out is going to work, and so we may not want to lose our old code in case
+we need to go back to it later.<span class="intersentencespace"></span> <a href="ch1_basicio_types_fragment.xhtml#code-comment_out" class="hyperref">Listing <span class="ref">1.11</span></a> demonstrates
+this concept.</p>
+<div class="codelisting" id="code-comment_out"><div class="heading"><span class="number">Listing 1.11:</span> 
+
+<span class="description">Commenting out code</span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="hll"><span class="c">#age = input("What is your age? ")</span>
+</span><span class="lineno">2</span> <span class="hll"><span class="c">#age = int(age)</span>
+</span><span class="lineno">3</span> 
+<span class="lineno">4</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"What is your age? "</span><span class="p">))</span>
+</pre></div></div></div><p>Python will not execute lines 1 and 2 because they are “commented out.”
+It will, however, execute line 4.</p>
+<p>Another use for comments is to help us program.<span class="intersentencespace"></span> As human beings, we do not
+naturally think in code.<span class="intersentencespace"></span> Even experienced programmers struggle to think purely
+in terms of programming language code.<span class="intersentencespace"></span> One good way to program is to write
+comments first in plain English to help us organize our logic and thoughts, and
+then we write Python code beneath the comments.<span class="intersentencespace"></span> For example, we might start
+with:</p>
+<div class="code"><div class="highlight"><pre><span class="c"># Get the user’s age.</span>
+
+<span class="c"># Print how old they’ll be in a year.</span>
+</pre></div></div>
+<p>Then, we can fill in the details.</p>
+<div class="code"><div class="highlight"><pre><span class="c"># Get the user’s age.</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your age? "</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+
+<span class="c"># Print how old they’ll be in a year.</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"In one year, you will be"</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s">"years old."</span><span class="p">)</span>
+</pre></div></div>
+<p>Comments end up being very important later on in the book when we start creating
+our own functions (yes, we get to make our own functions eventually).<span class="intersentencespace"></span> Practice
+writing comments when you write your own code.</p>
+</div>
+    
+        </body>
+        </html>
