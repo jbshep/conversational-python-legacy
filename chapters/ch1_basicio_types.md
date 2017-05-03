@@ -1076,7 +1076,7 @@ writing comments when you write your own code.
 
 6. Write a program that asks users for two whole numbers.  It should then add them and print the result.  Here is an example of what the output should look like.
 
-    <<(exercises/ch1/p1.6.out.py)
+    <<(exercises/ch1/p1.6.txt, lang: python)
 
 7. What is the output of the following program?
 
@@ -1112,8 +1112,8 @@ writing comments when you write your own code.
 
 15. Write a program that asks the user for a single character.  The program should then greet them in block letters "HI" consisting solely of that character.  Here is an example of a running program.
 
-    <<(exercises/ch1/p1.15.1.out.py)
+    <<(exercises/ch1/p1.15.1.txt, lang: python)
 
     Here is another example of a running program if the user were to type a different character.
 
-    <<(exercises/ch1/p1.15.2.out.py)
+    <<(exercises/ch1/p1.15.2.txt, lang: python)
