@@ -44,7 +44,7 @@ shell (even though they don't know any Python yet).
 You are now ready to start typing *statements* into the file `hello.py`.  These
 statements will make up a program.  Each statement gives the computer an
 instruction.  A statement might tell the computer to put something on the screen
-(which is called “printing”), it might prompt the user to type something, or it
+(which is called "printing"), it might prompt the user to type something, or it
 might tell the computer to remember some information so that we can recall it
 and use it later in the program, etc.
 
@@ -557,7 +557,7 @@ has a type.
 
 Say it again: an expression produces a value, and every value has a type.
 
-If you’re not sure what the type of an expression is, you can find out by typing
+If you're not sure what the type of an expression is, you can find out by typing
 the expression into the Python Shell.  If I entered `7 + 3`, the Python Shell
 would output `10`.  If I entered `type(7 + 3)`, the Python Shell would output
 `"<class 'int'>"`.  Try out the type command to see what different expressions and
@@ -585,7 +585,7 @@ after the `e` is the power of ten to which we multiply the first number.
 
 Any time we type a specific value like `5` or `5.25` in a program, we call that
 value a *literal*.  That is, `5.25` is a float literal because it is "literally"
-the value `5.25`.  It’s important to have the word "literal" in your programmer
+the value `5.25`.  It's important to have the word "literal" in your programmer
 vocabulary.
 
 Now let us consider a different example, shown in Listing~\ref{code:firstlast}.
@@ -617,10 +617,10 @@ following table.
 |`firstname + " " + lastname`|`"Kanye West"`|`str`|
 
 Some operators can work on strings, too.  When we use the plus (+) on two string
-values, it “smashes” the two strings together to form a new string.  Here, we
+values, it "smashes" the two strings together to form a new string.  Here, we
 are taking the first name and putting a space on the end of it.  Then, we are
 appending the last name onto that new string that consists of the first name and
-trailing space.  There is a geeky name for “smashing” two strings together to
+trailing space.  There is a geeky name for "smashing" two strings together to
 make a new string, and that name is *concatenation*.  We would say that the plus (+)
 *concatenates* two strings.
 
@@ -657,7 +657,7 @@ value `input` gives us is `str`.  Suppose the user typed a `5` at the prompt
 "How many cats do you have?"  The initial value of the variable cats will be the
 `str` value `"5"` rather than the `int` value `5`.
 
-It doesn’t make sense to Python to add a string and an integer.  After all, what
+It doesn't make sense to Python to add a string and an integer.  After all, what
 is reasonable to assume about the type and value of an expression like `"Hello" +
 32`?  In the above example, we need to convert `cats` from a string to an
 integer so that we can treat `cats` as an integer.  Let us add a new line of
@@ -670,7 +670,7 @@ code after the `input` statement in Listing~\ref{code:cats_cast} at line 2.
 cats = input("How many cats do you have? ")
 cats = int(cats)
 cats = cats + 4			
-print("In a month’s time, you will have", cats, "cats.")
+print("In a month's time, you will have", cats, "cats.")
 ```
 \end{codelisting}
 
@@ -680,12 +680,12 @@ value from one type to another is called *casting*.
 
 When we write code, it is bound to have errors we need to correct.  Sometimes,
 those errors make the program crash and we see an actual error message in
-\coloredtext{red}{red text} on the screen.  Other times, however, we don’t get a
+\coloredtext{red}{red text} on the screen.  Other times, however, we don't get a
 nice error message.  Instead, the program appears to behave erroneously.
 Erroneous code is called a *bug*, and it is up to us to "debug" the program.
 
-FIXME At some point, we’ll have a nice detour in this box about the origin of
-the term “debug.”  It’s an amusing historical tale.  For now, read this:
+FIXME At some point, we'll have a nice detour in this box about the origin of
+the term "debug."  It's an amusing historical tale.  For now, read this:
 http://www.wired.com/2013/12/googles-doodle-honors-grace-hopper-and-entomology/
 
 Let's practice detecting and fixing bugs.  We'll again use
@@ -701,7 +701,7 @@ Listing~\ref{code:cats_mult}.
 ```python, options: "linenos": true, "hl_lines": [2]
 cats = input("How many cats do you have? ")
 cats = cats * 2		
-print("In a month’s time, you will have", cats, "cats.")
+print("In a month's time, you will have", cats, "cats.")
 ```
 \end{codelisting}
 
@@ -712,7 +712,7 @@ cats.  What happens?
 
 `33` cats?!  Good grief!  As it turns out, Python allows string values to be
 repeated using the asterisk/star (`*`) operator.  Instead of performing `3 * 2`,
-the expression we’ve inadvertently performed is `"3" * 2`, which is the same as
+the expression we've inadvertently performed is `"3" * 2`, which is the same as
 `"3" + "3"`, which is the same as `"33"`.  If we properly cast `cats` to an
 `int` before multiplying, we get the proper result and we have "debugged" the
 program.
@@ -767,10 +767,10 @@ Operator & Usage \\
       & would produce the string \kode{"Hi, Bob Barker."}  Note that if we have multiple values to be inserted into the format string, we enclose them in parentheses and separate them with commas. \\
 
       & \texttt{Example 3}: \\
-      & Suppose we have a variable \kode{ch} that contains a single character \kode{‘!’} \\
+      & Suppose we have a variable \kode{ch} that contains a single character \kode{‘!'} \\
 
       & \kode{"OMG\%c\%c\%c" \% (ch, ch, ch)} \\
-      & would produce the string \kode{"OMG!!!”}. \\
+      & would produce the string \kode{"OMG!!!"}. \\
 \hline
 \end{tabular}
 \end{table}
@@ -808,7 +808,7 @@ We have since learned about other statements.  For example, we can use `type` to
 determine the type of an expression or `int` to cast a `str` to an `int`.  We
 have also been using the word *command* to refer to words like `print`, `input`,
 and `type` that seem to have important meaning to Python.  In fact, these
-commands are actually called *functions*.  It’s important to learn to speak like
+commands are actually called *functions*.  It's important to learn to speak like
 a programmer when you are writing code, so we will call them functions from here
 forward.
 
@@ -864,7 +864,7 @@ functions rather than as commands.  Note that assignment statements can have
 function calls in them, like `name = input("What is your name? ")`.  This
 statement is an assignment statement, and the RHS is a function call.
 
-The expressions that are placed between the parentheses after the function’s
+The expressions that are placed between the parentheses after the function's
 name are called *arguments*.  Some functions take no arguments, some functions
 take one argument, and some other functions can take several arguments.
 Arguments are separated with commas.  Arguments tell the function how to do its
@@ -900,11 +900,11 @@ The `input` function is called first, and the result returned by `input` is then
 
 ![Use of arrows to showing matching parentheses\label{fig:match_parens}](images/ch1/match_parens.png)
 
-If the user were to type `18`, the code above would be executed and “transformed” through the steps shown in Figure~\ref{fig:stmt_exec}.
+If the user were to type `18`, the code above would be executed and "transformed" through the steps shown in Figure~\ref{fig:stmt_exec}.
 
 ![Statement execution\label{fig:stmt_exec}](images/ch1/stmt_exec.png)
 
-Just for fun (again: whee!!), let’s change line 4 of Listing~\ref{code:age_inc} and try out the string formatting operator (`%`).  Instead of this,
+Just for fun (again: whee!!), let's change line 4 of Listing~\ref{code:age_inc} and try out the string formatting operator (`%`).  Instead of this,
 
 ```python
 print("In one year, you will be", age, "years old.")
@@ -963,7 +963,7 @@ silly) example.
 \label{code:age_w_comments}
 \codecaption{}
 ```python, options: "linenos": true
-# Get the user’s age.
+# Get the user's age.
 age = input("What is your age? ")
 age = int(age)
 
@@ -991,13 +991,13 @@ what the program does.  Here is an example (see Listing~\ref{code:comment_hdr}).
 # Description:
 #   This program allows users to play Tic Tac Toe against
 #   a computer opponent.  Users choose the row and column
-#   to place their ‘X’ or ‘O’ on the game grid in each turn.
+#   to place their ‘X' or ‘O' on the game grid in each turn.
 ```
 \end{codelisting}
 
 Because placing a `#` symbol at the start of a line hides the code from Python,
 another use of comments is to hide old code.  Sometimes, we want to save old
-code without deleting it.  This can occur when we’re not sure if new code we’re
+code without deleting it.  This can occur when we're not sure if new code we're
 trying out is going to work, and so we may not want to lose our old code in case
 we need to go back to it later.  Listing~\ref{code:comment_out} demonstrates
 this concept.
@@ -1013,7 +1013,7 @@ age = int(input("What is your age? "))
 ```
 \end{codelisting}
 
-Python will not execute lines 1 and 2 because they are “commented out.”
+Python will not execute lines 1 and 2 because they are "commented out."
 It will, however, execute line 4.
 
 Another use for comments is to help us program.  As human beings, we do not
@@ -1024,19 +1024,19 @@ then we write Python code beneath the comments.  For example, we might start
 with:
 
 ```python
-# Get the user’s age.
+# Get the user's age.
 
-# Print how old they’ll be in a year.
+# Print how old they'll be in a year.
 ```
 
 Then, we can fill in the details.
 
 ```python
-# Get the user’s age.
+# Get the user's age.
 age = input("What is your age? ")
 age = int(age)
 
-# Print how old they’ll be in a year.
+# Print how old they'll be in a year.
 age = age + 1
 print("In one year, you will be", age, "years old.")
 ```
