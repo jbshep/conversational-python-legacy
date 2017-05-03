@@ -34,7 +34,9 @@ programs.  One is the Python interpreter. The other is named *Thonny*.  Thonny
 will give us a window in which to type our code, and then Thonny will hand our
 code to the Python interpreter so that we can run our program.
 
-FIXME installation of Python and Thonny will go here.
+FIXME installation of Python and Thonny will go here.  Be sure to help readers
+navigate Thonny, and don't forget to have them type commands directly into the
+shell (even though they don't know any Python yet).
 
 ## The `print` statement
 \label{sec:print}
@@ -1042,3 +1044,76 @@ print("In one year, you will be", age, "years old.")
 Comments end up being very important later on in the book when we start creating
 our own functions (yes, we get to make our own functions eventually).  Practice
 writing comments when you write your own code.
+
+## Exercises
+
+1. Write a program that creates as its output a face on the screen by arranging different symbols, letters, and/or numbers.  Here is an example.
+
+    \begin{verbatim}
+    \\///
+     0 0
+      v
+     ---
+    \end{verbatim}
+
+2. What is the output of the following program?
+
+    <<(exercises/ch1/p1.2.py)
+
+3. What is the output of the following program?
+
+    <<(exercises/ch1/p1.3.py)
+
+4. What is the output of the following program?
+
+    <<(exercises/ch1/p1.4.py)
+
+5. What is the output of the following program if the user enters a `2` at the first prompt and a `3` at the second prompt?
+
+    <<(exercises/ch1/p1.5.py)
+
+    Be careful.  Try to type this program into the Python Shell and see what you get.
+
+6. Write a program that asks users for two whole numbers.  It should then add them and print the result.  Here is an example of what the output should look like.
+
+    <<(exercises/ch1/p1.6.out.py)
+
+7. What is the output of the following program?
+
+    <<(exercises/ch1/p1.7.py)
+
+8. What is the output of the following program?
+
+    <<(exercises/ch1/p1.8.py)
+
+9. What is the output of the following program?
+
+    <<(exercises/ch1/p1.9.py)
+
+10. What is the output of the following program?
+
+    <<(exercises/ch1/p1.10.py)
+
+11. What is the output of the following program?  Write down the answer exactly how it would appear on-screen.
+
+    <<(exercises/ch1/p1.11.py)
+
+12. What is the output of the following program?  Write down the answer exactly how it would appear on-screen.
+
+    <<(exercises/ch1/p1.12.py)
+
+13. What is the output of the following program?  Write down the answer exactly how it would appear on-screen.
+
+    <<(exercises/ch1/p1.13.py)
+
+14. What is the output of the following program?  Write down the answer exactly how it would appear on-screen.
+
+    <<(exercises/ch1/p1.14.py)
+
+15. Write a program that asks the user for a single character.  The program should then greet them in block letters "HI" consisting solely of that character.  Here is an example of a running program.
+
+    <<(exercises/ch1/p1.15.1.out.py)
+
+    Here is another example of a running program if the user were to type a different character.
+
+    <<(exercises/ch1/p1.15.2.out.py)

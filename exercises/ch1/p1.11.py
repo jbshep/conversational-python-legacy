@@ -1,0 +1,5 @@
+print("%s %s" % ("Item", "Price"))
+print("%s %f" % ("Soda", 1.75))
+print("%s %f" % ("Pizza", 2.00))
+print("%s %f" % ("Hot Dog", 1.50))
+print("%s %f" % ("Crab Legs", 30.99))
