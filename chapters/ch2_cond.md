@@ -464,7 +464,7 @@ if 14 <= age and age <= 16 and not drivers_ed:
 
 This example includes a few interesting code constructions.  Line 2 of
 Listing~\ref{code:drivers_ed_bool_expr} is different from what you’ve seen
-before.  In Listing~\ref{code:drivers_ed_and}, we let `drivers_ed` be a string
+before.  Previously in Listing~\ref{code:drivers_ed_and}, we let `drivers_ed` be a string
 variable whose value should be `"y"` or `"n"`. In this code, `drivers_ed` is a
 Boolean variable.  Why?
 
@@ -488,3 +488,38 @@ hard to notice, it may make the code more difficult to read and therefore
 maintain.  In the future, we may want to check what the user typed in to make
 sure it’s what we expect (i.e., a `"y"` or a `"n"`).  Checking inputs is
 something we’ll discuss in Chapter~\ref{cha:loops}.
+
+## Nuances of Boolean operators
+\label{sec:bool_nuances}
+
+Students will sometimes write code like this.
+
+```python
+age = int(input("What is your age? "))
+if age == 14 or 15:
+    print("You can get a learner’s permit.")
+```
+
+Run this code and type `18`.  Uh oh.  Why does it print "You can get a learner’s
+permit"?
+
+Remember than anything on the LHS and RHS of a Boolean operator must be itself a
+Boolean expression.  In other words, the LHS and RHS must both be `True` or
+`False`.  In the above example, there is an expression on either side of the
+double-equals.  One is
+
+```python
+age == 14
+```
+
+and the other is
+
+```python
+15
+```
+
+The expression `age == 14` is `False`.  The expression `15` is `True`.
+**Anything non-zero in Python is treated as `True`.**  Therefore, the Boolean
+expression is transformed as in Figure~\ref{fig:bool_op_nuance}.
+
+![Evaluating a Boolean \kode{or} expression\label{fig:bool_op_nuance}](images/ch2/bool_op_nuance.png)
