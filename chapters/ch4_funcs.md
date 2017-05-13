@@ -1,2 +1,2 @@
 # Functions
-
+\label{ch:funcs}

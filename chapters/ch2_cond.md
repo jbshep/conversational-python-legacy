@@ -1,5 +1,5 @@
 # Conditional Statements
-\label{cha:cond}
+\label{ch:cond}
 
 ## The `if` statement and the Boolean type
 \label{sec:if}
@@ -487,7 +487,7 @@ part of the expression (`== "y"`) might be hard to notice, and because it is
 hard to notice, it may make the code more difficult to read and therefore
 maintain.  In the future, we may want to check what the user typed in to make
 sure it's what we expect (i.e., a `"y"` or a `"n"`).  Checking inputs is
-something we'll discuss in Chapter~\ref{cha:loops}.
+something we'll discuss in Chapter~\ref{ch:loops}.
 
 ## Nuances of Boolean operators
 \label{sec:bool_nuances}
@@ -540,6 +540,7 @@ age == 14 or age == 15
 Bottom line: be very careful when using and/or.
 
 ## Exercises
+\label{sec:cond_exercises}
 
 1. Suppose `x` is an integer variable.  What is the difference between the
 expression `x = 2` and the expression `x == 2`?

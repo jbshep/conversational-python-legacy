@@ -1,5 +1,5 @@
 # Basic I/O, Statements, Expressions, Variables, and Types
-\label{cha:basicio_types}
+\label{ch:basicio_types}
 
 ## Getting set up to program
 \label{sec:getting_started}
@@ -1046,6 +1046,7 @@ our own functions (yes, we get to make our own functions eventually).  Practice
 writing comments when you write your own code.
 
 ## Exercises
+\label{sec:basicio_types_exercises}
 
 1. Write a program that creates as its output a face on the screen by arranging different symbols, letters, and/or numbers.  Here is an example.
 
