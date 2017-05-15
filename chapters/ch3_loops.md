@@ -1627,3 +1627,82 @@ Student name? ('quit' to end) quit
 
 ## Exercises
 \label{sec:loops_exercises}
+
+1. Write a program that asks for a word, phrase, or sentence.  The program should then print whether the input is a palindrome.  (Do a Web search to see what a palindrome is.)
+
+2. Write a program that repeatedly asks for a number until the user enters “quit.”  The program should print the sum and average of all the numbers.
+
+3. What is the output of the following program?
+
+    <<(exercises/ch3/p3.3.py)
+
+4. What is the output of the following program?
+
+    <<(exercises/ch3/p3.4.py)
+
+
+5. What is the output of the following program?
+
+    <<(exercises/ch3/p3.5.py)
+
+6. Write an English-to-Pirate translator like the one found in
+Section~\ref{sec:loop_valid_and_translate}, only have your program repeatedly
+ask for sentences until the user presses ENTER/RETURN without typing anything.
+You can still ignore capitalization and punctuation.
+
+7. Do the previous problem again, only this time properly handle capitalization
+and punctuation.
+
+8. Write a program that translates English sentences to Pig Latin.
+    To form the Pig Latin equivalent of a word, remove the first consonant sound of the word and append it to the end, followed by  “-ay”.  Thus, “cat” becomes “at-cay” and “ship” becomes “ip-shay.”   The latter example demonstrates that consonant sounds can be blended consonants.
+
+    If an English word begins with a vowel, the word is simplify restated with “-way” appended to it.  In other words, “apple” becomes “apple-way.”  Your solution should handle capitalization and punctuation.
+
+    Example of a working program:
+
+    <<(exercises/ch3/p3.8.txt, lang: ruby)
+
+9. Write a program that asks for a number and then prints that number of rows of 5 asterisks.  For example, if the user enters 4, the program would print the following.
+
+    ```
+    ***** \\
+    ***** \\
+    ***** \\
+    *****
+    ```
+
+10. Write a program that asks for two numbers x and y.  The program should print a rectangle of asterisks consisting of x rows and y columns.  For example, if the user enters 3 and 8, respectively, the program would print the following.
+
+    ```
+    ******** \\
+    ******** \\
+    ********
+    ```
+
+11. Write a program that asks for a number and then prints a triangle of asterisks where the base has that number of asterisks.  For example, if the user enters 4, the program would print the following.
+
+    ```
+    * \\
+    ** \\
+    *** \\
+    ****
+    ```
+
+12. Write a program that asks for a number and then prints an inverted triangle of asterisks where first row contains that number of asterisks.  For example, if the user enters 4, the program would print the following.
+
+    ```
+    **** \\
+    *** \\
+    ** \\
+    *
+    ```
+
+13.	Python programs are capable of generating random numbers (well, "pseudo"-random numbers – more about that in the next chapter).  One example of how to do this is as follows.
+
+    <<(exercises/ch3/p3.13.py)
+
+    If you run this program over and over again you’ll see the number change.  We can use random integers to simulate real-life occurrences, including games of chance and movement of animals.
+
+    Consider one program that demonstrates the use of random numbers.  A drunkard stumbling around in a grid of streets picks one of four directions (north, south, east, or west) at each intersection, and then he moves to the next intersection.
+
+    Write a program that simulates the drunkard’s walk.  Represent each intersection location as (x,y) integer pairs and have the drunkard start at (0,0).  Have the drunkard walk 100 intersections and print the intersection location where he ends up.  Run this program many times.  Does the drunkard tend to stay close to (0,0) or does he end up moving far away?

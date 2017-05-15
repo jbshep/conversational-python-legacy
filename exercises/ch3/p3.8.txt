@@ -1,0 +1,9 @@
+Enter English (press 'ENTER' only to quit): Hey there, Delilah!
+The Pig Latin equivalent is: Ey-hay ere-thay, Elilah-day!
+    
+Enter English (press 'ENTER' only to quit): Welcome to the Apple Store.
+The Pig Latin equivalent is: Elcome-way o-tay e-thay Apple-way Ore-stay.
+
+Enter English (press 'ENTER' only to quit): 
+
+Thank you for using the Pig Latin translator!
