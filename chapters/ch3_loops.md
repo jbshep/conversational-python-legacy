@@ -10,7 +10,7 @@ bit longer.  Don't be too daunted by this.  If you practice, you'll gain comfort
 with knowing how to break down programs section by section.  Let's go ahead and
 practice doing this starting with this chapter.
 
-Sometimes we’ll want to repeat an action in code.  One example might be that we
+Sometimes we'll want to repeat an action in code.  One example might be that we
 repeatedly ask the user for input until we run out of that input.  Suppose we
 write a program that calculates the amount of sales tax on different items at a
 store.  We might write the code found in Listing~\ref{code:sales_tax}.
@@ -55,13 +55,13 @@ loop body. The final `print` statement in line 10 of
 Listing~\ref{code:sales_tax} is not indented and is therefore *outside* the loop
 body.
 
-Try out the code above if you haven’t already.  Does it behave the way you
+Try out the code above if you haven't already.  Does it behave the way you
 expect?
 
 Now, notice that we ask for input twice in this program: once just before we try
 to enter the loop (line 4), and once at the end of the indented block inside the
 loop body (line 9).  Why?  The value returned by the initial `input` statement
-gets us into the loop body, though it doesn’t have to.  It is possible that the
+gets us into the loop body, though it doesn't have to.  It is possible that the
 user types "quit" right away, in which case the program bypasses the loop and
 prints our "thank you" message.  At the end of the loop body, we need to ask the
 user for the next input value, so that we have a new amount.  Otherwise, the
@@ -74,7 +74,7 @@ could just comment it out by putting a `#` symbol at the start of that line.
 Run your code and type an initial amount, say, `4.00`. Your code will endlessly
 compute sales tax with no end in sight!  Press the "Control" and "C" keys
 simultaneously to abort your program (we will write this `Ctrl+C` in the future
-because that’s how programmers write such things).
+because that's how programmers write such things).
 
 With this in mind, we will often see loops written using the pattern in
 Figure~\ref{fig:while_tmpl}.
@@ -113,7 +113,7 @@ Run it.  This prints the following.
 Done.
 ```
 
-We don’t always need to have a non-indented statement following a loop.  We are
+We don't always need to have a non-indented statement following a loop.  We are
 only doing this in the examples so it is clear in the output that we left the
 loop body.
 
@@ -127,7 +127,7 @@ which is `False`, so our code falls down to the non-indented section of code.
 It is good to observe that, in this example, the last value we print is `5`, but
 the value of `x` when we exit the loop is `6`.
 
-Let’s look at another "toy" example.  We will modify
+Let's look at another "toy" example.  We will modify
 Listing~\ref{code:while_ex1}, which was the following.
 
 ```python, options: "linenos": true, "hl_lines": [3,4]
@@ -193,7 +193,7 @@ are called *infinite loops*.  You will inadvertently create infinite loops every
 now and then when you program.  It becomes very important to know how to debug
 them.
 
-Let’s try another example (Listing~\ref{code:while_ex4}).
+Let's try another example (Listing~\ref{code:while_ex4}).
 
 \begin{codelisting}
 \label{code:while_ex4}
@@ -207,7 +207,7 @@ print("Done.")
 ```
 \end{codelisting}
 
-All we’ve done is changed the initial value of `x` and the value of `x` that
+All we've done is changed the initial value of `x` and the value of `x` that
 causes us to not reenter the loop.  The output is:
 
 ```console
@@ -219,7 +219,7 @@ causes us to not reenter the loop.  The output is:
 Done.
 ```
 
-Let’s make a small change to Listing~\ref{code:while_ex4}. Suppose we change
+Let's make a small change to Listing~\ref{code:while_ex4}. Suppose we change
 line 2 so that the code appears as it does in Listing~\ref{code:while_ex5}.
 
 \begin{codelisting}
@@ -331,12 +331,12 @@ Blastoff!
 ```
 
 Toy examples are a great way to understand how loops work from a "mechanical"
-perspective, but let’s see how we can use them to solve real problems.  Recall
+perspective, but let's see how we can use them to solve real problems.  Recall
 our very first example in this section, Listing~\ref{code:sales_tax}, which
 dealt  with reporting the price of an item after sales tax.  Our next example is
 also related to money.  Suppose we open a savings account, one that pays 5%
-interest per year into the account as long as we don’t withdraw any money that
-we deposit.  Let’s say we start the account by depositing $10,000.00.  How many
+interest per year into the account as long as we don't withdraw any money that
+we deposit.  Let's say we start the account by depositing $10,000.00.  How many
 years will it take to double our investment?
 
 Mathematicians would attempt to derive an equation to solve this problem, but
@@ -351,12 +351,12 @@ see if the balance has doubled.  If, in describing what our program is supposed
 to do, we say we need to check something, we are often talking about a Boolean
 condition found in an `if` statement or a `while` loop.
 
-Try to program this example on your own first.  You can’t learn to be a good
-programmer if you don’t try things regularly by starting with a blank screen or
+Try to program this example on your own first.  You can't learn to be a good
+programmer if you don't try things regularly by starting with a blank screen or
 a blank sheet of paper.  If you get really stuck, then (and only then) glance at
 the answer below.
 
-Okay, let’s look at a solution found in Listing~\ref{code:investment1}
+Okay, let's look at a solution found in Listing~\ref{code:investment1}
 (Warning: Our initial solution will have flaws, as initial solutions often do).
 
 \begin{codelisting}
@@ -377,14 +377,14 @@ print("It will take %d years to double your investment." % years)
 This is a good first attempt.  Here, we are letting the loop do the work of
 adding to the balance year after year, each time checking to see if the balance
 has doubled and if we can leave the loop.  However, our logic is flawed a bit.
-Consider the loop condition `balance < 2*balance`.  A variable’s value will never
-be greater than twice itself (unless that value is negative, but let’s steer
+Consider the loop condition `balance < 2*balance`.  A variable's value will never
+be greater than twice itself (unless that value is negative, but let's steer
 clear of negative values in bank accounts!).
 
-The problem here is that we’re trying to use the variable `balance` for two very
+The problem here is that we're trying to use the variable `balance` for two very
 different purposes simultaneously.  On one hand, we are using `balance` to keep
 track of the current balance as it changes year after year.  On the other hand,
-we’re pretending that it still holds the starting balance from our initial
+we're pretending that it still holds the starting balance from our initial
 investment.  We should really keep the starting balance in a separate variable,
 which we will name `startbalance`.
 
@@ -427,7 +427,7 @@ characters.  The latter is a string with a single space in it.
 
 Note that the string `s` contains a space between the substrings `"abc"` and
 `"def"`.  That will become an important observation later.  Now, we can inspect
-individual characters by using square brackets and character’s position in the
+individual characters by using square brackets and character's position in the
 string.  Consider the following example.
 
 ```python
@@ -463,7 +463,7 @@ to retrieve.  The first character (in this case `"a"`) is at position `0` rather
 than position `1`.  That may take a little getting used to. We will use the
 words "index" and "position" interchangeably to describe the location of a
 character in a string (also, note that the plural of "index" is "indices").
-Let’s re-list the code again in Listing~\ref{code:str_index}, this time with
+Let's re-list the code again in Listing~\ref{code:str_index}, this time with
 comments to explain each line.
 
 \begin{codelisting}
@@ -617,8 +617,8 @@ This produces something like:
 <built-in method upper of str object at 0x1019807e8>
 ```
 
-This is Python’s way of saying "yes, `upper` is the name of a function.  If you
-want to actually use that function, put parentheses at the end."  Let’s add the
+This is Python's way of saying "yes, `upper` is the name of a function.  If you
+want to actually use that function, put parentheses at the end."  Let's add the
 parentheses to the end of the function call
 (Listing~\ref{code:func_using_parens}).
 
@@ -634,7 +634,7 @@ print(t.upper())
 And now, it works.
 
 Observe that when we "shout" by using `upper()`, the punctuation displayed is a
-period.  Shouldn’t we change that to an exclamation point (`!`)?  Consider the
+period.  Shouldn't we change that to an exclamation point (`!`)?  Consider the
 following code in Listing~\ref{code:str_replace}.
 
 \begin{codelisting}
@@ -660,7 +660,7 @@ another string.  And, because `t.upper()` is a string, we can call `replace` on
 it to return yet another string.  Calling a series of functions in one line is
 called *function chaining*.
 
-Note that the original string value of `t` still hasn’t changed.  `t` is still
+Note that the original string value of `t` still hasn't changed.  `t` is still
 `"I like cheese."`.  If we wanted to actually change `t`, we would need to use
 an assignment statement as in Listing~\ref{code:replace_asgn}.
 
@@ -730,7 +730,7 @@ This is yet another "toy" example intended to get us to see the relationship
 between loops and strings, which is a powerful relationship we will exploit very
 shortly.
 
-Let’s make one change to Listing~\ref{code:print_chars}.  We will change only
+Let's make one change to Listing~\ref{code:print_chars}.  We will change only
 the value of the string variable `s`.  Our new code is in
 Listing~\ref{code:print_chars_hardcodelen}.
 
@@ -821,7 +821,7 @@ length of the string. Because indices start at `0`, not `1`, the last index is
 always the length minus `1` (in this case, the value of the expression
 `len(s)-1`).
 
-Let’s see how well this is all sinking in.  Can you write code to print the
+Let's see how well this is all sinking in.  Can you write code to print the
 characters of a string, one on each line, but in reverse order this time?  In
 other words, if my string is `"abc"`, can you write code that prints:
 
@@ -833,7 +833,7 @@ a
 
 Give it a try.
 
-Let’s check your work.  With some experimentation, you might have been able to
+Let's check your work.  With some experimentation, you might have been able to
 get close to a solution that looks like the code in
 Listing~\ref{code:reverse_print_str}.  (If not, keep trying and practicing.)
 
@@ -981,7 +981,7 @@ for index in range(len(s)-1, -1, -1):
 ```
 \end{codelisting}
 
-That’s a lot to mentally unpack.  Let’s take it a piece at a time.  Let’s take
+That's a lot to mentally unpack.  Let's take it a piece at a time.  Let's take
 the first emphasized expression in `range` below.
 
 > \kode{for index in range(}\textbf{\emph{len(s)-1}}\kode{, -1, -1)}
@@ -999,7 +999,7 @@ loop.  Finally, we have:
 This `-1` specifies how `index` should be changed prior to each iteration.  This
 means that `index` will have `1` subtracted from its value.
 
-Let’s see how we are doing here.  Suppose I have the code in
+Let's see how we are doing here.  Suppose I have the code in
 Listing~\ref{code:print_odds}.
 
 \begin{codelisting}
@@ -1049,7 +1049,7 @@ print("The reverse of the string is: %s." % rev)
 \end{codelisting}
 
 `s` is the input string variable and `rev` will be the string variable that
-holds `s`’s reverse.  We take each character from `s` using a `for` loop and we
+holds `s`'s reverse.  We take each character from `s` using a `for` loop and we
 concatenate it onto the end of `rev`.
 
 Consider how `rev` changes with each iteration of the loop, as shown in
@@ -1095,7 +1095,7 @@ print("The reverse of the string is: %s." % rev)
 ```
 \end{codelisting}
 
-Notice how we’ve changed the logic from what we did in
+Notice how we've changed the logic from what we did in
 Listing~\ref{code:for_rev_str}, our previous attempt.  In the previous code, we
 traversed the string starting at its last character and working towards its
 first character, and for each character, we appended it to the end of the
@@ -1105,7 +1105,7 @@ doing the opposite.  We are traversing the string from first character (the
 prepending the character to the front of the reversed string `rev`.  Both
 methods solve the same problem and produce the same output.
 
-As it turns out, we don’t even need to concern ourselves with having an `index`
+As it turns out, we don't even need to concern ourselves with having an `index`
 variable.  Python has a version of the `for` loop syntax that operates
 exclusively on strings.  Consider the following highlighted adjustments to
 Listing~\ref{code:for_rev_str2} shown in Listing~\ref{code:for_in_rev_str}.
@@ -1138,7 +1138,7 @@ as follows.
 age = int(input("Enter your age: "))
 ```
 
-What if users’ fingers slip and they enter `"1r"` instead of `"14"`?  The `int`
+What if users' fingers slip and they enter `"1r"` instead of `"14"`?  The `int`
 function will crash because `"1r"` cannot be cast to an integer.  This happens
 because we have prematurely tried to cast the string to an integer without
 checking the input first.  We need to wait to perform the `int` cast until we
@@ -1179,7 +1179,7 @@ fullname = input("Enter your full name: ")
 The variable `fullname` could contain `"Javier Sanchez"`, `"Mary Johnson"`, or
 just about anything, though in most cases, there will be a first name and a last
 name separated by a space.  Let us try to extract the first name from the value
-in `fullname`.  To do this, we’ll need to use the slicing operator (`:`).
+in `fullname`.  To do this, we'll need to use the slicing operator (`:`).
 Depending on the length of the first name, the range of the string slice will be
 a little different.
 
@@ -1193,7 +1193,7 @@ firstname = fullname[0:6]
 firstname = fullname[0:4]
 ```
 
-Since we can’t possibly know the length of the first name ahead of time, we will
+Since we can't possibly know the length of the first name ahead of time, we will
 need to find the index of the space in order to slice the appropriate substring.
 If we are able to put the index of the space into a variable named `space`, then
 we can extract the first name as follows.
@@ -1210,7 +1210,7 @@ something we have already done, both with `while` loops and with `for` loops.
 Here is our strategy.  We will use a loop to examine each character in
 `fullname`, one at a time.  If we encounter the space, we will set the value of
 `space` to the current index of the loop, and then we will jump out of the loop
-using the command `break`.  After all, once we’ve found the space, our work is
+using the command `break`.  After all, once we've found the space, our work is
 done; there is no need to keep looping.
 
 Thus, our code appears in Listing~\ref{code:find_space}.
@@ -1234,7 +1234,7 @@ Try out this code on several full names that you can think of.  Try to find
 *edge cases* that may not work.  *Edge cases* are exceptional cases of program
 input that could cause your code to fail.  One such edge case in this problem is
 full names that do not have spaces, i.e., the names of individuals who only have
-one name.  Consider celebrities’ names such as Prince, Cher, Sting, Madonna,
+one name.  Consider celebrities' names such as Prince, Cher, Sting, Madonna,
 etc.  Those names are their full names and first names simultaneously.  Try
 typing "Prince" in as the input to your program.
 
@@ -1251,10 +1251,10 @@ Where in the code do we create the `space` variable normally?
 
 In this case, `space` is first created inside the loop.  This is generally bad
 programming practice.  If the variable is used by code outside of a loop, the
-variable should also be defined outside the loop.  So, let’s define `space`
-before we reach the loop, but what should be its initial value?  Let’s choose a
-value that doesn’t look like a normal index.  Normal indices would be `0`, `1`,
-`2`, `3`, etc., so let’s choose `-1` as the initial value of `space`.  Our code
+variable should also be defined outside the loop.  So, let's define `space`
+before we reach the loop, but what should be its initial value?  Let's choose a
+value that doesn't look like a normal index.  Normal indices would be `0`, `1`,
+`2`, `3`, etc., so let's choose `-1` as the initial value of `space`.  Our code
 can now be written as in Listing~\ref{code:find_space2}.
 
 \begin{codelisting}
@@ -1319,13 +1319,13 @@ print("abcde".find("abcde")) # prints 0
 Now that we know how to find a pattern (and specifically, a space) in a string,
 consider what that allows us to do.  Suppose we have a sentence that we wish to
 break into individual words.  How are words separated in the English language?
-If you said “using spaces” then you are correct (for the most part).
+If you said "using spaces" then you are correct (for the most part).
 
-Let’s try to do something like this through an example.  If you spend time on
+Let's try to do something like this through an example.  If you spend time on
 the Web, you might have learned that Internet citizens have tabbed September
-19th as “International Talk Like a Pirate Day.”  Imagined pirate-speak draws
-from many sources in popular culture.  Fictional pirates might say “Ahoy!”
-instead of “Hello!” or they might use the word “matey” to describe a friend.  If
+19th as "International Talk Like a Pirate Day."  Imagined pirate-speak draws
+from many sources in popular culture.  Fictional pirates might say "Ahoy!"
+instead of "Hello!" or they might use the word "matey" to describe a friend.  If
 we wanted to translate a single English word into its Pirate equivalent, we
 might do something like Listing~\ref{code:pirate_one_word}.
 
@@ -1349,8 +1349,8 @@ print("%s in pirate is %s." % (english_word, pirate_word))
 What if we wanted to change an entire English sentence into Pirate instead of
 just translating a single word?  How would we accomplish that?
 
-Let’s keep this as simple as possible, so for now let’s ignore “edge cases” like
-uppercase letters and punctuation.  Let’s only worry about translating
+Let's keep this as simple as possible, so for now let's ignore "edge cases" like
+uppercase letters and punctuation.  Let's only worry about translating
 all-lowercase words separated by spaces.
 
 You might not have any idea how to accomplish this in code, but there are a
@@ -1360,7 +1360,7 @@ program as taking variables and changing their values in order to reach a goal,
 we can write down how we want those variables to change, and then write down the
 code to perform the changes.
 
-Let’s think about what variables we would want to have to make an
+Let's think about what variables we would want to have to make an
 English-to-Pirate translator program work.  Suppose we have two variables, one
 named `sentence` and the other named `word`.  `sentence` contains the English
 sentence the user types, and `word` will store each word as we extract it from
@@ -1382,10 +1382,10 @@ word: "friend"  sentence: ""
 Think of this process in a loop.  Each time through the loop, we find the index
 of the space in `sentence` and put that index into a variable named `space`.  We
 use the slicing operator to get the first word in the sentence from `0` to
-`space`.  Then, we use the slicing operator again to “shrink” `sentence` so that
+`space`.  Then, we use the slicing operator again to "shrink" `sentence` so that
 `sentence` only contains the remaining words.
 
-This would allow us to translate each word, one at a time.  Let’s write some
+This would allow us to translate each word, one at a time.  Let's write some
 code.  Our first attempt is found in Listing~\ref{code:pirate_sent1}.
 
 \begin{codelisting}
@@ -1405,7 +1405,7 @@ while space != -1:
 ```
 \end{codelisting}
 
-Let’s try it out.
+Let's try it out.
 
 ```python
 Enter an English sentence: hello there my friend
@@ -1415,7 +1415,7 @@ word: "there" sentence: "my friend"
 word: "my" sentence: "friend"
 ```
 
-This is pretty good, but what about the final word in this example: “friend”.  Since there is no space trailing the last word in the sentence, we will need to add some code after the loop to take care of the last word.  Consider Listing~\ref{code:pirate_sent2}.
+This is pretty good, but what about the final word in this example: "friend".  Since there is no space trailing the last word in the sentence, we will need to add some code after the loop to take care of the last word.  Consider Listing~\ref{code:pirate_sent2}.
 
 \begin{codelisting}
 \label{code:pirate_sent2}
@@ -1440,10 +1440,10 @@ if sentence != "":
 \end{codelisting}
 
 The highlighted block of code in Listing~\ref{code:pirate_sent2} checks to see
-if there’s still text residing in `sentence`.
+if there's still text residing in `sentence`.
 
-Now all that’s left is to do the translating.  We will take each `word` and
-append its translation to a new string which we’ll call `pirate`.  We can get
+Now all that's left is to do the translating.  We will take each `word` and
+append its translation to a new string which we'll call `pirate`.  We can get
 rid of our `print` statements, too, since they were only there to aid our
 understanding of what the code does.  Listing~\ref{code:pirate_sent3} is our
 final code.
@@ -1516,9 +1516,9 @@ for outer in range(0, 3):
 ```
 \end{codelisting}
 
-Let’s follow the code step-by-step as we would with any code.  The first
+Let's follow the code step-by-step as we would with any code.  The first
 statement we encounter is `for outer in range(0, 3)`.  Since this is first time
-we’ve encountered this statement, this code sets `outer` to `0` and we enter its
+we've encountered this statement, this code sets `outer` to `0` and we enter its
 loop body.  The first statement of the loop body is, of course, another loop.
 This loop statement is `for inner in range(0, 3)`.  So, this sets `inner` to `0`
 and we enter its loop body.  This means that at this point in the code, we are
@@ -1554,8 +1554,8 @@ the inner loop this time is like reaching it for the first time.  The statement
 repeats itself.
 
 We often use nested loops to write programs in Python.  For one example, suppose
-we wish to write a program that repeatedly asks for students’ names and exam
-scores.  The output should be students’ names followed by their exam average.
+we wish to write a program that repeatedly asks for students' names and exam
+scores.  The output should be students' names followed by their exam average.
 Listing~\ref{code:student_avgs} shows how to do this using nested loops.
 
 \begin{codelisting}
@@ -1603,7 +1603,7 @@ count += 1
 This type of shorthand assignment construct works for most operators in Python.
 
 Beyond that observation, we note that the outer `while` loop is responsible for
-getting each student’s name.  The inner `while` loop retrieves each score and
+getting each student's name.  The inner `while` loop retrieves each score and
 adds it to a sum.  Once we exit the inner loop, we can calculate the average
 using the sum.  We must be careful to make sure that there are any scores at
 all.  If `count` were `0` and we divided by `0` without checking, our program
@@ -1630,7 +1630,7 @@ Student name? ('quit' to end) quit
 
 1. Write a program that asks for a word, phrase, or sentence.  The program should then print whether the input is a palindrome.  (Do a Web search to see what a palindrome is.)
 
-2. Write a program that repeatedly asks for a number until the user enters “quit.”  The program should print the sum and average of all the numbers.
+2. Write a program that repeatedly asks for a number until the user enters "quit."  The program should print the sum and average of all the numbers.
 
 3. What is the output of the following program?
 
@@ -1654,9 +1654,9 @@ You can still ignore capitalization and punctuation.
 and punctuation.
 
 8. Write a program that translates English sentences to Pig Latin.
-    To form the Pig Latin equivalent of a word, remove the first consonant sound of the word and append it to the end, followed by  “-ay”.  Thus, “cat” becomes “at-cay” and “ship” becomes “ip-shay.”   The latter example demonstrates that consonant sounds can be blended consonants.
+    To form the Pig Latin equivalent of a word, remove the first consonant sound of the word and append it to the end, followed by  "-ay".  Thus, "cat" becomes "at-cay" and "ship" becomes "ip-shay."   The latter example demonstrates that consonant sounds can be blended consonants.
 
-    If an English word begins with a vowel, the word is simplify restated with “-way” appended to it.  In other words, “apple” becomes “apple-way.”  Your solution should handle capitalization and punctuation.
+    If an English word begins with a vowel, the word is simplify restated with "-way" appended to it.  In other words, "apple" becomes "apple-way."  Your solution should handle capitalization and punctuation.
 
     Example of a working program:
 
@@ -1701,8 +1701,8 @@ and punctuation.
 
     <<(exercises/ch3/p3.13.py)
 
-    If you run this program over and over again you’ll see the number change.  We can use random integers to simulate real-life occurrences, including games of chance and movement of animals.
+    If you run this program over and over again you'll see the number change.  We can use random integers to simulate real-life occurrences, including games of chance and movement of animals.
 
     Consider one program that demonstrates the use of random numbers.  A drunkard stumbling around in a grid of streets picks one of four directions (north, south, east, or west) at each intersection, and then he moves to the next intersection.
 
-    Write a program that simulates the drunkard’s walk.  Represent each intersection location as (x,y) integer pairs and have the drunkard start at (0,0).  Have the drunkard walk 100 intersections and print the intersection location where he ends up.  Run this program many times.  Does the drunkard tend to stay close to (0,0) or does he end up moving far away?
+    Write a program that simulates the drunkard's walk.  Represent each intersection location as (x,y) integer pairs and have the drunkard start at (0,0).  Have the drunkard walk 100 intersections and print the intersection location where he ends up.  Run this program many times.  Does the drunkard tend to stay close to (0,0) or does he end up moving far away?
