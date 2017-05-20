@@ -388,7 +388,7 @@ way, `next_int(-2) == -1`.  We define `next_int` in Listing~\ref{code:next_int}.
 
 \begin{codelisting}
 \label{code:next_int}
-\codecaption{}
+\codecaption{Function definition for \kode{next\_int}}
 ```python, options: "linenos": true
 def next_int(int_value):
     next_value = int_value + 1
@@ -419,7 +419,7 @@ Listing~\ref{code:next_int2}.
 
 \begin{codelisting}
 \label{code:next_int2}
-\codecaption{}
+\codecaption{Function definition for \kode{next\_int}}
 ```python, options: "linenos": true
 def next_int(int_value):
     return int_value + 1
@@ -427,11 +427,11 @@ def next_int(int_value):
 \end{codelisting}
 
 Time to move on and look at a different example function.  Consider
-Listing~\ref{pig_latin_word}.
+Listing~\ref{code:pig_latin_word}.
 
 \begin{codelisting}
 \label{code:pig_latin_word}
-\codecaption{}
+\codecaption{Function definition for \kode{piglatin}}
 ```python, options: "linenos": true
 def piglatin(english):
     if english[0] in "aeiou":
@@ -484,7 +484,7 @@ circle, will return the area of the circle.
 
 \begin{codelisting}
 \label{code:get_area}
-\codecaption{}
+\codecaption{Function definition for \kode{get\_area}}
 ```python, options: "linenos": true
 import math
 
@@ -498,7 +498,7 @@ Listing~\ref{code:roll} is a function definition that simulates rolling a
 
 \begin{codelisting}
 \label{code:roll}
-\codecaption{}
+\codecaption{Function definition for \kode{roll}}
 ```python, options: "linenos": true
 import random
 
