@@ -721,5 +721,274 @@ other languages.
 ## Variable Scope
 \label{sec:var_scope}
 
+You may have noticed in the previous section that our programs are starting to
+get longer in terms of number of lines of code (LOC).  As our programs get
+longer, we will start to define more variables to help our programs do their
+work.  Eventually, we will find that sometimes we can't access a variable in one
+part of the program that is defined in another part of the program.  This is due
+to *variable scope*.  The *scope* of a variable is the part of the code where
+the variable can be accessed.  In terms of accessing a variable, we need to make
+the distinction between *reading* a variable's value and *writing* to a
+variable's value.  Reading a variable means using--but not modifying--its
+current value.  Writing to a variable means modifying its value.  Consider the
+following code.
+
+```python
+y = x + 1
+```
+
+In this code, we are *reading* from `x`.  We are *writing* to `y`.  When we say
+*access* a variable's value, we mean the same thing as *reading* the variable.
+
+Now, let's explore the notion of variable scope.  Consider the (non-working)
+code in Listing~\ref{code:sumsq_no_init}.
+
+\begin{codelisting}
+\label{code:sumsq_no_init}
+\codecaption{Sum of squares, with \kode{NameError}}
+```python, options: "linenos": true
+for k in range(1, 11):
+    square = k * k
+    total = total + square
+
+print(total)
+```
+\end{codelisting}
+
+The code in Listing~\ref{code:sumsq_no_init} is supposed to compute the sum of
+squares, that is, $$1^2 + 2^2 + 3^2 + \dots + 10^2$$.  It computes each square's
+value and adds it to a variable named `total`.  However, when we run the code,
+we get the following error.
+
+```console
+Traceback (most recent call last):
+  File "<stdin>", line 3, in <module>
+NameError: name 'total' is not defined
+```
+
+Let's take a closer look at line 3.
+
+```python
+total = total + square
+```
+
+On the right-hand side (RHS) of the `=` in line 3, we are *reading* from both
+`total` and `square`, and then adding their values together.  Since we did not
+previously define `total`, it is not yet *in scope*.  The error produced in
+Python is called a `NameError` because Python doesn't have information about a
+variable named `total`.  To correct this problem, we must *initialize* `total`
+with a starting value.  Initializing a variable means to create the variable by
+giving it a starting value. Listing~\ref{code:sumsq} shows the corrected code.
+Note that `total` is created prior to the start of the loop.
+
+\begin{codelisting}
+\label{code:sumsq}
+\codecaption{Sum of squares, corrected}
+```python, options: "linenos": true, "hl_lines": [1]
+total = 0
+for k in range(1, 11):
+    square = k * k
+    total = total + square
+
+print(total)
+```
+\end{codelisting}
+
+Always remember to initialize your variables.
+
+Say it again: a variable's scope is the part of the program where the variable
+may be accessed (i.e., "read").
+
+We are bringing up the topic of variable scope in this chapter because variable
+scope has particular relevance in functions. Suppose we were to write the code
+in Listing~\ref{code:local_variable_bogus}.
+
+\begin{codelisting}
+\label{code:local_variable_bogus}
+\codecaption{}
+```python, options: "linenos": true
+import math
+
+def main():
+    people = 10
+    slices_per_pizza = 12
+    slices_per_person = 3
+    pizzas = number_of_pizzas()
+    print("You need to order %d pizzas." % pizzas)
+
+def number_of_pizzas():
+    return math.ceil(people * slices_per_person / slices_per_pizza)
+
+main()
+```
+\end{codelisting}
+
+Take a gander at Listing~\ref{code:local_variable_bogus} and try to guess what might
+happen?  Well, what do you think?  Try to come up with a few possibilities.  On
+one hand, it might set the variables `people`, `slices_per_pizza`, and
+`slices_per_person`, and then use them to calculate the number of pizzas one
+needs to order.  Another possibility is that the program crashes hideously...
+but why?
+
+Try running this code on your own.  Of course, it ends up crashing.  This code
+is a hot mess!  The error reads as follows.
+
+```console
+Traceback (most recent call last):
+  File "test.py", line 13, in <module>
+    main()
+  File "test.py", line 7, in main
+    pizzas = number_of_pizzas()
+  File "test.py", line 11, in number_of_pizzas
+    return math.ceil(people * slices_per_person / slices_per_pizza)
+NameError: name 'people' is not defined
+```
+
+When the code reaches the `number_of_pizzas` function, it does not remember that
+there is a variable named `people` that was defined in the `main` function.
+That's interesting.  This suggests that when we define a variable within a
+function's body, that variable is only visible within that function.
+
+Think about it this way.  Functions are like little houses.  What happens in
+your house is your business.  Other people shouldn't be able to see in your
+house from within their house.
+
+So, if we define a variable in one function, it only "lives" in that function.
+This is a good thing!  It means that if you define a variable somewhere in your
+program, a function you call can't mess with the variables you've already
+defined.  If a function could mess with your variables without you being aware
+of it, then your program could have unintended side effects.  If functions had
+surprising side effects, it would be very difficult to reason through programs
+and predict their behavior and output.  One of the great things about computers
+is that they are logical and predictable.
+
+A variable that is defined inside a function is called a *local variable*.  If
+we define a variable in the body of a function, we say that the variable is
+*local* to that function.  In this case, the variables `people`,
+`slices_per_pizza`, and `slices_per_person` are local variables in `main`.
+
+All right, let's fix the problem.  The best thing to do is to pass
+these values to the `number_of_pizzas` function, which means we'll need
+`number_of_pizzas` to have three parameters in its definition, as we can see in
+the updated code found in Listing~\ref{code:local_variable_good}.
+
+\begin{codelisting}
+\label{code:local_variable_good}
+\codecaption{}
+```python, options: "linenos": true, "hl_lines": [4, 7]
+import math
+
+def main():
+    pizzas = number_of_pizzas(10, 12, 3)
+    print("You need to order %d pizzas." % pizzas)
+
+def number_of_pizzas(people, slices_per_pizza, slices_per_person):
+    return math.ceil(people * slices_per_person / slices_per_pizza)
+
+main()
+```
+\end{codelisting}
+
+Hey, this works splendidly!
+
+Let's go back to the "houses" metaphor we presented a few paragraphs ago. Recall
+that I asked you to think of functions as being like little houses.  What do you
+think happens when you define a variable outside of all the "houses."  In other
+words, what if I define a variable in what is normally the main part of the
+program that exists outside of any function's body?  Consider
+Listing~\ref{code:global_bogus}, where you'll notice we've done away with a
+`main` function entirely.
+
+\begin{codelisting}
+\label{code:global_bogus}
+\codecaption{}
+```python, options: "linenos": true
+balance = 10000
+
+def withdraw(amount):
+    if balance >= amount:
+        balance =  balance - amount
+
+withdraw(1000)
+print(balance)
+```
+\end{codelisting}
+
+If you run Listing~\ref{code:global_bogus}, you'll see there is a problem.
+We'll resolve the problem shortly, however let's consider the intent of the
+code.  The main program consists of three lines of code.  They are (in order):
+
+```python
+balance = 10000
+withdraw(1000)
+print(balance)
+```
+
+After we have defined `balance`, we define a function named `withdraw` that can
+be used to subtract an amount of money from `balance`, but only if there is
+sufficient money available in `balance`.
+
+Since `balance` is not defined in the body of any function, it is known as a
+*global variable*.  Global variables are accessible anywhere in the program,
+including inside functions.  Consider the following code.
+
+```python
+gl = 7
+
+def f(x):
+    return x + gl
+
+print(f(3))
+```
+
+As we would expect, this code prints `10`.
+
+Although global variables are accessible (i.e., they may be "read") from within
+functions, they cannot be modified from within a function unless we explicitly
+tell Python that's what we intend to do.  Do you remember a little bit ago when
+I said that if function could mess with your variables without you being aware
+of it, then your program could have unintended side effects, and that side
+effects are bad?  Well, here we are again.  If you ran the code in
+Listing~\ref{code:global_bogus}, you would see this:
+
+```console
+Traceback (most recent call last):
+  File "variable_scope.py", line 38, in <module>
+    withdraw(1000)
+  File "variable_scope.py", line 35, in withdraw
+    if balance >= amount:
+UnboundLocalError: local variable 'balance' referenced before assignment
+```
+
+Python assumes that any variable you wish to *write* to inside a function is a
+local variable, even if there is a global variable of the same name.  Python
+does allow us to write to global variables, but we have to tell Python that we
+intend to do so and that we know the potential consequences!  We can use the
+*global* statement to allow a function to write to a global variable; see
+Listing~\ref{code:global_good}.
+
+\begin{codelisting}
+\label{code:global_good}
+\codecaption{}
+```python, options: "linenos": true, "hl_lines": [4]
+balance = 10000
+
+def withdraw(amount):
+    global balance
+    if balance >= amount:
+        balance =  balance - amount
+
+withdraw(1000)
+print(balance)
+```
+\end{codelisting}
+
+The output of Listing~\ref{code:global_good} is now `9000`, as we would expect.
+
+`global` should be used sparingly.  It is generally better to pass values to
+functions rather than storing those values in global variables, though in some
+cases we will manage common information in global variables, especially when we
+program video games.  Stay tuned!
+
 ## Exercises
 \label{sec:funcs_exercises}
