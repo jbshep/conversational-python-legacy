@@ -224,7 +224,7 @@ Clever readers might suspect that this function has a bug.  It looks like if the
 last name is fewer than four characters long or the first name is fewer than
 three characters long, the program would crash.  Surprisingly, in Python the
 string range operator is very forgiving.  If you were to type the expression
-"abc"[0:20], the substring returned will still be "abc".  We can read this
+`"abc"[0:20]`, the substring returned will still be `"abc"`.  We can read this
 substring operation aloud as “Start at index 0 and return any characters up to
 index 20, if it exists.”  Therefore, there is no bug, but skeptical thinking
 like this will help us as we program in the future.
