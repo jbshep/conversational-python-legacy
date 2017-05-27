@@ -992,3 +992,35 @@ program video games.  Stay tuned!
 
 ## Exercises
 \label{sec:funcs_exercises}
+
+1. Determine the output of the following code.
+
+    <<(exercises/ch4/p4.1.py)
+
+2. Determine the output of the following code.
+
+    <<(exercises/ch4/p4.2.py)
+
+3. Determine the output of the following code.
+
+    <<(exercises/ch4/p4.3.py)
+
+4. Determine the output of the following code.
+
+    <<(exercises/ch4/p4.4.py)
+
+5. Determine the output of the following code.
+
+    <<(exercises/ch4/p4.5.py)
+
+6. Define a function named `circum` that takes the radius of a circle as a
+parameter and returns the circumference of that circle.
+
+7. Define a function named `smallest` that takes three float parameters and
+returns the smallest value of the three.
+
+8. Define a function named `find_vowel` that takes a string as a parameter and
+returns the index of the first vowel in the string.
+
+9. Define a function named `count_words` that takes a string as a parameter and
+returns the number of words in the string (as determined by spaces).
