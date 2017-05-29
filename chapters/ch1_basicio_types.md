@@ -951,6 +951,179 @@ As you program, you will develop your own coding style.  You will want to decide
 which of the two blocks of code (or a combination of them) looks the most
 readable to you.
 
+## Handy functions
+\label{sec:handy_funcs}
+
+The purpose of this book is to teach novice programmers how to program.  The
+purpose is not to have you learn every single thing about the Python programming
+language.  To that point, this book is not intended to be a desk reference for
+all things Python.  If you want to find information about a particular language
+feature or a list of available functions, the best place to look is to use a Web
+search (like Google) or go straight to the [Python
+Documentation](https://docs.python.org/) online.
+
+That said, there are a number of handy functions that come "pre-packaged" with
+Python and ready for you to use.  We will list a few of them here in the
+subsections that follow, since we're highly confident you'll use them very soon.
+We'll introduce more functions throughout the book.  Eventually, you'll learn
+how to create your own functions.  That will happen in Chapter~\ref{ch:funcs}.
+Creating your own functions is pretty cool.
+
+Some functions can be called just by stating their name.  For example, we can
+use the `print` function just by typing something like `print("Hello")`.  Other
+functions are part of what we call *libraries*.  One example is the `math`
+library.  In order to use functions in the `math` library, we must do two
+things.  First, we must type the statement `import math`.  Then, `math` library
+functions start with the prefix `math.` (read aloud as "math-dot"), so when we
+call them we must use the `math.` prefix.  Here is an example of using a
+function from a library (see Listing~\ref{code:import_math}).
+
+\begin{codelisting}
+\label{code:import_math}
+\codecaption{}
+```python, options: "linenos": true, "hl_lines": [1,4]
+import math
+
+number = float(input("Enter a number: "))
+squared = math.pow(number, 2)
+print("Your number squared is %f." % squared)
+```
+\end{codelisting}
+
+In Listing~\ref{code:import_math} line 4, the function named `pow` is contained
+in the library `math`.  Because of this, we must type `math.pow` for the
+function name in order to call it.  As you may be able to guess, `pow` raises a
+number to a power.  In this case, we are raising whatever number the user types
+to the second power, which is called squaring the number.
+
+### Math functions
+\label{subsec:math_funcs}
+
+Suppose `i` is an `int` variable and `f` and `g` are both `float` variables.
+Said another way, `type(i) == int`, `type(f) == float`, and `type(g) == float`.
+Some of the functions in Table~\ref{tbl:math_funcs} belong to the `math` library
+and some do not.  If we want to use these functions, we need to first type the
+statement `import math`.  If we don't write `import math`, we will get a
+`NameError` that tells us `math` is not defined.
+
+Here is how to read Table~\ref{tbl:math_funcs}.  If the function is shown as `i =
+math.ceil(f)`, that means the function expects us to pass it a `float` (hence
+the `f` in parentheses), and the function will return an `int` (hence the `i` on
+the LHS of the equals).
+
+There are many more functions found in `math`, but these are the ones you're
+most likely to use in the near future.  Again, consult the online [Python
+Documentation](https://docs.python.org/) if there's something specific you're
+looking for that's not mentioned in this subsection.
+
+\begin{table}
+\caption{Math functions\label{tbl:math_funcs}}
+\begin{tabular}{|l|l|}
+\hline
+Function & Returns \\
+\hline
+\kode{i = round(f)} & The integer resulting from rounding \kode{f}. \\
+  & Examples: \\
+  & \kode{round(5.2) == 5} \\
+  & \kode{round(5.78) == 6} \\
+  & \kode{round(6) == 6} \\
+  & \kode{round(-1.2) == -1} \\
+\kode{i = math.ceil(f)} & The smallest integer \(\geq\) \kode{f}. \\
+  & Examples: \\
+  & \kode{math.ceil(5.2) == 6} \\
+  & \kode{math.ceil(5.78) == 6} \\
+  & \kode{math.ceil(6) == 6} \\
+  & \kode{math.ceil(-1.2) == -1} \\
+\kode{i = math.floor(f)} & The largest integer \(\leq\) \kode{f}. \\
+  & Examples: \\
+  & \kode{math.floor(5.2) == 5} \\
+  & \kode{math.floor(5.78) == 5} \\
+  & \kode{math.floor(6) == 6} \\
+  & \kode{math.floor(-1.2) == -2} \\
+\kode{g = abs(f)} & The absolute value of \kode{f}. \\
+  & Examples: \\
+  & \kode{abs(23.2) == 23.2} \\
+  & \kode{abs(-23.2) == 23.2} \\
+\hline
+\end{tabular}
+\end{table}
+
+Let's consider an example of how we might use some of these functions.
+
+Suppose we want to buy a whole bunch of fidget spinners in bulk and then re-sell
+them to make a profit.  If we buy them in bulk, then we can get a good deal
+because they'll be cheaper per fidget spinner.  Let's have users enter the
+number of fidget spinners they want and the number of spinners that come in a
+case.  The program should tell them how many cases they'll need to buy to get at
+least that many number of fidget spinners.
+
+To write this program, we'll need to ask for two inputs: the number of spinners
+and the number of spinners per case.  Then, we'll need to calculate the number
+of cases needed and then output that number.  Listing~\ref{code:spinner_cases}
+shows how to do this in Python code.
+
+\begin{codelisting}
+\label{code:spinner_cases}
+\codecaption{}
+```python, options: "linenos": true
+spinners = int(input("How many spinners do you need? "))
+spinners_per_case = int(input("How many spinners come in a case? "))
+
+cases = math.ceil(spinners / spinners_per_case)
+
+print("You need to order %d cases." % cases)
+```
+\end{codelisting}
+
+In line 4 of Listing~\ref{code:spinner_cases}, we divide `spinners` by
+`spinners_per_case` to get how many cases we'll need.  But this gives us a
+fractional number potentially.  For example, if we wanted `18` spinners and `12`
+come in a case, that would be `1.5` cases, but we can't order one case and then
+another half of a case.  We actually need `2` cases.  This is where `mail.ceil`
+comes in.  We take the "fractional" number of cases needed and find the
+*ceiling* of it.  This makes `cases` an integer that is greater than or equal to
+the number of fractional cases.
+
+### Random functions
+\label{subsec:rand_funcs}
+
+The library `random` has functions that help us generate random numbers.  This
+is useful for writing programs that involve random chance, for example, rolling
+dice, flipping coins, etc.  There are several useful functions in `random`, but
+the two we'll focus on right now are `random` and `randint`.
+
+Suppose `i`, `start`, and `end` are `int` variables and `f` is a `float` variable.
+
+\begin{table}
+\caption{Math functions\label{tbl:rand_funcs}}
+\begin{tabular}{|l|l|}
+\hline
+Function & Returns \\
+\hline
+\kode{f = random.random()} & A float value between \kode{0} and \kode{1} inclusive. \\
+\kode{i = random.randint(start, end)} & An integer value between \kode{start} and \kode{end} inclusive. \\
+\hline
+\end{tabular}
+\end{table}
+
+Listing~\ref{code:rand_ex} shows an example of how one might use a `random`
+library function.
+
+\begin{codelisting}
+\label{code:rand_ex}
+\codecaption{}
+```python, options: "linenos": true
+import random
+
+print("Rolling a six-sided die......")
+die_roll = random.randint(1, 6)
+print("You rolled a %d." % die_roll)
+```
+\end{codelisting}
+
+The code in Listing~\ref{code:rand_ex} may produce a different die roll every
+time you run the program.
+
 ## Comments
 \label{sec:comments}
 
