@@ -958,7 +958,7 @@ The purpose of this book is to teach novice programmers how to program.  The
 purpose is not to have you learn every single thing about the Python programming
 language.  To that point, this book is not intended to be a desk reference for
 all things Python.  If you want to find information about a particular language
-feature or a list of available functions, the best place to look is to use a Web
+feature or a list of available functions, the best way to look is to use a Web
 search (like Google) or go straight to the [Python
 Documentation](https://docs.python.org/) online.
 
