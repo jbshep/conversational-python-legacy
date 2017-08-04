@@ -152,11 +152,17 @@ function, which starts with `def two():`.  Each of the statements indented under
 finished, we jump back down to where `two()` was called in the first place.
 Finally, the main program resumes and we print `"Main: end of program."`
 
-In a sense, functions are like "tangents."  We can momentarily leave the main
-program to execute some pre-prepared code.  We have been *calling* functions
-throughout the entire book already.  We have used functions like `print`,
-`input`, and `int`.  Now we have a sense of how to *define* our own new
-functions.
+In a sense, functions are like "tangents" (not the math kind of tangent -- the
+tangent where we deviate from a conversation to another topic briefly)  With
+functions, we can momentarily leave the main program to execute some
+pre-prepared code.  We have been *calling* functions throughout the entire book
+already.  We have used functions like `print`, `input`, and `int`.  Now we have
+a sense of how to *define* our own new functions.
+
+When we define a new function, we give the function a name and we give the
+function an indented section known as the function's *body*.  There can be more
+pieces to a function as well, and we will learn about those in the next
+few sections.
 
 ## Parameters
 \label{sec:params}
@@ -319,6 +325,23 @@ parameters at any point in the function’s body to see what the “input” to 
 function was.  There is one situation, however, where it is desirable to modify
 the parameter values passed to a function.  We will discuss this situation in
 Chapter~\ref{ch:lists}.
+
+Terminology time!  The first line of a function definition is called the
+function's *signature*.  The signature tells us the name of the function and how
+many parameters it has.  For example, suppose we have the following function
+signature.
+
+```python
+def print_uppercase(words):
+    # function body omitted
+```
+
+We can see from this signature that if we want to call this function, we must
+use the name `print_uppercase` and we must pass one argument to the function.
+The argument will be assigned to the parameter `words`.
+
+We will use the term signature again in this book, so you should learn to use
+it, too!
 
 ## Return values
 \label{sec:ret_vals}

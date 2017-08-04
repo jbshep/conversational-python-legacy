@@ -535,6 +535,9 @@ each of them to a variable.  The variable will keep track of the running total.
 So, let’s create the variable (we’ll call it `running_total`) and then write the
 loop.
 
+\begin{codelisting}
+\label{code:total}
+\codecaption{Function definition for \kode{total}}
 ```python
 def total(numbers):
     running_total = 0.0
@@ -542,18 +545,129 @@ def total(numbers):
         running_total += numbers[i]
     return running_total
 ```
+\end{codelisting}
 
-This should work.  Go ahead and test it out.  The key ideas here are: 1.) we’re
-passing a list to a function, 2.) we’re using a loop to walk through the list’s
-items, and 3.) we’re creating a variable that we will update in each iteration
-of the loop.  These key ideas will show up a lot when we write functions that
-operate on lists.
+This should work.  Go ahead and test it out.  The key ideas here are:
 
-Let’s try out a different example, and let’s see if we can apply some of the same ideas mentioned in the prior paragraph......
+1. We’re passing a list to a function.
+2. We’re using a loop to walk through the list’s items.
+3. We’re creating a variable that we will update in each iteration of the loop.
+
+**These key ideas will show up a lot when we write functions that
+operate on lists.**
+
+Let’s try out a different example, and let’s see if we can apply some of the
+same ideas mentioned in the prior paragraph.  Suppose we have a list of numbers.
+We want to know the smallest value in that list of numbers.  Let's write
+function that determines this for us.
+
+First, let's pick a name for our function: `smallest`.
+
+Next, let's write the function signature.
+
+```python
+def smallest(numbers):
+    # FIXME
+```
+
+Notice how I have a comment with the all-caps word `FIXME` in place of the
+function's body?  This is a common idiom that programmers use to remind them
+that they need to add code to a particular part of a file.  I suppose it's silly
+to do this since we're going to replace the function body very shortly, but it's
+worth bringing up since 1.) many programmers do this, and 2.) many programs for
+editing code will keep track of your `FIXME`'s and then help you find them
+before you test out your code.
+
+Okay, now let's use a loop to walk through the list's items as we described
+above.  We'll use a variable to keep track of the smallest value we've seen so
+far with each step of the loop.
+
+\begin{codelisting}
+\label{code:smallest_firstattempt}
+\codecaption{Function definition for \kode{total}, first attempt}
+```python, options: "linenos": true
+def smallest(numbers):
+    small = 0.0
+    for i in range(0, len(numbers)):
+        if numbers[i] < small:
+            small = numbers[i]
+    return small
+```
+\end{codelisting}
+
+It's kind of crazy how similar `smallest` is to `total`, isn't it?  In computer
+science, we take a whole bunch of problems (many of them very complicated) and
+rearrange them so we can apply simple solutions to them.  That's one of the cool
+things about computer science; it teaches us to define and organize our problems
+so that we can manage the complexity of the problem.  Yay computer science!
+
+Okay, let's not pat ourselves on the back too much here.  We haven't tested this
+code yet.  Let's try it out.
+
+```python
+print(smallest([5, -5, 2, 3]))
+print(smallest([10, 30, 20]))
+```
+
+The output of these tests is:
+
+```console
+-5
+0.0
+```
+
+The first line is correct.  The second line is BOGUS!  What went wrong?  Can you
+figure it out on your own?  (Sure you can.  Take a deep breath and debug it.)
+
+The problem is on line 2 of Listing~\ref{code:smallest_firstattempt}.  We needed
+to give the variable `small` a good first value, but we weren't sure what a good
+first value was at the time.  We picked `0.0`.  Unfortunately, nothing in
+`numbers` is going to be smaller than `0.0` when all the numbers are greater
+than zero, so `smallest` returns `0.0` even though there is no zero in
+`numbers.`
+
+So, what would be a better starting choice for `small` than zero?  Some students might say, "How about a really big number!"  That's not a bad idea.  We could do something like Listing~\ref{code:smallest_secondattempt}.
+
+\begin{codelisting}
+\label{code:smallest_secondattempt}
+\codecaption{Function definition for \kode{total}, second attempt}
+```python, options: "linenos": true, "hl_lines": [2]
+def smallest(numbers):
+    small = 1000000000.0
+    for i in range(0, len(numbers)):
+        if numbers[i] < small:
+            small = numbers[i]
+    return small
+```
+\end{codelisting}
+
+This will work really well... until we have all numbers that are bigger than 1
+billion.
+
+Let's try one more strategy.  Let's let the first smallest number be the first
+number in the list.  Suppose `numbers[0]` is `10.0`.  Then, the first value of
+`small` can just be `10.0`.  This should work nicely.  If the first number in
+the list is the smallest, `small` will stay set to that number.  If there is a
+smaller number down the line in the list, eventually it will get changed.  This
+should work, and our final function definition for `smallest` is shown in
+Listing~\ref{code:smallest}.  Naturally, we'll want to test it, however.  This
+final code works... as long as there is at least one item in the list.  If it's
+an empty list, then we have problems again!
+
+\begin{codelisting}
+\label{code:smallest}
+\codecaption{Function definition for \kode{total}, corrected}
+```python, options: "linenos": true, "hl_lines": [2]
+def smallest(numbers):
+    small = numbers[0]
+    for i in range(0, len(numbers)):
+        if numbers[i] < small:
+            small = numbers[i]
+    return small
+```
+\end{codelisting}
 
 FIXME: find smallest, biggest, valid candidates
-
-
 
 ## (Optional) Functional Programming with Lists
 \label{sec:func_prog}
