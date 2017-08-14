@@ -626,7 +626,9 @@ first value was at the time.  We picked `0.0`.  Unfortunately, nothing in
 than zero, so `smallest` returns `0.0` even though there is no zero in
 `numbers.`
 
-So, what would be a better starting choice for `small` than zero?  Some students might say, "How about a really big number!"  That's not a bad idea.  We could do something like Listing~\ref{code:smallest_secondattempt}.
+So, what would be a better starting choice for `small` than zero?  Some students
+might say, "How about a really big number!"  That's not a bad idea.  We could do
+something like Listing~\ref{code:smallest_secondattempt}.
 
 \begin{codelisting}
 \label{code:smallest_secondattempt}
@@ -650,9 +652,7 @@ number in the list.  Suppose `numbers[0]` is `10.0`.  Then, the first value of
 the list is the smallest, `small` will stay set to that number.  If there is a
 smaller number down the line in the list, eventually it will get changed.  This
 should work, and our final function definition for `smallest` is shown in
-Listing~\ref{code:smallest}.  Naturally, we'll want to test it, however.  This
-final code works... as long as there is at least one item in the list.  If it's
-an empty list, then we have problems again!
+Listing~\ref{code:smallest}.  Naturally, we'll want to test it, however.
 
 \begin{codelisting}
 \label{code:smallest}
@@ -667,13 +667,745 @@ def smallest(numbers):
 ```
 \end{codelisting}
 
-FIXME: find smallest, biggest, valid candidates
+This final code works... as long as there is at least one item in the list.  If
+the list is empty, then calling `smallest` doesn't make much sense in the first
+place.  After all, a list with no items does not have a smallest item, per se.
+
+Are these examples starting to help?  How about if we do a few more examples?
+
+Here's a different one.  Suppose we have a list of student exam percentages.
+Such a list might look like this (we'll call it `scores`):
+
+```python
+scores = [82.5, 77.0, 95.0, 56.0, 74.5, 46.0, 97.5]
+```
+
+In this example, there are seven student scores.  We could think of other
+examples where there could be far more scores.  Suppose we're interested in the
+number of students who passed the exam, i.e., the number whose score is `60` or
+above.  Let us define a function named `number_passed` that returns the number
+of passing students.
+
+First, write the function signature (Listing~\ref{code:number_passed_sig}).
+
+\begin{codelisting}
+\label{code:number_passed_sig}
+\codecaption{Function signature for \kode{number\_passed}}
+```python
+def number_passed(scores):
+    # FIXME
+    pass
+```
+\end{codelisting}
+
+I've written `pass` for the body of the function.  We'll delete it very shortly,
+but I thought now would be a good time to introduce `pass`.  What does `pass` do
+exactly?  Python expects there to be an indented block of statements after a
+function signature.  If there is no indented statement or block of statements,
+our code will crash.  Comments don't count, so naturally `FIXME` comments don't
+count either.  This way I can still run any other code in my file even if I
+haven't finished the definition of `number_passed`.
+
+Okay, let's delete the `pass` statement and the `FIXME` comment and replace them
+with an actual function body.  What are we trying to accomplish again?  We want
+to scan the list and keep track of how many students passed.  Any time we need
+to scan a list, we should immediately think of using a loop.  We've used `for`
+loops mostly, but we can use `while` loops just as easily.  It's up to you as
+the programmer to express your code however you want.  Let's write some code
+that scans through the list.  Listing~\ref{code:number_passed_1} shows a loop
+with a lot of pseudocode surrounding it.
+
+\begin{codelisting}
+\label{code:number_passed_1}
+\codecaption{Partial function definition for \kode{number\_passed}, attempt 1}
+```python
+def number_passed(scores):
+    # Probably use a variable to keep track of something.
+    for i in range(0, len(scores)):
+        # Do something with scores[i]
+    # Return a thing.
+```
+\end{codelisting}
+
+This function definition follows the same pattern as `total` and `smallest`.
+Since we wish to keep track of the number of students who've passed, we'll use a
+variable and that variable's value will be what this function returns.  Let's
+update those lines (Listing~\ref{code:number_passed_2}).
+
+\begin{codelisting}
+\label{code:number_passed_2}
+\codecaption{Partial function definition for \kode{number\_passed}, attempt 2}
+```python, options: "linenos": true, "hl_lines": [2,5]
+def number_passed(scores):
+    passed = 0
+    for i in range(0, len(scores)):
+        # Do something with scores[i]
+    return passed
+```
+\end{codelisting}
+
+Notice how we're writing the code non-linearly.  Often, it's best to write what
+you can at the time, use comments when you're not ready to fill in the details,
+and then go back later and fill in the details.
+
+Lastly, we need to increment `passed` whenever we encounter a passing score, i.e., `scores[i]`.  Checking `scores[i]` involves an `if` statement (Listing\ref{code:number_passed_final}).
+
+\begin{codelisting}
+\label{code:number_passed_final}
+\codecaption{Function definition for \kode{number\_passed}}
+```python, options: "linenos": true, "hl_lines": [4,5]
+def number_passed(scores):
+    passed = 0
+    for i in range(0, len(scores)):
+        if scores[i] >= 60.0:
+            passed += 1
+    return passed
+```
+\end{codelisting}
+
+This looks simply grand!  Now, you test it!
+
+Write some test cases.  Use the examples of test code that we're written in
+previous examples.  Go ahead.  I'll wait.  I could use a break from writing this
+book.  Writing a book is hard work, you know.
+
+Okay, I'm back.  Did you come up with something like this?
+
+```python
+print(number_passed([5, 100, 2, 70]))    # should print 2
+print(number_passed([90, 80, 70, 60]))   # should print 4
+print(number_passed([1, 2, 3]))          # should print 0
+print(number_passed([]))                 # should print 0
+```
+
+## Using Several Lists to Store Related Data
+\label{sec:lists_rel_data}
+
+We've been using lists thus far to store groups of related information.  In
+Section~\ref{sec:list_funcs}, for example, we kept a series of exam scores in a
+list variable we named `scores`.  We might store a series of names in a list
+called `names`.
+
+But, what if we want to keep track of both names and scores.  That is, we want
+to associate students' names with their scores.  In this way, we can know that
+Michelle got a 90\% while Susan got a 76\%.  There are a number of ways to
+accomplish this, and in fact we will explore some rather slick ways to do this
+in Chapters~\ref{ch:dict} and \ref{ch:classes}, respectively.  However, there is
+a very good way to do this by simply using more than one list.  Observe
+Listing~\ref{code:names_scores_lists}.
+
+\begin{codelisting}
+\label{code:names_scores_lists}
+\codecaption{Using several lists to store related data}
+```python, options: "linenos": true
+names = ["Aubrey Bell", "Adam Jamison", "Susan Stratford", "Michelle Wang"]
+scores = [82.5, 87.0, 76.0, 90.0]
+```
+\end{codelisting}
+
+Notice that `names` and `scores` contain the same number of items.  Let us assume that the positions of each name matches the position of the score in each list.  For example, `"Aubrey Bell"` got an `82.5` since both values exist at index `0` in both lists.  Likewise, `Susan Stratford` got a `76.0` because they are both at index `2` in both lists.
+
+In the example found in Listing~\ref{code:names_scores_lists}, we are using
+different lists to store different attributes of people.  Each list has the same
+number of items.  One attribute is the person's name, which is stored in its own
+list.  Another attribute is a person's score, which is stored in its own list as
+well.  Each person is uniquely identified by an index.
+Figure~\ref{fig:names_scores_indices} shows this relationship appears visually,
+using indices to associate names and scores.  (Note: not all items and indices
+are shown in the figure to keep the image smaller).
+
+![\label{fig:names_scores_indices}](images/ch5/names_scores_indices.png)
+
+The definitions in Listing~\ref{code:names_scores_lists} allows us to write code like the following (see Listing~\ref{code:iter_names_scores_lists}).
+
+\begin{codelisting}
+\label{code:iter_names_scores_lists}
+\codecaption{Iterating through related lists}
+```python, options: "linenos": true
+for index in range(0, len(names)):
+    print("The score for %s is %.2f%%." % (names[index], scores[index]))
+```
+\end{codelisting}
+
+The output of the example code in Listing~\ref{code:iter_names_scores_lists} is:
+
+```console
+The score for Aubrey Bell is 82.50%.
+The score for Adam Jamison is 87.00%.
+The score for Susan Stratford is 76.00%.
+The score for Michelle Wang is 90.00%.
+```
+
+## Coding Conventions for Lists Spanning Multiple Lines
+
+Sometimes the lists we define will have a whole lot of items, and it will be cumbersome to manage their contents on a single line.  We can "spread out" the definition of such a list using the convention shown in Listing~\ref{code:multi_line_list1}.
+
+\begin{codelisting}
+\label{code:multi_line_list1}
+\codecaption{List definition spanning multiple lines}
+```python, options: "linenos": true
+cheeses = [
+    "cheddar",
+    "provolone",
+    "colby jack",
+    "gorgonzola",
+    "brief",
+    "pepper jack"
+]
+```
+\end{codelisting}
+
+This is the preferred way to format a list that spans multiple lines as defined
+by the [PEP8](https://www.python.org/dev/peps/pep-0008/) coding standard.  PEP8
+is a document available on the Web that tells Python programmers how best to
+format their code so that any programmer can more easily read and modify code
+written by others.  The PEP8 document tells us this is one of the two ways that
+are best for defining multi-line lists.  This particular way is the one we will
+use through the remainder of this book.
+
+Note that we are still using commas to separate the items in the list.  If we
+wanted to add another cheese to the end of this list, we would need to add a comma after `"pepper jack"` and then add the last cheese, like this:
+
+```python
+cheeses = [
+    "cheddar",
+    "provolone",
+    "colby jack",
+    "gorgonzola",
+    "brief",
+    "pepper jack",
+    "mozzarella"
+]
+```
+
+This is cumbersome, so the people who invented Python decided we should be able to leave a trailing comma at the end of any list (either single line or multiple line) in case we want to add more values.  This allows us to change the look of our definition to Listing~\ref{code:multi_line_list2} (note line 7).
+
+\begin{codelisting}
+\label{code:multi_line_list2}
+\codecaption{List definition spanning multiple lines}
+```python, options: "linenos": true, "hl_lines": [7]
+cheeses = [
+    "cheddar",
+    "provolone",
+    "colby jack",
+    "gorgonzola",
+    "brief",
+    "pepper jack",
+]
+```
+\end{codelisting}
+
+Now if we want to add `"mozzarella"`, we can just hit the `Enter` or `Return`
+key and start typing.  This is handy if we want to copy and paste a bunch of
+lines.
+
+```python, options: "linenos": true, "hl_lines": [8]
+cheeses = [
+    "cheddar",
+    "provolone",
+    "colby jack",
+    "gorgonzola",
+    "brief",
+    "pepper jack",
+    "mozzarella",
+]
+```
+
+## Lists of Lists
+\label{sec:lists_of_lists}
+
+We've been using lists to store a series of items in a row. Each of these items
+can have any type: string, integer, float, ... or even another list!  This might
+sound kind of weird and scary at first, but you may be surprised to know that a
+list containing lists is nothing more than a matrix, a grid, a table, a
+spreadsheet, or whatever other term you might use to describe rows and columns
+of data.
+
+Watch this:
+
+```python
+votes = [
+    [25, 18,  2],
+    [19, 17,  1],
+    [25,  4,  5],
+    [ 5, 27, 20],
+    [40, 30, 29],
+]
+```
+
+Hey, it's a grid!  Let's try to type some expressions using `votes` to see what
+we can do with it.
+
+```python
+print(votes[0])      # prints [25, 18, 2]
+print(votes[-1])     # prints [40, 30, 29]
+print(votes[0][1])   # prints 18
+print(votes[1][0])   # prints 19
+print(votes[2][2])   # prints 5
+print(votes[20][20]) # Kablooey!  IndexError!  The max index of votes is 4.
+```
+
+How does an expression like `votes[0][1]` work?  Well, the first part of the
+expression `votes[0]` gives us the list `[25, 18, 2]`.  Essentially,
+`votes[0][1]` becomes `[25, 18, 2][1]`.  Then, the `[1]` gives us the value of
+the list at index `1`, so `[25, 18, 2][1]` becomes `18`.
+
+When we use two sets of square brackets, the first square bracketed value
+selects the row number and the second bracketed value selects the column, as in
+`votes[row][column]`.
+
+Now, let's see a practical example.  I've named this list of lists `votes` for a
+reason.  Suppose we have an election and we want to keep track of the votes for
+each candidate.  Suppose we also want to be more detailed in tracking votes, so
+we want not just total votes but votes by county in a particular state.  Let's
+let the columns represent the candidates.  Since we have three columns, that
+must mean we have three candidates!  Then, let's let the rows represent the
+counties.  We have five rows, so we should assume we have five counties we are
+tracking.
+
+So, let's see who won the election.  No Electoral College here folks; we'll
+count raw votes.  Let's total them up.  Only, let's do it like real programmers.
+We could write `total0 = votes[0][0] + votes[1][0] + votes[2][0] + votes[3][0] +
+votes[4][0]`, but that's really lame and we'd have to change our totaling code
+if we ever add more counties.  So, let's do this instead (Listing~\ref{code:total_one_cand}).
+
+\begin{codelisting}
+\label{code:total_one_cand}
+\codecaption{Total votes for one candidate}
+```python, options: "linenos": true
+total = 0
+for countyindex in range(0, len(votes)):
+    total = total + votes[countyindex][0]
+
+print("Total votes for candidate 0: %d" % total)
+```
+\end{codelisting}
+
+Then, we could copy and paste this code for candidates `1` and `2`, or we could
+put all of this code in another loop and "loop through" the candidates
+(Listing~\ref{code:total_all_cand}).
+
+\begin{codelisting}
+\label{code:total_all_cand}
+\codecaption{Total votes for all candidates}
+```python, options: "linenos": true, "hl_lines": [1]
+for candindex in range(0, len(votes[0])):
+    total = 0
+    for countyindex in range(0, len(votes)):
+        total = total + votes[countyindex][candindex]
+
+    print("Total votes for candidate %d: %d" % (candindex, total))
+```
+\end{codelisting}
+
+Let's stop referring to the candidates as "Candidate 0", "Candidate 1", etc.
+Let's give them actual names and store them in code somewhere.  How about a
+using a list?
+
+\begin{codelisting}
+\label{code:cand_list}
+\codecaption{A list for candidates}
+```python
+candidates = ["Ronald Rump", "Billary Blimpton", "A Giant Meteor"]
+```
+\end{codelisting}
+
+Similarities of these names to candidates in recent U.S. presidential elections
+is purely coincidental... or not.
+
+Now, check this out.  See how we can use a loop with this new `candidates` list
+to label the columns of our `votes` grid when totaling up the results (see
+Listing~\ref{code:total_all_cand_names}).
+
+\begin{codelisting}
+\label{code:total_all_cand_names}
+\codecaption{Total votes for all candidates, with names}
+```python, options: "linenos": true, "hl_lines": [8, 14]
+votes = [
+    [25, 18,  2],
+    [19, 17,  1],
+    [25,  4,  5],
+    [ 5, 27, 20],
+    [40, 30, 29],
+]
+candidates = ["Ronald Rump", "Billary Blimpton", "A Giant Meteor"]
+for candindex in range(0, len(votes[0])):
+    total = 0
+    for countyindex in range(0, len(votes)):
+        total = total + votes[countyindex][candindex]
+
+    print("Total votes for %s: %d" % (candidates[candindex], total))
+```
+\end{codelisting}
+
+The output of Listing~\ref{code:total_all_cand_names} is:
+
+```console
+Total votes for Ronald Rump: 114
+Total votes for Billary Blimpton: 96
+Total votes for A Giant Meteor: 57
+```
+
+This code is pretty slick.  This code is also a good example of where we should
+be heading as programmers.  We should be getting pretty comfortable with
+iterating through a list using a loop.
+
+What makes this code slick?  Well, if we change the structure of the `votes`
+grid, the code still works perfectly.  In other words, we could add or subtract
+candidates, or we could add or subtract counties, and the code still works
+because we have not hard-coded the number of candidates or counties.
+
+To verify this, let's redefine `votes` (and `candidates`, so that its length
+matches the number of columns in `votes`) and then try to run our code again.  A
+new, full listing can be found in Listing~\ref{code:bigger_votes}.
+
+\begin{codelisting}
+\label{code:bigger_votes}
+\codecaption{Total votes for all candidates, again}
+```python, options: "linenos": true, "hl_lines": [2, 3, 4, 5, 6, 7, 9, 10]
+votes = [
+    [25, 18,  4,  2],
+    [19, 17,  8,  1],
+    [25,  4,  1,  5],
+    [ 5, 27, 21, 20],
+    [40, 30,  5, 29],
+    [10, 12,  1,  1],
+]
+candidates = ["Ronald Rump", "Billary Blimpton",
+              "Johnny Third-Party", "A Giant Meteor"]
+for candindex in range(0, len(votes[0])):
+    total = 0
+    for countyindex in range(0, len(votes)):
+        total = total + votes[countyindex][candindex]
+
+    print("Total votes for %s: %d" % (candidates[candindex], total))
+```
+\end{codelisting}
+
+Because we have not hard-coded the lengths of the lists, and because the number of `votes` columns matches the length of `candidates`, the code works as shown below.
+
+```console
+Total votes for Ronald Rump: 124
+Total votes for Billary Blimpton: 108
+Total votes for Johnny Third-Party: 40
+Total votes for A Giant Meteor: 58
+```
+
+Poor Johnny Third-Party -- the Giant Meteor got more votes than he did.  Maybe
+Johnny should re-think his political career aspirations if he can't manage to
+beat an eschatological, extra-terrestrial projectile of doom!
+
+Spend a little time thinking about how you might write code to do different
+things with `votes` and `candidates`.  How many different ways can we
+slice-and-dice this data?  In Section Section~\ref{sec:lists_exercises} (the
+Chapter~\ref{ch:lists} Exercises), you'll be asked to report the winner of each
+county, and you'll need to give each county a name.  Be thinking about how you
+might accomplish that.
 
 ## (Optional) Functional Programming with Lists
 \label{sec:func_prog}
 
+It’s not uncommon to have a list that contains items that we wish to modify.
+Or, we may have a list, and we wish to create a new list based on the original
+list.  You may recall an exercise in a previous chapter where we were asked to
+create a program that translated English into Pig Latin.  If you do not recall
+this exercise, it is sufficient to understand that an English word can be
+translated into the fictional "Pig Latin" language by taking the first consonant
+in the word, moving it to the end of the word, and then adding "ay" to the end.
+Thus, "cat" becomes "at-cay."  There are other pertinent rules for forming Pig
+Latin words, but for the example that follows, this understanding is sufficient.
+
+If we take a string containing an English sentence and we transform it into a
+list of words, creating a program that translates English to Pig Latin becomes
+as simple as creating a new list from our original list where each word has been
+translated into its Pig Latin equivalent.  Written another way, suppose we have
+a list like this:
+
+```python
+words = ["jim", "likes", "radishes"]
+```
+
+And we wish to make a new list that looks like this:
+
+```python
+pig_words = ["im-jay", "ikes-lay", "adishes-ray"]
+```
+
+We could easily write a function to translate a single word at a time.  Consider
+the following simple function.
+
+```python
+def piglatin(english):
+    return english[1:] + "-" + english[0] + "ay"
+```
+
+Then, we could construct a new list by using this `piglatin` function on each
+item in the original list.  Observe:
+
+```python
+sentence = input("Enter a sentence: ")
+# sentence is now something like "jim likes radishes"
+
+words = sentence.split()
+# words is now something like ["jim", "likes", "radishes"]
+
+pig_words = []
+for word in words:
+    pig_word = piglatin(word)
+    pig_words.append(pig_word)
+```
+
+There is a far more concise way to do this in Python using something called
+*functional programming*.  Observe that all we wish to do is make a new list
+from an original list by applying a function to each item in the list.  The
+original list is `words`.  The new list is `pig_words`.  The function is named
+`piglatin`.  We can compress the above code into the following code.
+
+```python
+sentence = input("Enter a sentence: ")
+# sentence is now something like "jim likes radishes"
+
+words = sentence.split()
+# words is now something like ["jim", "likes", "radishes"]
+
+pig_words = list(map(piglatin, words))
+```
+
+Look at the last line of the above code.  This statement tells Python to "map"
+the function `piglatin` onto all of the items in `words`.  That is, it tells
+Python to pass each of the items in `words` to `piglatin`, and then take all the
+return values and make a new list out of them.
+
+The expression `map(piglatin, words)` creates something that is like a `list`.
+We then must convert its return value to a `list`.  Notice that `map` takes two
+arguments.  The second is a list, but the first is actually a function.  We can
+pass function as parameters to other functions.  Python allows us to do this
+because we can store a reference to a function in any variable, including
+parameter variables.
+
+To understand how to pass a function to another function, consider the following
+"toy" example.
+
+```python
+def call_function(func, val):
+    return func(val)
+
+call_function(print, "Hi there")
+# prints "Hi there"
+
+def square(x):
+    return x * x
+
+y = call_function(square, 3)
+print(y)
+# prints 9
+```
+
+`call_function` takes the first parameter `func` and calls it.  It uses `val` as
+the argument to `func`.
+
+Consider (roughly) how `map` works.
+
+```python
+def map(func, inlist):
+    outlist = []
+    for item in inlist:
+        outlist.append(func(item))
+    return outlist
+```
+
+We say this is how `map` works "roughly" because `map` does not actually return
+a `list`; it returns something like a `list` that we can convert to a `list`.
+The reason for this is beyond the scope of this book.
+
+The `map` function is pretty slick! Consider the following examples.
+
+```python
+xs = ["1", "2", "3"]
+ys = list(map(int, xs))
+# ys is now [1, 2, 3]
+
+strings = ["cheese", "ate", "sand"]
+lengths = list(map(len, strings))
+# lengths is now [6, 3, 4]
+```
+
+This is really the tip of the iceberg when it comes to functional programming!
+This is just a taste, and most other programming languages support some form of
+functional programming.  There are a lot more things you can do with functional
+programming that are super powerful and really concise in terms of coding.  If
+you take future computer science classes and read more books, it is likely
+you'll encounter functional programming again.  Functional programming is used
+frequently in "real world" code.  In fact, Google's data processing pipeline is
+built around a functional programming paradigm known as "Map-Reduce."  Google
+it!
+
 ## (Optional) List Comprehensions
 \label{sec:list_comprehensions}
 
+Based on what we know so far, we can construct lists in two ways.  If we know
+the items we want in a list at the time we create the list, we can do so as
+follows.
+
+```python
+mylist = [1, 2, 3, 4, 5]
+```
+
+Alternatively, we could create an empty list and then add items to it later, like this.
+
+```python
+mylist = []
+# Then, later on...
+mylist.append(1)
+mylist.append(2)
+mylist.append(3)
+mylist.append(4)
+mylist.append(5)
+```
+
+There is an additional way to create lists that is somewhat unique to Python.
+This method is called a *list comprehension*.  Consider the following code.
+
+```python
+squares = []
+for num in range(0, 10):
+    squares.append(num**2)
+# squares is now [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+```
+
+The list comprehension-way to write this is:
+
+```python
+squares = [num**2 for num in range(0, 10)]
+```
+
+A list comprehension consists of square brackets containing an expression
+followed by a loop that gives the expression a sequence of values.  The loop can
+contain additional loops or even if statements.  Consider this:
+
+```python
+evens = [x for x in range(0, 16) if x % 2 == 0]
+# evens is now [0, 2, 4, 6, 8, 10, 12, 14]
+```
+
+The value for each item in `evens` is `x`, but only if `x` is divisible by `2`.
+The `if` expression can be used to "filter" items in the list.
+
+List comprehensions can be handy if you have one list and you wish to make
+another new list based the values in the first list.  For example:
+
+```python
+sentence = "Sheamus Shaughnessy is HUNGRY."
+words = [w.lower().replace(".","") for w in sentence.split()]
+# words is now:
+#     ['sheamus', 'shaughnessy', 'is', 'hungry']
+```
+
+Another example:
+
+```python
+nonprimes = [y for x in range(2, 8) for y in range(x*2, 50, x)]
+primes = [x for x in range(2, 50) if x not in nonprimes]
+# primes is now:
+#     [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+```
+
+Neat-o burrito!
+
+(Mmm... burritos.  Those who happen to be in Storm Lake, Iowa, may want to take
+a break from studying and head to [La
+Juanitas](https://www.google.com/maps/place/La+Juanita/@42.644911,-95.200439,15z/data=!4m5!3m4!1s0x0:0x9641e72e9da91650!8m2!3d42.644911!4d-95.200439)
+for some exceptional, authentic Mexican food.)
+
 ## Exercises
 \label{sec:lists_exercises}
+
+1. Suppose we define a list as follows:
+
+    <<(exercises/ch5/p5.1a.py)
+
+   What is the type and value of each of the following expressions?
+
+    <<(exercises/ch5/p5.1b.py)
+
+2. What is the output of the following code?
+
+    <<(exercises/ch5/p5.2.py)
+
+3. Define a function named `biggest` that takes a `list` of numbers as a
+parameter and returns the biggest number in the list.
+
+3. Define a function named `average` that takes a `list` of numbers as a
+parameter and returns the mean/average of the numbers as a `float`.
+
+4. Define a function named `contains_chuck` that takes a `list` of names and
+returns `True`/`False` whether `"Chuck Norris"` or `"Carlos Norris"` is in the
+list.
+
+5. Define a function named `count_chucks` that takes a `list` of names and
+returns an integer representing the number of names that start with `"Chuck"` in
+the list.
+
+6. Define a function named `cull_cullens` that takes a `list` of names and
+returns a new `list` based on the original list, only in the new list any name
+ending in `"Cullen"` has been removed.  For example:
+
+    <<(exercises/ch5/p5.6.py)
+
+7. Define a function named `replace` that takes a list of values, an "old" value,
+and a "new" value.  The function should modify the list of values by replacing
+any "old" values with the "new" value.  For example:
+
+    <<(exercises/ch5/p5.7.py)
+
+8. Define a function named `shuffle_list` that takes a `list` as a parameter and
+returns a `list` of the same size only with the items in the parameter list in
+different positions.  That is, the returned list should have the items randomly
+assigned to new positions; granted, it is possible that some of the items may
+still be in their original positions.  For example:
+
+    <<(exercises/ch5/p5.8.py)
+
+9. Define a function `shuffle_this` just like the function `shuffle_list` in the
+previous problem, only this time change the original list rather returning a new
+list.  For example:
+
+    <<(exercises/ch5/p5.9.py)
+
+10. Define a function named `merge` that takes two lists and returns a new
+single list that is the result of interleaving the two original lists.  If one
+list is exhausted before the other, the remaining items are tacked on to the end
+of the resulting list.  For example:
+
+    <<(exercises/ch5/p5.10.py)
+
+11. Suppose we have a list of lists (a grid") representing exam grades in a
+class.  The rows are individual students’ scores.  The columns are the exam
+scores for each student.  Each score is based on a possible score of 100 points.
+
+    Define a function named `print_averages` that takes a grades "grid" and a names
+`list` as parameters, and then it should print the exam average for each student
+along with the student’s name.  The function does not need to return anything.
+
+    NOTE: you cannot assume that there will only be three scores or three students.
+The code you write should still work correctly even if we were to add columns or
+rows.  The code below serves only as an example.
+
+    <<(exercises/ch5/p5.11.py)
+
+12. Recall the `votes` grid example in the section on lists of lists (i.e.,
+Section~\ref{sec:lists_of_lists}).  Define a function named `county_winners`
+that prints the name of the candidate who wins each county.  The output should
+display a line for each county.  Each output line should be of the form
+`"CANDIDATE has won COUNTY."` where `CANDIDATE` is the candidate's name and
+`COUNTY` is the name of the county.  To define this function, you will need to
+create a list that stores the names of the counties in addition to defining the
+function body itself.
+
+    An example of needed list definitions are:
+
+    <<(exercises/ch5/p5.12a.py)
+
+    Sample output:
+
+    <<(exercises/ch5/p5.12b.py)
