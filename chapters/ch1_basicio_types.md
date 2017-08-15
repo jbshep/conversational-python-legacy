@@ -733,8 +733,7 @@ Operator & Usage \\
 \kode{/} & Division \\
 \kode{//} & \pbox{9cm}{Integer division - Returns the whole number result only from division.  Example: \kode{5 // 2} gives us \kode 2 rather than \kode{2.5}.} \\
 \kode{\%} & \pbox{9cm}{Modulus, or mod - Returns the remainder from division. Example: \kode{5 \% 2} gives us \kode{1} since \kode{5} divided by \kode{2} is \kode{2} remainder \kode{1}} \\
-\kode{**} & \pbox{9cm}{Exponentiation - Returns the result of raising a number to a power.
-Example: \kode{2 ** 3} gives us \kode{8} \\
+\kode{**} & \pbox{9cm}{Exponentiation - Returns the result of raising a number to a power. Example: \kode{2 ** 3} gives us \kode{8}} \\
 \hline
 \end{tabular}
 \end{table}
