@@ -427,3 +427,14 @@ print("The food with the least calories is %s with %d cal." % \
 
 We use `.split(",")` to split the line into its three pieces: the item, the
 calories, and the carbs.  Then, we proceed as we did previously.
+
+
+## Writing Information to Files
+
+## Exceptions
+
+## Bits, Bytes, and Machine Representation
+
+## (Optional) Introduction to Cryptography
+
+## (Optional) Regular Expressions and File Encodings

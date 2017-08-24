@@ -6,12 +6,13 @@
 
 Computers consist of hardware and software.  Hardware is the physical stuff you
 can hold in your hands, like memory, disks, keyboards, etc.  Software tells the
-hardware what to do.  In this book, we're going to learn how to create software.
-Creating software is called *programming* or *coding*.  When coding, we give the
-computer  instructions for it to do.
+hardware what to do.  The hardware stores the software and "runs" it.  In this
+book, we're going to learn how to create software. Creating software is called
+*programming* or *coding*.  When coding, we give the computer instructions for
+it to do.
 
 Typically, hardware consists of a bunch of electrical circuits.  Instructions
-for controlling the circuits is called *machine code* (which is basically a
+for controlling the circuits are called *machine code* (which is basically a
 bunch of 1's and 0's that tell the computer which electrical circuits to turn on
 and off... beep beep boop boop).  However, we will not need to learn machine
 code or worry about electrical circuits.  We will write code that looks
@@ -34,9 +35,62 @@ programs.  One is the Python interpreter. The other is named *Thonny*.  Thonny
 will give us a window in which to type our code, and then Thonny will hand our
 code to the Python interpreter so that we can run our program.
 
-FIXME installation of Python and Thonny will go here.  Be sure to help readers
-navigate Thonny, and don't forget to have them type commands directly into the
-shell (even though they don't know any Python yet).
+First, let's install Python.
+
+- Open your favorite Web browser (mine is Google Chrome).
+- In your Web browser, go to the Web address
+  [https://www.python.org/](https://www.python.org/).
+- The Python Web page will appear.  Choose *Downloads* and then select the most
+  recent version of Python (that is, the Python that has the biggest version
+  number).
+- Find the file that you've downloaded and double-click on it to run it.
+- An installer program will be displayed.  Follow the steps in the installer to
+  finish installing Python.  If you are unsure of what to do at a particular
+  step, accept the default information in that step.
+
+If you made it through these steps, then "Hurray!"  If not, get help from a
+knowledgeable human near you.
+
+Once you have Python installed, we can then install Thonny.
+
+- Open your favorite Web browser, again (mine is Google Chrome... still!).
+- In your Web browser, go to the Web address
+  [http://thonny.org/](http://thonny.org/).
+- The Thonny Web page will appear.  In the upper-right hand you will see options
+  to download Thonny for your computer.  If you have a Windows computer, choose
+  Windows.  If you have Mac, choose Mac.  If you have Linux, choose Linux.
+- Find the file that you've downloaded and double-click on it to run it.
+- An installer program will be displayed.  Follow the steps in the installer to
+  finish installing Thonny.  If you are unsure of what to do at a particular
+  step, accept the default information in that step.
+
+Now, find the Thonny program on your computer and run it.  The main Thonny
+window is shown in Figure~\ref{fig:thonny_basic}.
+
+![\label{fig:thonny_basic}](images/ch1/thonny_basic.png)
+
+Notice that there are two "parts" to the Thonny window.  The top part is where
+you type Python code.  The bottom part is called the Python *Shell* window.  The
+shell is where you will see the result of your code, which we call the *output*.
+
+Normally, you'll be able to write code in code window, save it to a file, and
+then run it to see the output in the Python Shell window.  Additionally, you can
+type single lines of code into the Python Shell window if you want to experiment
+a little bit before writing your finished program code.  We'll encourage you to
+do both types of activities throughout this book.
+
+Notice that the code window in Thonny displays something like "untitled."  Let's
+go ahead and start saving any code we type into a file.  That way, after we
+close Thonny we can always come back and work on our code some more later.  In
+Thonny, choose **File --> Save As...** from the top menu.  A dialog window will
+appear.  Choose an appropriate folder location for your new file (and all other
+Python code files you'll create in this book), and then let's name this first
+file `hello.py`.  Python files always end with the suffix `.py`.  This helps us
+remember what type of file it is.  We call these files Python source code files,
+or simply Python source files.  Click the **Save** button and return to the
+Thonny code window.
+
+Okay, let's learn some Python!
 
 ## The `print` statement
 \label{sec:print}
@@ -684,9 +738,10 @@ those errors make the program crash and we see an actual error message in
 nice error message.  Instead, the program appears to behave erroneously.
 Erroneous code is called a *bug*, and it is up to us to "debug" the program.
 
-FIXME At some point, we'll have a nice detour in this box about the origin of
-the term "debug."  It's an amusing historical tale.  For now, read this:
-http://www.wired.com/2013/12/googles-doodle-honors-grace-hopper-and-entomology/
+At some point in this book's sure-to-be-glorious future, we'll have a nice
+detour in this box about the origin of the term "debug."  It's an amusing
+historical tale.  For now, read this:
+[http://www.wired.com/2013/12/googles-doodle-honors-grace-hopper-and-entomology/](http://www.wired.com/2013/12/googles-doodle-honors-grace-hopper-and-entomology/).
 
 Let's practice detecting and fixing bugs.  We'll again use
 Listing~\ref{code:cats_typeerror} as our starting point, only this time instead
@@ -860,8 +915,13 @@ We can now simplify the list of statements we know about to these.
 
 From now on, we will refer to things like `print`, `input`, and `type` as
 functions rather than as commands.  Note that assignment statements can have
-function calls in them, like `name = input("What is your name? ")`.  This
-statement is an assignment statement, and the RHS is a function call.
+function calls in them, like
+
+```python
+name = input("What is your name? ")
+```
+
+This statement is an assignment statement, and the RHS is a function call.
 
 The expressions that are placed between the parentheses after the function's
 name are called *arguments*.  Some functions take no arguments, some functions
