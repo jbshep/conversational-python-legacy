@@ -59,10 +59,12 @@ Now try this in the Python Shell window:
 f.readlines()
 ```
 
-Interesting.  This function returns a list that looks like `['roast duck\n',
-'ribeye steak\n', 'wood-fired pizza\n', 'plank-seared salmon\n', 'caesar
-salad\n']`.  Each item in the list is a single line in the file.  The `"\n"` is
-the newline character.  A newline can be found at the end of every line.
+Interesting.  This function returns a list that looks like `['roast
+duck\textbackslash n', 'ribeye steak\textbackslash n', 'wood-fired
+pizza\textbackslash n', 'plank-seared salmon\textbackslash n', 'caesar
+salad\textbackslash n']`.  Each item in the list is a single line in the file.
+The `"\textbackslash n"` is the newline character.  A newline can be found at
+the end of every line.
 
 Try reading the lines again by typing:
 
@@ -196,17 +198,17 @@ First of all, we don’t see our excited message at all.  Second, the period at
 the end of each `print` statement is on the next line.
 
 Look again at the list value returned by `f.readlines()`, which is `['roast
-duck\n', 'ribeye steak\n', 'wood-fired pizza\n', 'plank-seared salmon\n',
-'caesar salad\n']`.  Every string value within the list includes a `"\n"` at the
-end.  The `"\n"` is the newline that separates the text on each line.  Since
+duck\textbackslash n', 'ribeye steak\textbackslash n', 'wood-fired pizza\textbackslash n', 'plank-seared salmon\textbackslash n',
+'caesar salad\textbackslash n']`.  Every string value within the list includes a `"\textbackslash n"` at the
+end.  The `"\textbackslash n"` is the newline that separates the text on each line.  Since
 `print` normally inserts a newline after it prints its string, and since the
 string has a newline, too, there are two newlines that get printed: one before
 the period and one after the period.
 
 This also causes our `if` statement to fail.  When we compare `"roast duck"` to
-`"roast duck\n"`, these are technically different strings because the second one
-has a `"\n"` character at the end.  That’s why we never see our excited message.
-The expression `"roast duck" == "roast duck\n"` is `False`.
+`"roast duck\textbackslash n"`, these are technically different strings because the second one
+has a `"\textbackslash n"` character at the end.  That’s why we never see our excited message.
+The expression `"roast duck" == "roast duck\textbackslash n"` is `False`.
 
 Let’s fix this code; see Listing~\ref{code:find_duck}.
 
