@@ -6,22 +6,10 @@ prices:
     description:
       |
         * Optimized for computer screens, Kindle, and iPad
-        * Incredibly awesome content
+        * A textbook for students who don't like textbooks
     media:
       - ebooks
-    price: 3500
-
-  -
-    code: all
-    name: "HTML, Ebook, and Screencasts"
-    description:
-      |
-        * Includes 10 hours of video screencasts
-        * Ebooks inclded in PDF/EPUB/MOBI formats
-    media:
-      - ebooks
-      - media/screencasts
-    price: 12500
+    price: 2500
 
 authors:
   -
@@ -34,30 +22,8 @@ authors:
       |
         Author bio [link](https://jbshep.github.io)
 
-faq:
-  -
-    question: "Question 1 text"
-    answer: "Answer 1 text"
-
-  -
-    question: "Question 2 text"
-    answer: "Answer 2 text"
-
-testimonials:
-  -
-    name: "Person 1"
-    title: "Person 1 Title"
-    image: /images/testimonial_1.png
-    text: "Testimonial 1 text"
-
-  -
-    name: "Person 2"
-    title: "Person 2 Title"
-    gravatar_email: "info@softcover.io"
-    text: "Testimonial 2 text"
-
 marketing_content: ''
 
 repo_url: ''
-contact_email: ''
+contact_email: 'jason_b_shepherd@acm.org'
 hide_custom_domain_footer: false
