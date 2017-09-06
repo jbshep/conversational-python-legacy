@@ -433,6 +433,9 @@ calories, and the carbs.  Then, we proceed as we did previously.
 
 ## Writing Information to Files
 
+This section and the sections that follow are currently being re-edited.  Come
+back later.
+
 ## Exceptions
 
 ## Bits, Bytes, and Machine Representation
