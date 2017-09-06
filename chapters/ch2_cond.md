@@ -577,12 +577,10 @@ expression `x = 2` and the expression `x == 2`?
 
     <<(exercises/ch2/p2.7.py)
 
-8. Write code that asks for a number, and then it takes that number and rounds it up or down appropriately.  For example, if the user types `3.6`, the program should output a `4` since the fractional part `.6` is greater than `.5`.  The user were to type `3.2`, the program should output a `3` since the fractional part `.2` is less than `.5`.
+8. Write code that rounds a float number up or down *without* using the \kode{round} function introduced in Section~\ref{sec:handy_funcs}.  That is, write code that asks for a number, and then it takes that number and rounds it up or down appropriately without using \kode{round}.  For example, if the user types `3.6`, the program should output a `4` since the fractional part `.6` is greater than `.5`.  The user were to type `3.2`, the program should output a `3` since the fractional part `.2` is less than `.5`.
 
     It may help to know that if you use the `int` function to cast a float to an integer, the fractional part disappears.  This is called *truncation*.  For example, in the following code
 
     <<(exercises/ch2/p2.8.py)
 
     the value of \kode{i} ends up being `3`.
-
-    For this problem, only use what has been introduced in this book so far.  If you were to search the Web you can find a very simple function that does this, but for the sake of learning try to do this problem only with what you've learned in the book so far.
