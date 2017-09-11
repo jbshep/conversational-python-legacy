@@ -337,9 +337,6 @@ lst[i] = "Sheryl"
 lst[j] = "Maria"
 ```
 
-
-FIXME Do I at some point mention trailing comma list syntax using multiline example?
-
 ## List Variables: References Versus Values
 \label{sec:list_refs}
 
