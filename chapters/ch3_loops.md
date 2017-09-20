@@ -1270,9 +1270,9 @@ for index in range(0, len(fullname)):
         break
 
 if space == -1:
-    firstname = fullname[0:space]
-else:
     firstname = fullname
+else:
+    firstname = fullname[0:space]
 
 print("Your first name is %s." % firstname)
 ```
@@ -1291,9 +1291,9 @@ fullname = input("Enter your full name: ")
 space = fullname.find(" ")
 
 if space == -1:
-    firstname = fullname[0:space]
-else:
     firstname = fullname
+else:
+    firstname = fullname[0:space]
 
 print("Your first name is %s." % firstname)
 ```
