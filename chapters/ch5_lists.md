@@ -292,8 +292,8 @@ here.  This same programming technique will work with most other programming
 language as you encounter them (e.g., C++, Java, etc.).  However, Python has a
 really cool way of performing swaps called *multiple assignment* that your
 author (that's me!) simply can't help himself from showing you!  We can replace
-the code in Listing~\ref{code:swap_good_nohc}) with
-Listing~\ref{code:swap_good_multiassign}).
+the code in Listing~\ref{code:swap_good_nohc} with
+Listing~\ref{code:swap_good_multiassign}.
 
 \begin{codelisting}
 \label{code:swap_good_multiassign}
