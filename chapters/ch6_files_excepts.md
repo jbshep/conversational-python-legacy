@@ -433,10 +433,210 @@ calories, and the carbs.  Then, we proceed as we did previously.
 
 ## Writing Information to Files
 
-This section and the sections that follow are currently being re-edited.  Come
-back later.
+So far in this chapter, we have written code to read information from existing
+files.  Let's learn how to write code that writes to files.  That is, we may
+want to create new files, or we may wish to update existing files.
+
+We shall continue with another food-related example, and we'll hope that you're
+not reading this book close to meal time, otherwise it may be hard to
+concentrate!
+
+Suppose we want to create a program that allows us to make a menu for a meal
+that we would then save for later use.  Let's save this code into a file named
+`write_menu.py`.  Let's ask for each menu item, one after another, until the
+user enters a bare enter/return (i.e., an empty string). Then, we'll write each
+menu item line to a file that we will name `menu.txt`.
+Listing~\ref{code:write_menu} shows the code to accomplish this in all its
+wonderous Python-y glory.
+
+\begin{codelisting}
+\label{code:write_menu}
+\codecaption{Creating \kode{menu.txt}}
+```python, options: "linenos": true
+f = open("menu.txt", "w")
+food = input("What do you want to eat? (Enter nothing to quit.) ")
+while food != "":
+    f.write(food + "\n")
+    food = input("What do you want to eat? (Enter nothing to quit.) ")
+f.close()
+```
+\end{codelisting}
+
+Give this code a try.  After the program ends, a file named `menu.txt` should
+"magically" appear in the same folder as your code file `write_menu.py`.  Go
+ahead and open `menu.txt` and verify that all the items you typed when you first
+ran the program do in fact appear in the file, each on a separate line.
+
+Take note of line 1 in Listing~\ref{code:write_menu}.  See how we changed the
+second parameter of the function call to `open`?  Instead of `"r"`, which means
+"read", we typed `"w"`, which means "write."
+
+Also, consider line 4 in Listing~\ref{code:write_menu}.  The file variable `f`
+has a function named `write`.  Unlike `print`, which always inserts a newline
+(`\n`) at the end of output, `write` does not automatically add a newline. Thus,
+we must manually insert the newline by passing the string expression `food +
+"\n"` to our call to `f.write`.  If we omitted the `"\n"`, all of the food items
+you entered would be squished together on one unreadable line.
+
+There is a downside to this program.  Whenever we run this code,
+`open("menu.txt", "w")` obliterates any pre-existing `menu.txt` file.  Any menu
+that we have previously created is destroyed.  That's maybe not such a good
+thing.  It might be a good idea to show users the menu we already have, if there
+is one, and then ask if they want to create a new menu.
+
+Okay, here we go!  Check out Listing~\ref{code:check_and_write_menu}.
+
+\begin{codelisting}
+\label{code:check_and_write_menu}
+\codecaption{Show and re-create \kode{menu.txt}}
+```python, options: "linenos": true
+infile = open("menu.txt", "r")
+print("The current menu on file is:")
+for menuitem in infile:
+    print(menuitem.rstrip())
+infile.close()
+print()
+
+create_new = input("Would you like to throw away this menu " +
+                   "and create a new one? (y/n): ")
+
+if create_new == "y":
+    outfile = open("menu.txt", "w")
+    food = input("What do you want to eat? (Enter nothing to quit.) ")
+    while food != "":
+        outfile.write(food + "\n")
+        food = input("What do you want to eat? (Enter nothing to quit.) ")
+    outfile.close()
+```
+\end{codelisting}
+
+Run the code in Listing~\ref{code:check_and_write_menu}.  It should show you the
+contents of `menu.txt` and then ask you if you want to create a new menu.  Enter
+`n` and press enter/return.  Re-run the code.  Your menu items should still be
+intact!  Now run the program again.  When it asks you if you want to create a
+new menu, enter `y`.  You will be able to enter several new menu items.  When
+you are finished entering items, you should be able to see those menu items
+whenever you re-run the program.
+
+Our code does suffer from at least one problem, however.  Line 1 of
+Listing~\ref{code:check_and_write_menu} assumes there is a file named
+`menu.txt`.  What if there isn't?  In other words, if we were to run this
+program for the first time without creating a `menu.txt` ahead of time, what
+will happen.  Well, let's try that.  Delete the file `menu.txt`.  Re-run the
+program.  Kablooey!
+
+```console
+Traceback (most recent call last):
+  File "t.py", line 1, in <module>
+    infile = open("menu.txt", "r")
+FileNotFoundError: [Errno 2] No such file or directory: 'menu.txt'
+```
+
+Our code is brittle.  We will fix this in Section~\ref{sec:except}.
 
 ## Exceptions
+\label{sec:except}
+
+Let's not delay in fixing Listing~\ref{code:check_and_write_menu}.  The code,
+again, for the sake of convenience, is:
+
+```python, options: "linenos": true
+infile = open("menu.txt", "r")
+print("The current menu on file is:")
+for menuitem in infile:
+    print(menuitem.rstrip())
+infile.close()
+print()
+
+create_new = input("Would you like to throw away this menu " +
+                   "and create a new one? (y/n): ")
+
+if create_new == "y":
+    outfile = open("menu.txt", "w")
+    food = input("What do you want to eat? (Enter nothing to quit.) ")
+    while food != "":
+        outfile.write(food + "\n")
+        food = input("What do you want to eat? (Enter nothing to quit.) ")
+    outfile.close()
+```
+
+To recap, the problem lies in line 1, which assumes that we already have a file
+named `menu.txt` that resides in the same folder as our code.  If that file does
+not exist, then our code will crash at line 1.  Furthermore, lines 2 through 9
+also rely on this assumption, namely, that we already have a menu saved.  So,
+our first instinct might be to "protect" lines 1 through 9 with an `if`
+statement.  The Python standard libraries has a package named `os` that has
+functions that let us look at the contents of the current folder.  We can use it
+as shown in Listing~\ref{code:menu_with_isfile}.
+
+\begin{codelisting}
+\label{code:menu_with_isfile}
+\codecaption{Show and create menu with error checking}
+```python, options: "linenos": true, "hl_lines": [1,3,5]
+import os
+
+create_new = "y"
+
+if os.path.isfile("menu.txt"):
+    infile = open("menu.txt", "r")
+    print("The current menu on file is:")
+    for menuitem in infile:
+        print(menuitem.rstrip())
+    infile.close()
+    print()
+
+    create_new = input("Would you like to throw away this menu " +
+                        "and create a new one? (y/n): ")
+
+if create_new == "y":
+    outfile = open("menu.txt", "w")
+    food = input("What do you want to eat? (Enter nothing to quit.) ")
+    while food != "":
+        outfile.write(food + "\n")
+        food = input("What do you want to eat? (Enter nothing to quit.) ")
+    outfile.close()
+```
+\end{codelisting}
+
+In Listing~\ref{code:menu_with_isfile}, we've indented lines 6 through 14 from
+our previous code (Listing~\ref{code:check_and_write_menu}).  We are now
+importing the `os` module and using it in line 5 to ensure that `menu.txt`
+exists before we try to open it and read from it.  We also need to initialize
+the variable `create_new` since we only ask the question of whether to create a
+new menu if we already have a menu created (see line 3).
+
+Try to break this code.  Remove `menu.txt` and run the code.  What happens?
+
+It looks like we've fixed everything, so congratulations!  Give yourself a pat
+on the back.  If that is difficult, you may want to consider stretching your
+shoulders more often (heh!).
+
+The strategy we just used is one we've used before in this book, specifically,
+we've used an `if` statement to "guard" a block of other statements.  That's not
+the only way to solve this problem, however.  There is another way to do it, and
+it is one that might make other problems easier to solve in the future as well.
+The other way is to utilize *exceptions*.
+
+You've seen exceptions before in code.  In fact, we saw one at the end of the
+last section.
+
+```console
+Traceback (most recent call last):
+  File "t.py", line 1, in <module>
+    infile = open("menu.txt", "r")
+FileNotFoundError: [Errno 2] No such file or directory: 'menu.txt'
+```
+
+`FileNotFoundError` is an exception!  An exception is an "exceptional condition"
+that, if unhandled, can cause the program to crash.  We've seen others of these
+earlier in the book as well: `NameError`, `TypeError`, `IndexError`, etc.
+
+Notice what we just said about exceptions: they *can* cause a program to crash.
+We can prevent them from causing a crash, however.  We can *catch* exceptions
+when they happen, and then we can respond appropriately to them.
+
+
+
 
 ## Bits, Bytes, and Machine Representation
 
