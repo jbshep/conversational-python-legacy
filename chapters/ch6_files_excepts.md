@@ -473,10 +473,11 @@ second parameter of the function call to `open`?  Instead of `"r"`, which means
 
 Also, consider line 4 in Listing~\ref{code:write_menu}.  The file variable `f`
 has a function named `write`.  Unlike `print`, which always inserts a newline
-(`\n`) at the end of output, `write` does not automatically add a newline. Thus,
-we must manually insert the newline by passing the string expression `food +
-"\n"` to our call to `f.write`.  If we omitted the `"\n"`, all of the food items
-you entered would be squished together on one unreadable line.
+(`\textbackslash n`) at the end of output, `write` does not automatically add a
+newline. Thus, we must manually insert the newline by passing the string
+expression `food + "\textbackslash n"` to our call to `f.write`.  If we omitted
+the `"\textbackslash n"`, all of the food items you entered would be squished
+together on one unreadable line.
 
 There is a downside to this program.  Whenever we run this code,
 `open("menu.txt", "w")` obliterates any pre-existing `menu.txt` file.  Any menu
