@@ -635,10 +635,135 @@ Notice what we just said about exceptions: they *can* cause a program to crash.
 We can prevent them from causing a crash, however.  We can *catch* exceptions
 when they happen, and then we can respond appropriately to them.
 
+Before we go back to Listing~\ref{code:menu_with_isfile} and try to solve the
+problem a different way, let's look at a more simple example that uses
+exceptions.  Let's start with the following code.
 
+```python
+age = int(input("How old are you? "))
+if age >= 18:
+    print("You are old enough to vote.")
+else:
+    print("You are not old enough to vote yet.")
+```
 
+This code is all fine and dandy as long at the users properly enter an integer
+as their input.  If the user types something other than an integer (say,
+"cheetos"), the call to `int` will produce an exception named `ValueError`.
+
+```console
+Traceback (most recent call last):
+  File "s.py", line 1, in <module>
+    age = int(input("How old are you? "))
+ValueError: invalid literal for int() with base 10: 'cheetos'
+```
+
+Instead, we can "try" a certain bit of code, and then also write code that
+should be executed only in the event we receive an exception, like this:
+
+```python, options: "linenos": "true", "hl_lines": [1,7,8]
+try:
+    age = int(input("How old are you? "))
+    if age >= 18:
+        print("You are old enough to vote.")
+    else:
+        print("You are not old enough to vote yet.")
+except ValueError:
+    print("That does not look like a valid age.")
+```
+
+We "try" lines 2 through 6.  If we encounter a `ValueError`, we immediately jump
+down to line 8 and execute that code.  If we didn't have `try` and `except`, we
+would have to write code like this:
+
+```python
+age = input("How old are you? ")
+if age.isdigit():
+    age = int(age)
+    if age >= 18:
+        print("You are old enough to vote.")
+    else:
+        print("You are not old enough to vote yet.")
+else:
+    print("That does not look like a valid age.")
+```
+
+One of the next things about `try`/`except` is we can focus on "normal"
+conditions in our code and then handle "edge" cases in our `except` block.
+
+For the sake of completeness in our terminology, when a function generates an
+exception, we sometimes say that the function *throws* or *raises* an exception.
+The `except` block is responsible for *catching* or *handling* an exception.
+
+A `try` block can be followed by more than one `except` block.  You might think of each `except` block as being like an `elif` in that we can have different blocks of code to be executed depending on the type of exception we catch.  Consider Listing~\ref{code:multi_except}.
+
+\begin{codelisting}
+\label{code:multi_except}
+\codecaption{Show and create menu with error checking}
+```python, options: "linenos": true
+# Try commenting out the different lines in the try block to see what
+# exceptions get caught and handled.
+try:
+    float("cheetos")
+    ["a","b"][7]
+    x
+except ValueError:
+    print("ValueError")
+except IndexError:
+    print("IndexError")
+except:
+    print("Error")
+```
+\end{codelisting}
+
+Line 4 of Listing~\ref{code:multi_except} generates a `ValueError`.  If we
+comment out line 4, then line 5 throws an `IndexError`.  If we comment out lines
+4 and 5, then line 6 throws a `NameError` since `x` is not defined.  The last
+`except` that starts on line 11 catches all other exceptions, including
+`NameError`.  Thus, we do not necessarily need to state the type of exception to
+catch.
+
+Now, let's return to our file reading/writing example involving menus.  We can
+use exceptions to deal with the situation where there is no `menu.txt` file.
+Consider Listing~\ref{code:menu_with_try}.
+
+\begin{codelisting}
+\label{code:menu_with_try}
+\codecaption{Show and create menu with exception handling}
+```python, options: "linenos": true, "hl_lines": [3,12,13]
+create_new = "y"
+
+try:
+    infile = open("menu.txt", "r")
+    print("The current menu on file is:")
+    for menuitem in infile:
+        print(menuitem.rstrip())
+    infile.close()
+    print()
+    create_new = input("Would you like to throw away this menu " +
+                        "and create a new one? (y/n): ")
+except:
+    pass
+
+if create_new == "y":
+    outfile = open("menu.txt", "w")
+    food = input("What do you want to eat? (Enter nothing to quit.) ")
+    while food != "":
+        outfile.write(food + "\n")
+        food = input("What do you want to eat? (Enter nothing to quit.) ")
+    outfile.close()
+```
+\end{codelisting}
+
+The `except` block in Listing~\ref{code:menu_with_try} handles any exceptions
+encountered in lines 4 through 11.  Since `except` must have a body and there's
+really nothing more to do once the exception is caught, we simply write `pass`.
+`pass` is just an empty statement in Python that doesn't do anything other than
+serve as a placeholder.
 
 ## Bits, Bytes, and Machine Representation
+
+This section and the sections that follow are currently being re-edited.
 
 ## (Optional) Introduction to Cryptography
 
