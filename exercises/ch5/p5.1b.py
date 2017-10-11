@@ -13,4 +13,4 @@ min(mylist)
 max(mylist)
 mylist[mylist[1]]
 str(mylist[2])
-",".join(mylist)
+",".join(["cat", "dog"])
