@@ -83,10 +83,10 @@ f.seek(0)
 f.readlines()
 ```
 
-Hey, they’re back!  What do you think `f.seek(0)` does?  (We’ll explain exactly
+Hey, they're back!  What do you think `f.seek(0)` does?  (We'll explain exactly
 what it does in a bit.)
 
-Okay, now let’s try these lines in the Python Shell window.
+Okay, now let's try these lines in the Python Shell window.
 
 ```python
 f.seek(0)
@@ -124,7 +124,7 @@ by typing:
 f.closed    # type is bool
 ```
 
-Let’s make sense of how this all works.  When we open a new file, imagine that
+Let's make sense of how this all works.  When we open a new file, imagine that
 we are setting up a “pipe” in front of our file.  Through the pipe, we can pull
 lines out of a file and into our Python program, line by line.  At any point,
 the end of the pipe is pointing at the next line to be retrieved.
@@ -140,7 +140,7 @@ line = f.readline()
 print(line)
 ```
 
-With each call to `readline()`, the next line will be read through the file’s
+With each call to `readline()`, the next line will be read through the file's
 pipe, and then the pipe will be moved to the location in the file to be read
 next.  To help visualize this process, the first and second `readline` calls are
 shown in Figure~\ref{fig:read1} and Figure~\ref{fig:read2}, respectively.  Note
@@ -179,7 +179,7 @@ we close the file.  It is always good practice to remember to close any files
 you open.
 
 Save your code file and run it.  Does the output look like what you would expect
-(I would guess the answer is "no")?  Let’s look at the output.
+(I would guess the answer is "no")?  Let's look at the output.
 
 ```console
 They have roast duck
@@ -194,7 +194,7 @@ They have caesar salad
 .
 ```
 
-First of all, we don’t see our excited message at all.  Second, the period at
+First of all, we don't see our excited message at all.  Second, the period at
 the end of each `print` statement is on the next line.
 
 Look again at the list value returned by `f.readlines()`, which is `['roast
@@ -207,10 +207,10 @@ the period and one after the period.
 
 This also causes our `if` statement to fail.  When we compare `"roast duck"` to
 `"roast duck\textbackslash n"`, these are technically different strings because the second one
-has a `"\textbackslash n"` character at the end.  That’s why we never see our excited message.
+has a `"\textbackslash n"` character at the end.  That's why we never see our excited message.
 The expression `"roast duck" == "roast duck\textbackslash n"` is `False`.
 
-Let’s fix this code; see Listing~\ref{code:find_duck}.
+Let's fix this code; see Listing~\ref{code:find_duck}.
 
 \begin{codelisting}
 \label{code:find_duck}
@@ -229,7 +229,7 @@ f.close()
 
 The `rstrip` function removes any "whitespace" characters from the end of the
 string.  Whitespace characters include spaces, tabs, and newlines.  Make sure
-you remember to call the `rstrip` function using parentheses.  It’s a common
+you remember to call the `rstrip` function using parentheses.  It's a common
 mistake to forget.  It is perfectly "legal" in Python to do this:
 
 ```python
@@ -281,7 +281,7 @@ In the previous section, we had a file that contained a list of food items.
 What if we wanted to store more information about each food item beyond simply
 its name?  Suppose we wanted to also track how many calories and carbohydrates
 the food item contains?  One way we might do this is to store each piece of
-information on a separate line in a new file (let’s name it `new-menu.txt`),
+information on a separate line in a new file (let's name it `new-menu.txt`),
 like this.
 
 ```console
@@ -300,10 +300,10 @@ The attributes of each item are now listed on three separate lines.  The first
 line is the name of the food item.  The second line is the calorie count.  The
 third line is the number of carbohydrates ("carbs") in grams.
 
-Let’s write code to show all of the items and their attributes, and at the end
-of the program, let’s announce which food has the lowest calorie count.  Let’s
+Let's write code to show all of the items and their attributes, and at the end
+of the program, let's announce which food has the lowest calorie count.  Let's
 focus on the first part initially (see Listing~\ref{code:show_records}), and
-then we’ll come back and add to the code to print out the item with the lowest
+then we'll come back and add to the code to print out the item with the lowest
 calorie count.
 
 \begin{codelisting}
@@ -323,13 +323,13 @@ infile.close()
 ```
 \end{codelisting}
 
-In Listing~\ref{code:show_records}, we attempt to read lines in sets of three’s
+In Listing~\ref{code:show_records}, we attempt to read lines in sets of three's
 since each item now consists of three lines of attributes, the item name, the
 calorie count, and the carbohydrate count.  If we ever get an empty string for
 the first line in the next set of three lines, we know we have reached the end
 of the file.
 
-Now, let’s add the code to track which food as the lowest calorie count.  For
+Now, let's add the code to track which food as the lowest calorie count.  For
 now, if there is a tie, we will announce only the first food with the lowest
 calorie count (see Listing~\ref{code:lowcal_record}).
 
@@ -365,14 +365,14 @@ print("The food with the least calories is %s with %d cal." % \
 In Listing~\ref{code:lowcal_record}, we make two variables before the loop
 starts.  `lowitem` keeps track of the name of the lowest calorie item and
 `lowcal` keeps track of how many calories it was.  Then, inside the loop, we
-check each item to see if its calorie count is lower than what we’ve seen so far
-in the file.  Once the loop is finished and we’ve examined all items, we print
+check each item to see if its calorie count is lower than what we've seen so far
+in the file.  Once the loop is finished and we've examined all items, we print
 our findings.
 
 Storing related values on separate lines is not uncommon, though real-world data
 is often stored differently.  It is very common to find data stored in files
-using the comma-separated values (CSV) format.  Let’s explore how to read CSV
-files.  To do this, let’s make yet another new file and name it `menu.csv` (note
+using the comma-separated values (CSV) format.  Let's explore how to read CSV
+files.  To do this, let's make yet another new file and name it `menu.csv` (note
 the `.csv` file extension).  The contents of this file should appear as follows.
 
 ```console
