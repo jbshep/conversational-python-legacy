@@ -1046,4 +1046,5 @@ returns the smallest value of the three.
 returns the index of the first vowel in the string.
 
 9. Define a function named `count_words` that takes a string as a parameter and
-returns the number of words in the string (as determined by spaces).
+returns the number of words in the string (where words are separated by a
+single space).
