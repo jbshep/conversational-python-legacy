@@ -762,10 +762,210 @@ really nothing more to do once the exception is caught, we simply write `pass`.
 `pass` is just an empty statement in Python that doesn't do anything other than
 serve as a placeholder.
 
-## Bits, Bytes, and Machine Representation
+## Machine Representation (a.k.a. Bits, Bytes, and Nybbles)
 
-This section and the sections that follow are currently being re-edited.
+The files our programs have accessed so far in this chapter have all been *text
+files*.  We have appended the file extension `.txt` to the file's name to remind
+us that the files contain plain text.  Since they contain only plain text, it is
+easy to read their contents in any text editor, including Thonny.
+
+Not all files are text files.  In fact, many files are not text files.  Image
+files (which typically end with `.jpg`, `.png`, or `.bmp`, among others) are not
+easily examined by just opening the file in a text editor and examining the
+contents.  If you do, the file will look like gibberish.  Other programs such as
+image viewers or Web browsers must be used for us to view the contents of an
+image file.
+
+Image files belong to a class of files known as *binary files*.  Rather than
+consisting of lines of strings of characters, binary files contain *bytes*.
+(Actually, text files really consist of bytes, too, but don't concern yourself
+with that now. We'll come back to that later.)
+
+We can read bytes from files and we can write bytes to files if we want programs
+that create or modify images, manipulate music files, or edit video files.
+Before we get into that, we really need to understand what the heck a byte is in
+the first place.
+
+Okay, so here's a byte:
+
+$$0110\,\,0101_2$$ \kode{}
+What?
+
+Why is there a subscripted 2 after a bunch of zeroes and ones?  What is this
+supposed to mean to us?
+
+In short, this byte is a number, but it doesn't look quite like we expect
+numbers to look.  To understand what this means, we have to digress a bit.  What
+follows is actually kind of cool.
+
+Consider something that looks more like a number.  How about $$16$$?  Say the
+name of this number aloud.  If you said "sixteen", then you're correct!  But, what
+does this number *mean*?  It depends.  Maybe it conveys how many years you had
+been alive before you got your driver's license.  Maybe it's the number of
+Mountain Dews in your refrigerator.  Numbers represent a *magnitude*, or the
+*amount* of something.
+
+Even more importantly, we can look at a number and get a sense of just *how big*
+it is.  Why?
+
+1. A number is just a string of symbols.
+2. The order of the symbols conveys magnitude.
+3. The symbols themselves are convey magnitude.
+
+There is a rule for what symbols we are allowed to use.  Each symbol can be a 0,
+1, 2, 3, 4, 5, 6, 7, 8, or 9.  Ever wondered why?
+
+Well, let's go back to the number sixteen.  Here's what the string of symbols
+that makes up the number sixteen (i.e., the "1" and "6") tell us.
+
+\begin{align*}
+16 &= 1\times10^1 + 6\times10^0 \\
+   &= 10 + 6
+\end{align*}
+
+The "1" and the "6" tell us we have one ten and six ones.  Tens is a larger
+magnitude than ones.
+
+Suppose we have the number 9.  What happens when we add 1 to 9?
+
+\begin{equation*}
+9 + 1 = 10
+\end{equation*}
+
+We run out of "room" in one digit to hold the magnitude of the number, so we add
+1 to the next digit to the left.  We now have a "ten," not just ones.
+
+The numbers we use on a daily basis are called *decimal* numbers.  The position
+of each digit represents a power of ten, hence the prefix *deci-*.  Valid
+symbols in each digit position are 0 through 9.
+
+This may all seem very elementary, but it sets the table for what comes next,
+and it's important to realize that numbers are actually strings whose pieces
+have meaning.
+
+With all this in mind, can you successfully write other numbers in the expanded
+form we used above?  In other words, if I give you 16, can you write
+$$1\times10^1 + 6\times10^0$$?  Let's find out.
+
+Write 216 and 1000 in expanded form.
+
+Did you come up with the following?
+
+\begin{align*}
+216 &= 2\times10^2 + 1\times10^1 + 6\times10^0 \\
+    &= 200 + 10 + 6
+\end{align*}
+
+\begin{align*}
+1000 &= 1\times10^3 + 0\times10^2 + 0\times10^1 + 0\times10^0 \\
+     &= 1000 + 0 + 0 + 0
+\end{align*}
+
+We will also refer to this expanded form as *sum of products* since the
+positions of the digits in a number tell us its value when we add up the values
+of the digits, each of which involve multiplication with a power of ten.
+
+When we think about computers, we can envision them as electrical machines.  At
+their simplest level, they consist of lots of very tiny electrical wires where
+each wire is either "on" or "off."  Because of this, there's no good way to
+store numbers in computers using the digits 0 through 9.  We can only have 0 and
+1 where we think of 0 as "off" and 1 as "on."  (For a more comprehensive
+discussion of why it would be hard to create decimal computer, your author
+strongly encourages you to take an introductory physics course that covers
+electromagnetism!)
+
+Since we only have 0 and 1 to work with as symbols, we can no longer work in
+base-10, namely, having digit positions represent powers of ten.  Since digits 0 -
+9 allow us to work with powers of ten, digits 0 - 1 only allow us to represent
+powers of two.  We said that numbers whose symbols convey powers of ten are
+called *decimal* numbers.  Numbers whose symbols convey powers of two are called
+*binary numbers*.
+
+Let us consider the binary number 101.  It's sum-of-products expanded form would
+be:
+
+\begin{align*}
+101 &= 1\times2^2 + 0\times2^1 + 1\times2^0 \\
+    &= 4 + 0 + 1 \\
+    &= 5
+\end{align*}
+
+We took a lot of liberty with how we write numbers, because it looks like I just wrote $$101 = 5$$, which doesn't make any sense!  We need a way to let people know if 101 is a binary number or a decimal number.  We will write the *base* of the number (base-2 binary or base-10 decimal) as a subscript following the number.  Thus:
+
+\begin{align*}
+101_2 = 5_{10}
+\end{align*}
+
+In other words, "101" in binary means the same as "5" in decimal.
+
+To more exactly show sum-of-products in the prior example, we would write:
+
+\begin{align*}
+101_2 &= (1\times2^2 + 0\times2^1 + 1\times2^0)_{10} \\
+    &= (4 + 0 + 1)_{10} \\
+    &= 5_{10}
+\end{align*}
+
+The subscript 10 following the parentheses says "the stuff in the parentheses is
+in base-10."
+
+Okay, let's see if this is making sense.  What is the decimal value of
+$$11011_2$$ in binary?  Write sum-of-products expansion to figure it out.  Try
+it, and try not to look ahead until you have an answer.
+
+Here's the answer, and we'll show a few more steps this time so everything is
+more clear.
+
+\begin{align*}
+11011_2 &= (1\times2^4 + 1\times2^3 + 0\times2^2 + 1\times2^1 + 1\times2^0)_{10} \\
+    &= (16 + 8 + 0 + 2 + 1)_{10} \\
+    &= 27_{10}
+\end{align*}
+
+Try another: $$11111_2$$.
+
+\begin{align*}
+11111_2 &= (1\times2^4 + 1\times2^3 + 1\times2^2 + 1\times2^1 + 1\times2^0)_{10} \\
+    &= (16 + 8 + 4 + 2 + 1)_{10} \\
+    &= 31_{10}
+\end{align*}
+
+The value of each digit in a binary number is twice the amount of the digit to
+its right. This is similar to how each digit in a decimal number is ten times
+the amount of the digit to its right.
+
+It's worth seeing what it looks like to count in binary versus how we
+traditionally count in decimal.  Table~\ref{tbl:dec_bin} shows a side-by-side
+comparison of counting in these two bases.  Note that we have done a few things
+to make the binary numbers easier to read and understand.  First, we have placed
+leading zeroes in front of the binary numbers. This is something that is
+commonly done with binary numbers so that it is easier to see where the 0's are
+and where the 1's are.  Also, we have placed a space between each group of four
+binary digits.  This also helps to tell which digit places are occupied by which
+0's and 1's.
+
+\begin{table}
+\caption{Counting in decimal versus binary\label{tbl:dec_bin}}
+\begin{tabular}{|l|l||l|l|}
+\hline
+Decimal & Binary & Decimal & Binary \\
+\hline
+\kode{0} & \kode{0000 0000} & \kode{10} & \kode{0000 1010} \\
+\kode{1} & \kode{0000 0001} & \kode{11} & \kode{0000 1011} \\
+\kode{2} & \kode{0000 0010} & \kode{12} & \kode{0000 1100} \\
+\kode{3} & \kode{0000 0011} & \kode{13} & \kode{0000 1101} \\
+\kode{4} & \kode{0000 0100} & \kode{14} & \kode{0000 1110} \\
+\kode{5} & \kode{0000 0101} & \kode{15} & \kode{0000 1111} \\
+\kode{6} & \kode{0000 0110} & \kode{16} & \kode{0001 0000} \\
+\kode{7} & \kode{0000 0111} & \kode{17} & \kode{0001 0001} \\
+\kode{8} & \kode{0000 1000} & \kode{18} & \kode{0001 0010} \\
+\kode{9} & \kode{0000 1001} & \kode{19} & \kode{0001 0011} \\
+\hline
+\end{tabular}
+\end{table}
 
 ## (Optional) Introduction to Cryptography
+
+This section and the sections that follow are currently being re-edited.
 
 ## (Optional) Regular Expressions and File Encodings
