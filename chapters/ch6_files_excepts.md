@@ -942,7 +942,8 @@ leading zeroes in front of the binary numbers. This is something that is
 commonly done with binary numbers so that it is easier to see where the 0's are
 and where the 1's are.  Also, we have placed a space between each group of four
 binary digits.  This also helps to tell which digit places are occupied by which
-0's and 1's.
+0's and 1's.  This is similar to the use of commas in decimal numbers when we
+have larger numbers (e.g., 157,246,398).
 
 \begin{table}
 \caption{Counting in decimal versus binary\label{tbl:dec_bin}}
@@ -964,8 +965,77 @@ Decimal & Binary & Decimal & Binary \\
 \end{tabular}
 \end{table}
 
-## (Optional) Introduction to Cryptography
+Did you notice some of the patterns that emerge in Table~\ref{tbl:dec_bin} when
+we count in binary?  The right-most binary digit flips between 0 and 1 with each
+new number we count.  Why?  Well, think about when we count in decimal.  When we
+add 1 repeatedly in decimal, it takes us until we reach 9 and then add 1 before
+we run out of "room" in the right-most digit, so we add one to the tens digit.
+In binary, we run out of "room" in the right-most digit every other time we add
+a 1.  Thus, that digit flips every time.  For the same reason, each binary digit
+"flips" half as often as the digit to its right.
 
-This section and the sections that follow are currently being re-edited.
+Let's introduce some handy terminology.  The word *bit* is used to describe a
+**b**inary **di**git.  A bit is either a 0 or a 1.  If a bit is a 1, we say the
+bit is *set*.  Bits are typically grouped into collections of 8.  8 bits is a
+*byte*.  We typically separate bits in a byte into groups of 4 bits for the sake
+of readability.  A group of 4 bits is called a *nybble* (I am not making this
+up!).
 
-## (Optional) Regular Expressions and File Encodings
+Suppose we jumped ahead in our counting, and I told you that
+
+\begin{equation*}
+0011\,\,1111_{2} = 63_{10}.
+\end{equation*}
+
+Can you use your powers of deduction to find $$x$$ in
+
+\begin{equation*}
+0100\,\,0000_{2} = x_{10}?
+\end{equation*}
+
+Think about it.
+
+What happens when we add 1 to a string of all 1's with binary numbers?  Look
+again at Table~\ref{tbl:dec_bin}.  Can you see how adding the 1 causes all of
+the digits to run out of "room" again.  Thus, adding a 1 to binary number
+consisting solely of 1's results in all of the bits being "flipped."  Therefore,
+
+\begin{align*}
+0011\,\,1111_{2} &= 63_{10} \\
+0100\,\,0000_{2} &= 64_{10}
+\end{align*}
+
+Also, we should expect $$0100\,\,0000_{2}$$ to be a power of two since only a
+single bit is set.
+
+It's easy to tell if a binary number is even or odd.  If the right-most bit is
+set, it's odd.  Otherwise, it's even.
+
+All information in a computer is stored as bytes.  Since bytes are numbers, you
+might wonder how things like character strings are stored in your computer. Each
+number corresponds to a character using something called a *character encoding*.
+For example, the number `65` (`0100 0001` in binary) corresponds to the capital
+letter `A`.  There are different character encodings that computers use.  The
+most basic one is [ASCII](http://www.asciitable.com/).  More comprehensive ones
+exist that include characters from different languages, such as
+[Unicode](http://unicode.org/standard/WhatIsUnicode.html).  Unicode even
+includes encodings for emojis!
+
+If you look at the ASCII codes, you can translate your name into the bytes that
+would represent it in computer memory.  For example, your author's first name
+would reside in computer memory as:
+
+\begin{table}
+\caption{Counting in decimal versus binary\label{tbl:dec_bin}}
+\begin{tabular}{|l|l|l|}
+\hline
+Character & Decimal ASCII Code & Binary ASCI Code \\
+\hline
+J & \kode{65} & \kode{0100 0001} \\
+a & \kode{97} & \kode{0110 0001} \\
+s & \kode{115} & \kode{0111 0011} \\
+o & \kode{111} & \kode{0110 1111} \\
+n & \kode{110} & \kode{0110 1110} \\
+\hline
+\end{tabular}
+\end{table}
