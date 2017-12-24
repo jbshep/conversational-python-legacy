@@ -762,6 +762,32 @@ really nothing more to do once the exception is caught, we simply write `pass`.
 `pass` is just an empty statement in Python that doesn't do anything other than
 serve as a placeholder.
 
+So how do exceptions get raised in the first place?  Consider the following
+example code (see Listing~\ref{code:raise}).
+
+\begin{codelisting}
+\label{code:raise}
+\codecaption{Raising an exception}
+```python, options: "linenos": true, "hl_lines": [3]
+try:
+    print("hello")
+    raise Error
+    print("goodbye")
+except Error:
+    print("Not so fast!")
+```
+\end{codelisting}
+
+The output of the code in Listing~\ref{code:raise} is:
+
+```console
+hello
+Not so fast!
+```
+
+Raising an exception can be a good way in code to say "something's not right and
+we need the programmer to handle it appropriately."
+
 ## Machine Representation (a.k.a. Bits, Bytes, and Nybbles)
 
 The files our programs have accessed so far in this chapter have all been *text
@@ -1021,9 +1047,9 @@ exist that include characters from different languages, such as
 [Unicode](http://unicode.org/standard/WhatIsUnicode.html).  Unicode even
 includes encodings for emojis!
 
-If you look at the ASCII codes, you can translate your name into the bytes that
-would represent it in computer memory.  For example, your author's first name
-would reside in computer memory as:
+If you look at the ASCII codes (use the link above), you can translate your name
+into the bytes that would represent it in computer memory.  For example, your
+author's first name would reside in computer memory as:
 
 \begin{table}
 \caption{Counting in decimal versus binary\label{tbl:dec_bin}}
@@ -1039,3 +1065,6 @@ n & \kode{110} & \kode{0110 1110} \\
 \hline
 \end{tabular}
 \end{table}
+
+The `J` would be stored first as `0100 0001`, followed by the `a` as `0110
+0001`, and so forth.
