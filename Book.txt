@@ -11,4 +11,5 @@ ch4_funcs.md
 ch5_lists.md
 ch6_files_excepts.md
 ch7_dicts.md
-ch8_classes.md
+ch8_searchsort.md
+ch9_classes.md
