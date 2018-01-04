@@ -1094,7 +1094,7 @@ beat an eschatological, extra-terrestrial projectile of doom!
 
 Spend a little time thinking about how you might write code to do different
 things with `votes` and `candidates`.  How many different ways can we
-slice-and-dice this data?  In Section Section~\ref{sec:lists_exercises} (the
+slice-and-dice this data?  In Section~\ref{sec:lists_exercises} (the
 Chapter~\ref{ch:lists} Exercises), you'll be asked to report the winner of each
 county, and you'll need to give each county a name.  Be thinking about how you
 might accomplish that.
