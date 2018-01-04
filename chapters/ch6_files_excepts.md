@@ -1068,3 +1068,8 @@ n & \kode{110} & \kode{0110 1110} \\
 
 The `J` would be stored first as `0100 0001`, followed by the `a` as `0110
 0001`, and so forth.
+
+## Exercises
+\label{sec:files_exercises}
+
+FIXME
