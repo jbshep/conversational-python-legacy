@@ -1376,7 +1376,7 @@ of the resulting list.  For example:
 
     <<(exercises/ch5/p5.10.py)
 
-11. Suppose we have a list of lists (a grid") representing exam grades in a
+11. Suppose we have a list of lists (a "grid") representing exam grades in a
 class.  The rows are individual students’ scores.  The columns are the exam
 scores for each student.  Each score is based on a possible score of 100 points.
 
