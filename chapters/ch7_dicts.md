@@ -266,10 +266,92 @@ However, `def` is a reserved keyword in Python, which we know is used to define
 functions.  So, I had to chose another variable name.  Instead, I chose `defn`
 to stand for "definition."
 
+What if we want to remove a key-value pair from a dictionary?  We can use the
+`del` keyword to accomplish this.  Consider Listing~\ref{code:del_dict_pair},
+specifically line 13.
+
+\begin{codelisting}
+\label{code:del_dict_pair}
+\codecaption{}
+```python, options: "linenos": true, "hl_lines": [13]
+d = {
+    "alpaca" : ["A domesticated camelid"],
+    "bow" : ["A weapon that shoots arrows",
+             "To bend at the waist",
+             ],
+    "rose" : ["A prickly bush that produces fragrant flowers",
+              "The past tense of rise",
+              ],
+}
+
+word = input("Enter a word to remove from the dictionary: ")
+if word in d:
+    del d[word]
+else:
+    print("Sorry, %s doesn't seem to be defined in our dictionary." % word)
+```
+\end{codelisting}
+
+If the user were to type `alpaca`, the pair for the key `"alpaca"` would be
+removed.  Only the pairs for the keys `"bow"` and `"rose"` would remain.
+(Readers will note that removing alpacas from the dictionary would be a terrible
+calamity because they are adorable and charming.  Llamas, on the other hand, are
+jerks.)
+
 ## Iterating through dictionaries
 \label{sec:iter_dict}
 
-FIXME
+There may be instances where we wish to iterate through a `dict` similar to how
+we might traverse a `list`.  Suppose have the following dictionary definition.
+
+```python
+calories = {
+    "egg" : 80.0,
+    "milk" : 80.0,
+    "cheerios" : 100.0,
+    "blueberry" : 0.78,
+    "strawberry" : 4.0,
+}
+```
+
+`calories` is a `dict` that acts as a food database.  It allows programmers to
+look up the calories for a given food.  Thus, `calories["strawberry"]` gives us
+`4.0`.  Suppose we want to see all the foods in our database.  We might write
+the following code.
+
+```python
+for food in calories:
+    print(food)
+```
+
+When a `for` loop operates on a dictionary, the value assigned to the variable
+`food` is actually the *key*.  The output of this code is each of the keys (the
+food names), one on each line.
+
+Now, run this code.  Run it several times.  What do you notice?  In all
+likelihood, the ordering changes for the food names.  We cannot rely on the keys
+to be kept in order when we use a dictionary.  If we want the keys to be sorted
+alphabetically, we would need to do something like what we see in
+Listing~\ref{code:sorted_dict_iter}.
+
+\begin{codelisting}
+\label{code:sorted_dict_iter}
+\codecaption{}
+```python, options: "linenos": true
+for food in sorted(calories.keys()):
+    print(food)
+```
+\end{codelisting}
+
+`keys()` creates a `list` of the keys in `calories`.  `sorted` then returns a
+new `list` with the keys in alphabetical order.
+
+If you're curious where the ordering comes from when you use a loop, you'll
+learn more when you take a class on data structures and learn about *hash
+tables*. Hash tables are used to make dictionaries.  (Very curious readers
+should look on YouTube for a video from PyCon 2010 titled "Mighty Dictionary."
+This will give you an idea how hash tables work and how they organize the
+internals of a dictionary.)
 
 ## Exercises
 \label{sec:dict_exercises}
