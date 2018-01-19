@@ -114,6 +114,7 @@ Terminology time!  The values on the left side of the `:` in our dictionary
 definition (e.g., `"Shayla Succotash"`, etc.) are called *keys*.  The values on
 the right (e.g., `"Comp Sci"`, etc.) are simply called *values*.  Each entry in
 the dictionary that associates a name with a major is called a *key-value pair*.
+`"Larry Linguini"` and  `"Math"` is an example of a key-value pair.
 
 Okay, so now what?  Well, in this book we often ask questions that start with
 "What happens if..." or "What happens when...?" to enhance our understanding of
@@ -210,7 +211,7 @@ It appears that we want a key to have multiple values, potentially.  If we
 wanted to store multiple values in the past, we have relied on `list`s.  So, we
 shall use `list`s once again.  Let us modify the definition of `d` in
 Listing~\ref{code:eng_dict_str} so that the values are no longer strings, but
-rather lists of strings.
+rather lists of strings (that is, a `list` of `str`).
 
 ```python
 d = {
@@ -346,12 +347,12 @@ for food in sorted(calories.keys()):
 `keys()` creates a `list` of the keys in `calories`.  `sorted` then returns a
 new `list` with the keys in alphabetical order.
 
-If you're curious where the ordering comes from when you use a loop, you'll
-learn more when you take a class on data structures and learn about *hash
-tables*. Hash tables are used to make dictionaries.  (Very curious readers
-should look on YouTube for a video from PyCon 2010 titled "Mighty Dictionary."
-This will give you an idea how hash tables work and how they organize the
-internals of a dictionary.)
+If you're curious why the keys are ordered differently when you iterate through
+them using a loop, you'll learn more when you take a class on data structures
+and learn about *hash tables*. Hash tables are used to make dictionaries.  (Very
+curious readers should look on YouTube for a video from PyCon 2010 titled
+"Mighty Dictionary." This will give you an idea how hash tables work and how
+they organize the internals of a dictionary.)
 
 ## Exercises
 \label{sec:dict_exercises}
