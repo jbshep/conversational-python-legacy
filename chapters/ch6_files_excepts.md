@@ -1072,4 +1072,142 @@ The `J` would be stored first as `0100 0001`, followed by the `a` as `0110
 ## Exercises
 \label{sec:files_exercises}
 
-FIXME
+For each of these exercises, your code should properly handle situations where
+files that should exist fail to exist.  That is, rather than just allowing the
+program to crash, you should handle the exceptional condition and print a
+helpful error message, if possible.
+
+1. Write code that reads lines from a file named `input.txt`.  It should then
+print each line to the screen, but it should prefix the line's contents with the
+line number on which it appears.
+
+   For example, if the contents of `input.txt` are:
+
+   ```
+   Haikus are easy \\
+   But sometimes they don't make sense \\
+   Refrigerator
+   ```
+
+   Then the code should print to the screen:
+
+   ```
+   1. Haikus are easy \\
+   2. But sometimes they don't make sense \\
+   3. Refrigerator
+   ```
+
+1. Write code that reads from a file named `input.txt`.  The code should print
+to the screen the _even-numbered_ lines in the file.  The lines should be
+prefixed with the line number on which they appear in the file (much like the
+previous problem).
+
+1. Repeat the previous problem, only this time the program should prompt the
+user for a file name rather than assuming `input.txt` should be used.
+
+1. Write code that writes the first 20 positive even numbers to a file named
+`evens.txt` such that each number is on a separate line in the file.
+
+1. Suppose we have a text file named `temps.txt` that contains a series of
+temperatures.  Each temperature is a `float` on a single line in the file.
+Write code that prints the _average_ temperature given all the temperatures
+in the file.
+
+1. Write code that replaces each line in a file with its reverse.  The program
+should prompt the user for a file name first.
+
+   For example, if the contents of the file are:
+
+   ```
+   The quick brown fox jumps over the lazy dog. \\
+   Pack my box with five dozen liquor jugs.
+   ```
+
+   Then the new contents should become:
+
+   ```
+   .god yzal eht revo spmuj xof nworb kciuq ehT \\
+   .sguj rouqil nezod evif htiw xob ym kcaP
+   ```
+
+1. Repeat the previous exercise, only this time reverse the _order_ of the lines
+in addition to the lines themselves.
+
+   For example, if the contents of the file are:
+
+   ```
+   The quick brown fox jumps over the lazy dog. \\
+   Pack my box with five dozen liquor jugs.
+   (These are all pangrams.)
+   ```
+
+   Then the new contents should become:
+
+   ```
+   ).smargnap lla era esehT( \\
+   .sguj rouqil nezod evif htiw xob ym kcaP
+   .god yzal eht revo spmuj xof nworb kciuq ehT \\
+   ```
+
+1. Suppose we have the following code.
+
+   <<(exercises/ch6/pfinterp1.py)
+
+   And, suppose `input.txt` contains each capital letter of the English alphabet
+   on a single line, like this:
+
+   ```
+   A \\
+   B \\
+   C \\
+   D \\
+   E \\
+   F \\
+   ... and so on through 'Z' \\
+   ```
+
+   What is the output of this code?  Explain why.
+
+1. Convert the following twos-complement 8-bit binary numbers into decimal.
+
+   0001 0000$$_2$$
+
+   0000 1111$$_2$$
+
+   0001 0100$$_2$$
+
+   0010 1000$$_2$$
+
+   0011 1111$$_2$$
+
+   1011 1111$$_2$$
+
+   1001 1001$$_2$$
+
+   1000 0001$$_2$$
+
+1. Convert the following decimal numbers to twos-complement 8-bit binary numbers (use leading zeroes if necessary).
+
+   15$$_{10}$$
+
+   85$$_{10}$$
+
+   102$$_{10}$$
+
+   -102$$_{10}$$
+
+   -128$$_{10}$$
+
+   -127$$_{10}$$
+
+1. Add the following binary numbers using binary arithmetic.  Show your work, especially anytime you carry a one.
+
+   0101 0101$$_2$$
+
+   0001 1101$$_2$$
+
+1. Consider the following code.  What output does it produce?  Use [asciitable.com](http://www.asciitable.com/) to figure it out.
+
+   ```
+   print("%s%s%s" % (chr(77), chr(86), chr(80)))
+   ```
