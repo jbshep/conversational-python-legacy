@@ -357,4 +357,72 @@ they organize the internals of a dictionary.)
 ## Exercises
 \label{sec:dict_exercises}
 
-FIXME
+1. Given the following `dict` definition
+
+   ```
+   d = {"a" : 1, "b" : 2, "c" : 3}
+   ```
+
+   write the type and value of each of the following expressions.  If there is
+   an error, state the error instead.
+
+   a. `d`
+
+   b. `d["b"]`
+
+   c. `d[2]`
+
+   d. `d["x"]`
+
+   e. `"c" in d`
+
+   f. `3 in d`
+
+1. Given the following `dict` definition
+
+   ```
+   d = {"a" : 1, "b" : 2, "c" : 3}
+   ```
+
+   write code that adds a new key `"d"` and gives it the value `4`, and then
+   modifies the key `"c"` and gives it the value `"radish"`.
+
+1. Write a function that stores a `dict` to a file.  The function's name should
+be `dict_to_file` and it should have two parameters.  The first parameter should
+be the `dict`.  The second parameter should be the new file's name.  Assume that
+each key is a `str` and each value is also a `str`.  The format of the file
+should be each key on a line followed by its value on the next line.
+
+1. Write a function that creates a `dict` and fills its contents using lines
+from a file.  The function's name should be `file_to_dict` and it should have
+one parameter: the name of the file.  The function should return the `dict` it
+creates.  Assume the file's format consists of a key on a single line followed
+by the key's value on the line after it.  Also assume both the key and the value
+are strings.
+
+1. Write a function that stores a `dict` that maps strings to lists into a file.
+The function's name should be `str2list_to_file` and it should have two
+parameters.  The first parameter should be the `dict`.  The second parameter
+should be the new file's name.  Assume that each key is a `str` and each value
+is a `list`.  The format of the file should be each key on a line followed by a
+series of lines, where each line is an item in the `list`.  The lines that are
+keys should be prefixed with the string `"K:"`.  This will tell us which lines
+are keys and which are values.
+
+   For example, suppose we define
+
+   ```
+   names = { "Anderson" : ["Steve", "Tyler"], "Smith" : [Susie, Aaron] }
+   ```
+
+   calling `str2list_to_file(names, "names.txt")` should create a file named
+   `names.txt` that has the contents
+
+   ```
+   K:Anderson \\
+   Steve \\
+   Tyler \\
+   K:Smith \\
+   Susie \\
+   Aaron
+   ```
