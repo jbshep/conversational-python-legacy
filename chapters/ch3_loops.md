@@ -1654,9 +1654,9 @@ You can still ignore capitalization and punctuation.
 and punctuation.
 
 8. Write a program that translates English sentences to Pig Latin.
-    To form the Pig Latin equivalent of a word, remove the first consonant sound of the word and append it to the end, followed by  "-ay".  Thus, "cat" becomes "at-cay" and "ship" becomes "ip-shay."   The latter example demonstrates that consonant sounds can be blended consonants.
+    To form the Pig Latin equivalent of a word, remove the first consonant sound of the word and append it to the end preceded by a dash and followed by "ay".  Thus, "cat" becomes "at-cay" and "ship" becomes "ip-shay."   The latter example demonstrates that consonant sounds can be blended consonants.
 
-    If an English word begins with a vowel, the word is simplify restated with "-way" appended to it.  In other words, "apple" becomes "apple-way."  Your solution should handle capitalization and punctuation.
+    If an English word begins with a vowel, the word is simply restated with "-way" appended to it.  In other words, "apple" becomes "apple-way."  Your solution should handle capitalization and punctuation.
 
     Example of a working program:
 
