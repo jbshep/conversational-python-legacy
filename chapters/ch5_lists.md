@@ -581,7 +581,7 @@ far with each step of the loop.
 
 \begin{codelisting}
 \label{code:smallest_firstattempt}
-\codecaption{Function definition for \kode{total}, first attempt}
+\codecaption{Function definition for \kode{smallest}, first attempt}
 ```python, options: "linenos": true
 def smallest(numbers):
     small = 0.0
@@ -629,7 +629,7 @@ something like Listing~\ref{code:smallest_secondattempt}.
 
 \begin{codelisting}
 \label{code:smallest_secondattempt}
-\codecaption{Function definition for \kode{total}, second attempt}
+\codecaption{Function definition for \kode{smallest}, second attempt}
 ```python, options: "linenos": true, "hl_lines": [2]
 def smallest(numbers):
     small = 1000000000.0
@@ -653,7 +653,7 @@ Listing~\ref{code:smallest}.  Naturally, we'll want to test it, however.
 
 \begin{codelisting}
 \label{code:smallest}
-\codecaption{Function definition for \kode{total}, corrected}
+\codecaption{Function definition for \kode{smallest}, corrected}
 ```python, options: "linenos": true, "hl_lines": [2]
 def smallest(numbers):
     small = numbers[0]
