@@ -1372,7 +1372,10 @@ list.  For example:
 10. Define a function named `merge` that takes two lists and returns a new
 single list that is the result of interleaving the two original lists.  If one
 list is exhausted before the other, the remaining items are tacked on to the end
-of the resulting list.  For example:
+of the resulting list.  To perform the merge, the function should select the
+first item from the first list, the first item from the second list, the second
+item from the first list, the second item from the second list, etc.  For
+example:
 
     <<(exercises/ch5/p5.10.py)
 
