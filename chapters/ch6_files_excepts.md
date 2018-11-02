@@ -771,9 +771,9 @@ example code (see Listing~\ref{code:raise}).
 ```python, options: "linenos": true, "hl_lines": [3]
 try:
     print("hello")
-    raise Error
+    raise Exception
     print("goodbye")
-except Error:
+except Exception:
     print("Not so fast!")
 ```
 \end{codelisting}
