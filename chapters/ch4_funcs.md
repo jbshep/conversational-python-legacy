@@ -219,12 +219,12 @@ carrsha@heu.edu
 ```
 
 How does this work?  When we call a function, we must provide the correct number
-of values to the function.  The correct number of values is based on how many
-parameters the function has.  In this case, the function `print_email` has two
-parameters, `first` and `last`.  The *values* we pass to the definition of a
-function are called the *arguments*.  When a function is called, the arguments’
-values become the parameters’ values.  Thus, `first` gets the value `"Shania"`
-and `last` gets the value `"Carrington"`.
+of values to the function, in the right order.  The correct number of values is
+based on how many parameters the function has.  In this case, the function
+`print_email` has two parameters, `first` and `last`.  The *values* we pass to
+the definition of a function are called the *arguments*.  When a function is
+called, the arguments’ values become the parameters’ values.  Thus, `first` gets
+the value `"Shania"` and `last` gets the value `"Carrington"`.
 
 Clever readers might suspect that this function has a bug.  It looks like if the
 last name is fewer than four characters long or the first name is fewer than
