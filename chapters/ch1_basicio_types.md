@@ -30,30 +30,16 @@ interpreter, and the hardware.
 language\label{fig:interp}](images/ch1/interp.jpg)
 
 To get started programming in Python, we will need to install two software
-programs on our computer.  These programs will help us to write our own
-programs.  One is the Python interpreter. The other is named *Thonny*.  Thonny
-will give us a window in which to type our code, and then Thonny will hand our
-code to the Python interpreter so that we can run our program.
+programs on our computer.  One program will help us write code for the computer
+to execute.  The second program will run our code so that we can see what it
+does.  The first program is named *Thonny*.  The second program is simply known
+as the *Python interpreter*.  Fortunately, we don't need to download these two
+programs separately.  When we download and install Thonny, Thonny contains the
+Python interpreter as well for free!
 
-First, let's install Python.
+Let's install Thonny, and by extension, the Python interpreter.
 
-- Open your favorite Web browser (mine is Google Chrome).
-- In your Web browser, go to the Web address
-  [https://www.python.org/](https://www.python.org/).
-- The Python Web page will appear.  Choose *Downloads* and then select the most
-  recent version of Python (that is, the Python that has the biggest version
-  number).
-- Find the file that you've downloaded and double-click on it to run it.
-- An installer program will be displayed.  Follow the steps in the installer to
-  finish installing Python.  If you are unsure of what to do at a particular
-  step, accept the default information in that step.
-
-If you made it through these steps, then "Hurray!"  If not, get help from a
-knowledgeable human near you.
-
-Once you have Python installed, we can then install Thonny.
-
-- Open your favorite Web browser, again (mine is Google Chrome... still!).
+- Open your favorite Web browser, again (mine is Google Chrome).
 - In your Web browser, go to the Web address
   [http://thonny.org/](http://thonny.org/).
 - The Thonny Web page will appear.  In the upper-right hand you will see options

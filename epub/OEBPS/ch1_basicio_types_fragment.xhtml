@@ -14,15 +14,17 @@
 
         <body>
           
-      <div id="cha-basicio_types" class="chapter"><h1><a href="ch1_basicio_types_fragment.xhtml#cha-basicio_types" class="heading hyperref"><span class="number">Chapter 1 </span>Basic I/O, Statements, Expressions, Variables, and Types</a></h1>
+      <div id="ch-basicio_types" class="chapter"><h1><a href="ch1_basicio_types_fragment.xhtml#ch-basicio_types" class="heading hyperref"><span class="number">Chapter 1 </span>Basic I/O, Statements, Expressions, Variables, and Types</a></h1>
 </div>
-<div id="sec-getting_started" class="section"><h2><a href="ch1_basicio_types_fragment.xhtml#sec-getting_started" class="heading hyperref"><span class="number">1.1 </span>Getting set up to program</a></h2>
+<div id="sec-getting_started" class="section"><h2><a href="ch9_classes_fragment.xhtml#sec-getting_started" class="heading hyperref"><span class="number">1.1 </span>Getting set up to program</a></h2>
 <p class="noindent">Computers consist of hardware and software.<span class="intersentencespace"></span> Hardware is the physical stuff you
 can hold in your hands, like memory, disks, keyboards, etc.<span class="intersentencespace"></span> Software tells the
-hardware what to do.<span class="intersentencespace"></span> In this book, we’re going to learn how to create software.<span class="intersentencespace"></span> Creating software is called <em>programming</em> or <em>coding</em>.<span class="intersentencespace"></span> When coding, we give the
-computer instructions for it to do.</p>
+hardware what to do.<span class="intersentencespace"></span> The hardware stores the software and “runs” it.<span class="intersentencespace"></span> In this
+book, we’re going to learn how to create software.<span class="intersentencespace"></span> Creating software is called
+<em>programming</em> or <em>coding</em>.<span class="intersentencespace"></span> When coding, we give the computer instructions for
+it to do.</p>
 <p>Typically, hardware consists of a bunch of electrical circuits.<span class="intersentencespace"></span> Instructions
-for controlling the circuits is called <em>machine code</em> (which is basically a
+for controlling the circuits are called <em>machine code</em> (which is basically a
 bunch of 1’s and 0’s that tell the computer which electrical circuits to turn on
 and off… beep beep boop boop).<span class="intersentencespace"></span> However, we will not need to learn machine
 code or worry about electrical circuits.<span class="intersentencespace"></span> We will write code that looks
@@ -42,7 +44,65 @@ programs on our computer.<span class="intersentencespace"></span> These programs
 programs.<span class="intersentencespace"></span> One is the Python interpreter.<span class="intersentencespace"></span> The other is named <em>Thonny</em>.<span class="intersentencespace"></span> Thonny
 will give us a window in which to type our code, and then Thonny will hand our
 code to the Python interpreter so that we can run our program.</p>
-<p>FIXME installation of Python and Thonny will go here.</p>
+<p>First, let’s install Python.</p>
+<ul>
+<li>Open your favorite Web browser (mine is Google Chrome).<span class="intersentencespace"></span>
+</li>
+<li>In your Web browser, go to the Web address
+<a href="https://www.python.org/" rel="noopener">https://www.python.org/</a>.<span class="intersentencespace"></span>
+</li>
+<li>The Python Web page will appear.<span class="intersentencespace"></span> Choose <em>Downloads</em> and then select the most
+recent version of Python (that is, the Python that has the biggest version
+number).<span class="intersentencespace"></span>
+</li>
+<li>Find the file that you’ve downloaded and double-click on it to run it.<span class="intersentencespace"></span>
+</li>
+<li>An installer program will be displayed.<span class="intersentencespace"></span> Follow the steps in the installer to
+finish installing Python.<span class="intersentencespace"></span> If you are unsure of what to do at a particular
+step, accept the default information in that step.<span class="intersentencespace"></span>
+</li></ul>
+<p>If you made it through these steps, then “Hurray!”<span class="intersentencespace"></span> If not, get help from a
+knowledgeable human near you.</p>
+<p>Once you have Python installed, we can then install Thonny.</p>
+<ul>
+<li>Open your favorite Web browser, again (mine is Google Chrome… still!).<span class="intersentencespace"></span>
+</li>
+<li>In your Web browser, go to the Web address
+<a href="http://thonny.org/" rel="noopener">http://thonny.org/</a>.<span class="intersentencespace"></span>
+</li>
+<li>The Thonny Web page will appear.<span class="intersentencespace"></span> In the upper-right hand you will see options
+to download Thonny for your computer.<span class="intersentencespace"></span> If you have a Windows computer, choose
+Windows.<span class="intersentencespace"></span> If you have Mac, choose Mac.<span class="intersentencespace"></span> If you have Linux, choose Linux.<span class="intersentencespace"></span>
+</li>
+<li>Find the file that you’ve downloaded and double-click on it to run it.<span class="intersentencespace"></span>
+</li>
+<li>An installer program will be displayed.<span class="intersentencespace"></span> Follow the steps in the installer to
+finish installing Thonny.<span class="intersentencespace"></span> If you are unsure of what to do at a particular
+step, accept the default information in that step.<span class="intersentencespace"></span>
+</li></ul>
+<p>Now, find the Thonny program on your computer and run it.<span class="intersentencespace"></span> The main Thonny
+window is shown in <a href="ch1_basicio_types_fragment.xhtml#fig-thonny_basic" class="hyperref">Figure <span class="ref">1.2</span></a>.</p>
+<div class="center figure" id="fig-thonny_basic">
+<div class="graphics image"><img src="images/ch1/thonny_basic.png" alt="images/ch1/thonny_basic" /></div><div class="caption"><span class="header">Figure 1.2 </span><span class="description"></span></div></div>
+<p>Notice that there are two “parts” to the Thonny window.<span class="intersentencespace"></span> The top part is where
+you type Python code.<span class="intersentencespace"></span> The bottom part is called the Python <em>Shell</em> window.<span class="intersentencespace"></span> The
+shell is where you will see the result of your code, which we call the <em>output</em>.</p>
+<p>Normally, you’ll be able to write code in code window, save it to a file, and
+then run it to see the output in the Python Shell window.<span class="intersentencespace"></span> Additionally, you can
+type single lines of code into the Python Shell window if you want to experiment
+a little bit before writing your finished program code.<span class="intersentencespace"></span> We’ll encourage you to
+do both types of activities throughout this book.</p>
+<p>Notice that the code window in Thonny displays something like “untitled.”<span class="intersentencespace"></span> Let’s
+go ahead and start saving any code we type into a file.<span class="intersentencespace"></span> That way, after we
+close Thonny we can always come back and work on our code some more later.<span class="intersentencespace"></span> In
+Thonny, choose <strong>File –&gt; Save As…</strong> from the top menu.<span class="intersentencespace"></span> A dialog window will
+appear.<span class="intersentencespace"></span> Choose an appropriate folder location for your new file (and all other
+Python code files you’ll create in this book), and then let’s name this first
+file <code>hello.py</code>.<span class="intersentencespace"></span> Python files always end with the suffix <code>.py</code>.<span class="intersentencespace"></span> This helps us
+remember what type of file it is.<span class="intersentencespace"></span> We call these files Python source code files,
+or simply Python source files.<span class="intersentencespace"></span> Click the <strong>Save</strong> button and return to the
+Thonny code window.</p>
+<p>Okay, let’s learn some Python!</p>
 </div>
 <div id="sec-print" class="section"><h2><a href="ch1_basicio_types_fragment.xhtml#sec-print" class="heading hyperref"><span class="number">1.2 </span>The <code>print</code> statement</a></h2>
 <p class="noindent">You are now ready to start typing <em>statements</em> into the file <code>hello.py</code>.<span class="intersentencespace"></span> These
@@ -342,9 +402,9 @@ statement, <code>cats</code> is <code>6</code>.<span class="intersentencespace">
 <code>7</code>.<span class="intersentencespace"></span> Therefore, the assignment statement <code>cats = cats + 1</code> is essentially the
 same as saying <code>cats = 7</code>.</p>
 <p>We can visualize how this assignment statement is <em>evaluated</em> in
-<a href="ch1_basicio_types_fragment.xhtml#fig-cats_eval" class="hyperref">Figure <span class="ref">1.2</span></a>.</p>
+<a href="ch1_basicio_types_fragment.xhtml#fig-cats_eval" class="hyperref">Figure <span class="ref">1.3</span></a>.</p>
 <div class="center figure" id="fig-cats_eval">
-<div class="graphics image"><img src="images/ch1/cats_eval.png" alt="images/ch1/cats_eval" /></div><div class="caption"><span class="header">Figure 1.2: </span><span class="description">Evaluating an assignment
+<div class="graphics image"><img src="images/ch1/cats_eval.png" alt="images/ch1/cats_eval" /></div><div class="caption"><span class="header">Figure 1.3: </span><span class="description">Evaluating an assignment
 statement
 </span></div></div>
 <p>Remember, the equals sign performs assignment of the value produced by the RHS
@@ -528,7 +588,7 @@ code after the <code>input</code> statement in <a href="ch1_basicio_types_fragme
 <div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="n">cats</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"How many cats do you have? "</span><span class="p">)</span>
 <span class="lineno">2</span> <span class="hll"><span class="n">cats</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cats</span><span class="p">)</span>
 </span><span class="lineno">3</span> <span class="n">cats</span> <span class="o">=</span> <span class="n">cats</span> <span class="o">+</span> <span class="mi">4</span>			
-<span class="lineno">4</span> <span class="k">print</span><span class="p">(</span><span class="s">"In a month’s time, you will have"</span><span class="p">,</span> <span class="n">cats</span><span class="p">,</span> <span class="s">"cats."</span><span class="p">)</span>
+<span class="lineno">4</span> <span class="k">print</span><span class="p">(</span><span class="s">"In a month's time, you will have"</span><span class="p">,</span> <span class="n">cats</span><span class="p">,</span> <span class="s">"cats."</span><span class="p">)</span>
 </pre></div></div></div><p>The <code>int</code> command converts the string value stored in <code>cats</code> to an integer, and
 then it overwrites the value of <code>cats</code> to this new <code>int</code> value.<span class="intersentencespace"></span> Converting a
 value from one type to another is called <em>casting</em>.</p>
@@ -536,9 +596,10 @@ value from one type to another is called <em>casting</em>.</p>
 those errors make the program crash and we see an actual error message in
 <span style="color: red">red text</span> on the screen.<span class="intersentencespace"></span> Other times, however, we don’t get a
 nice error message.<span class="intersentencespace"></span> Instead, the program appears to behave erroneously.<span class="intersentencespace"></span> Erroneous code is called a <em>bug</em>, and it is up to us to “debug” the program.</p>
-<p>FIXME At some point, we’ll have a nice detour in this box about the origin of
-the term “debug.” It’s an amusing historical tale.<span class="intersentencespace"></span> For now, read this:
-http://www.wired.com/2013/12/googles-doodle-honors-grace-hopper-and-entomology/</p>
+<p>At some point in this book’s sure-to-be-glorious future, we’ll have a nice
+detour in this box about the origin of the term “debug.”<span class="intersentencespace"></span> It’s an amusing
+historical tale.<span class="intersentencespace"></span> For now, read this:
+<a href="http://www.wired.com/2013/12/googles-doodle-honors-grace-hopper-and-entomology/" rel="noopener">http://www.wired.com/2013/12/googles-doodle-honors-grace-hopper-and-entomology/</a>.</p>
 <p>Let’s practice detecting and fixing bugs.<span class="intersentencespace"></span> We’ll again use
 <a href="ch1_basicio_types_fragment.xhtml#code-cats_typeerror" class="hyperref">Listing <span class="ref">1.4</span></a> as our starting point, only this time instead
 of adding <code>4</code> to the number of cats, we will double the number of cats by
@@ -552,7 +613,7 @@ accurate representation of what happens to cat populations.<span class="intersen
 
 <div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="n">cats</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"How many cats do you have? "</span><span class="p">)</span>
 <span class="lineno">2</span> <span class="hll"><span class="n">cats</span> <span class="o">=</span> <span class="n">cats</span> <span class="o">*</span> <span class="mi">2</span>		
-</span><span class="lineno">3</span> <span class="k">print</span><span class="p">(</span><span class="s">"In a month’s time, you will have"</span><span class="p">,</span> <span class="n">cats</span><span class="p">,</span> <span class="s">"cats."</span><span class="p">)</span>
+</span><span class="lineno">3</span> <span class="k">print</span><span class="p">(</span><span class="s">"In a month's time, you will have"</span><span class="p">,</span> <span class="n">cats</span><span class="p">,</span> <span class="s">"cats."</span><span class="p">)</span>
 </pre></div></div></div><p>Note that we forgot to cast <code>cats</code> to be an <code>int</code>.<span class="intersentencespace"></span> We might expect this
 program to have a <code>TypeError</code> since it doesn’t make sense to multiply a string
 and an integer.<span class="intersentencespace"></span> In fact, this is not what happens.<span class="intersentencespace"></span> Type <code>3</code> for the number of
@@ -618,11 +679,11 @@ list of these operators and their function.</p>
 </tr><tr><td class="left_border align_right right_border"></td>
 <td class="align_left right_border"><code class="tt">Example 3</code>:</td>
 </tr><tr><td class="left_border align_right right_border"></td>
-<td class="align_left right_border">Suppose we have a variable <code>ch</code> that contains a single character <code>‘!’</code></td>
+<td class="align_left right_border">Suppose we have a variable <code>ch</code> that contains a single character <code>‘!’</code><span class="intersentencespace"></span></td>
 </tr><tr><td class="left_border align_right right_border"></td>
 <td class="align_left right_border"><code>"OMG%c%c%c" % (ch, ch, ch)</code></td>
 </tr><tr class="bottom_border"><td class="left_border align_right right_border"></td>
-<td class="align_left right_border">would produce the string <code>"OMG!!!”</code>.<span class="intersentencespace"></span></td>
+<td class="align_left right_border">would produce the string <code>"OMG!!!"</code>.<span class="intersentencespace"></span></td>
 </tr></tbody></table><div class="caption"><span class="header">Table 1.2: </span><span class="description">String operators
 </span></div></div>
 <div id="tbl-str_fmts" class="table"><table class="tabular">
@@ -707,8 +768,10 @@ tuned.</p>
 </li></ol>
 <p>From now on, we will refer to things like <code>print</code>, <code>input</code>, and <code>type</code> as
 functions rather than as commands.<span class="intersentencespace"></span> Note that assignment statements can have
-function calls in them, like <code>name = input("What is your name?<span class="intersentencespace"></span> ")</code>.<span class="intersentencespace"></span> This
-statement is an assignment statement, and the RHS is a function call.</p>
+function calls in them, like</p>
+<div class="code"><div class="highlight"><pre><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your name? "</span><span class="p">)</span>
+</pre></div></div>
+<p>This statement is an assignment statement, and the RHS is a function call.</p>
 <p>The expressions that are placed between the parentheses after the function’s
 name are called <em>arguments</em>.<span class="intersentencespace"></span> Some functions take no arguments, some functions
 take one argument, and some other functions can take several arguments.<span class="intersentencespace"></span> Arguments are separated with commas.<span class="intersentencespace"></span> Arguments tell the function how to do its
@@ -733,13 +796,13 @@ expression, we could do both the <code>input</code> and the <code>int</code> cas
 this.</p>
 <div class="code"><div class="highlight"><pre><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"What is your age? "</span><span class="p">))</span>
 </pre></div></div>
-<p>The <code>input</code> function is called first, and the result returned by <code>input</code> is then given to <code>int</code>, which casts the result from a string to an integer.<span class="intersentencespace"></span> Students are often puzzled by what appears to be “double right parentheses” at the end of the above statement.<span class="intersentencespace"></span> Note that the last right parenthesis matches the left parenthesis for <code>int</code>, and the next to last right parenthesis matches the left parenthesis for <code>input</code>.<span class="intersentencespace"></span> This is shown visually in <a href="ch1_basicio_types_fragment.xhtml#fig-match_parens" class="hyperref">Figure <span class="ref">1.3</span></a>.</p>
+<p>The <code>input</code> function is called first, and the result returned by <code>input</code> is then given to <code>int</code>, which casts the result from a string to an integer.<span class="intersentencespace"></span> Students are often puzzled by what appears to be “double right parentheses” at the end of the above statement.<span class="intersentencespace"></span> Note that the last right parenthesis matches the left parenthesis for <code>int</code>, and the next to last right parenthesis matches the left parenthesis for <code>input</code>.<span class="intersentencespace"></span> This is shown visually in <a href="ch1_basicio_types_fragment.xhtml#fig-match_parens" class="hyperref">Figure <span class="ref">1.4</span></a>.</p>
 <div class="center figure" id="fig-match_parens">
-<div class="graphics image"><img src="images/ch1/match_parens.png" alt="images/ch1/match_parens" /></div><div class="caption"><span class="header">Figure 1.3: </span><span class="description">Use of arrows to showing matching parentheses
+<div class="graphics image"><img src="images/ch1/match_parens.png" alt="images/ch1/match_parens" /></div><div class="caption"><span class="header">Figure 1.4: </span><span class="description">Use of arrows to showing matching parentheses
 </span></div></div>
-<p>If the user were to type <code>18</code>, the code above would be executed and “transformed” through the steps shown in <a href="ch1_basicio_types_fragment.xhtml#fig-stmt_exec" class="hyperref">Figure <span class="ref">1.4</span></a>.</p>
+<p>If the user were to type <code>18</code>, the code above would be executed and “transformed” through the steps shown in <a href="ch1_basicio_types_fragment.xhtml#fig-stmt_exec" class="hyperref">Figure <span class="ref">1.5</span></a>.</p>
 <div class="center figure" id="fig-stmt_exec">
-<div class="graphics image"><img src="images/ch1/stmt_exec.png" alt="images/ch1/stmt_exec" /></div><div class="caption"><span class="header">Figure 1.4: </span><span class="description">Statement execution
+<div class="graphics image"><img src="images/ch1/stmt_exec.png" alt="images/ch1/stmt_exec" /></div><div class="caption"><span class="header">Figure 1.5: </span><span class="description">Statement execution
 </span></div></div>
 <p>Just for fun (again: whee!!), let’s change line 4 of <a href="ch1_basicio_types_fragment.xhtml#code-age_inc" class="hyperref">Listing <span class="ref">1.8</span></a> and try out the string formatting operator (<code>%</code>).<span class="intersentencespace"></span> Instead of this,</p>
 <div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"In one year, you will be"</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s">"years old."</span><span class="p">)</span>
@@ -774,17 +837,175 @@ in other programming languages (e.g., C, Java, etc.).</p>
 which of the two blocks of code (or a combination of them) looks the most
 readable to you.</p>
 </div>
-<div id="sec-comments" class="section"><h2><a href="ch1_basicio_types_fragment.xhtml#sec-comments" class="heading hyperref"><span class="number">1.7 </span>Comments</a></h2>
-<p class="noindent">As we go forward in learning Python, our programs will get longer and more
-intricate.<span class="intersentencespace"></span> It may be helpful to annotate our code with short comments to remind
-us what our code does.<span class="intersentencespace"></span> <a href="ch1_basicio_types_fragment.xhtml#code-age_w_comments" class="hyperref">Listing <span class="ref">1.9</span></a> shows a (somewhat
-silly) example.</p>
-<div class="codelisting" id="code-age_w_comments"><div class="heading"><span class="number">Listing 1.9</span> 
+<div id="sec-handy_funcs" class="section"><h2><a href="ch1_basicio_types_fragment.xhtml#sec-handy_funcs" class="heading hyperref"><span class="number">1.7 </span>Handy functions</a></h2>
+<p class="noindent">The purpose of this book is to teach novice programmers how to program.<span class="intersentencespace"></span> The
+purpose is not to have you learn every single thing about the Python programming
+language.<span class="intersentencespace"></span> To that point, this book is not intended to be a desk reference for
+all things Python.<span class="intersentencespace"></span> If you want to find information about a particular language
+feature or a list of available functions, the best way to look is to use a Web
+search (like Google) or go straight to the <a href="https://docs.python.org/" rel="noopener">Python
+Documentation</a> online.</p>
+<p>That said, there are a number of handy functions that come “pre-packaged” with
+Python and ready for you to use.<span class="intersentencespace"></span> We will list a few of them here in the
+subsections that follow, since we’re highly confident you’ll use them very soon.<span class="intersentencespace"></span> We’ll introduce more functions throughout the book.<span class="intersentencespace"></span> Eventually, you’ll learn
+how to create your own functions.<span class="intersentencespace"></span> That will happen in <a href="ch4_funcs_fragment.xhtml#ch-funcs" class="hyperref">Chapter <span class="ref">4</span></a>.<span class="intersentencespace"></span> Creating your own functions is pretty cool.</p>
+<p>Some functions can be called just by stating their name.<span class="intersentencespace"></span> For example, we can
+use the <code>print</code> function just by typing something like <code>print("Hello")</code>.<span class="intersentencespace"></span> Other
+functions are part of what we call <em>libraries</em>.<span class="intersentencespace"></span> One example is the <code>math</code>
+library.<span class="intersentencespace"></span> In order to use functions in the <code>math</code> library, we must do two
+things.<span class="intersentencespace"></span> First, we must type the statement <code>import math</code>.<span class="intersentencespace"></span> Then, <code>math</code> library
+functions start with the prefix <code>math.</code><span class="intersentencespace"></span> (read aloud as “math-dot”), so when we
+call them we must use the <code>math.</code><span class="intersentencespace"></span> prefix.<span class="intersentencespace"></span> Here is an example of using a
+function from a library (see <a href="ch1_basicio_types_fragment.xhtml#code-import_math" class="hyperref">Listing <span class="ref">1.9</span></a>).</p>
+<div class="codelisting" id="code-import_math"><div class="heading"><span class="number">Listing 1.9</span> 
 
 <span class="description"></span>
 </div>
 
-<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="c"># Get the user’s age.</span>
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="hll"><span class="kn">import</span> <span class="nn">math</span>
+</span><span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="n">number</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"Enter a number: "</span><span class="p">))</span>
+<span class="lineno">4</span> <span class="hll"><span class="n">squared</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span><span class="lineno">5</span> <span class="k">print</span><span class="p">(</span><span class="s">"Your number squared is </span><span class="si">%f</span><span class="s">."</span> <span class="o">%</span> <span class="n">squared</span><span class="p">)</span>
+</pre></div></div></div><p>In <a href="ch1_basicio_types_fragment.xhtml#code-import_math" class="hyperref">Listing <span class="ref">1.9</span></a> line 4, the function named <code>pow</code> is contained
+in the library <code>math</code>.<span class="intersentencespace"></span> Because of this, we must type <code>math.pow</code> for the
+function name in order to call it.<span class="intersentencespace"></span> As you may be able to guess, <code>pow</code> raises a
+number to a power.<span class="intersentencespace"></span> In this case, we are raising whatever number the user types
+to the second power, which is called squaring the number.</p>
+<div id="subsec-math_funcs" class="subsection"><h3><a href="ch1_basicio_types_fragment.xhtml#subsec-math_funcs" class="heading hyperref"><span class="number">1.7.1 </span>Math functions</a></h3>
+<p class="noindent">Suppose <code>i</code> is an <code>int</code> variable and <code>f</code> and <code>g</code> are both <code>float</code> variables.<span class="intersentencespace"></span> Said another way, <code>type(i) == int</code>, <code>type(f) == float</code>, and <code>type(g) == float</code>.<span class="intersentencespace"></span> Some of the functions in <a href="ch1_basicio_types_fragment.xhtml#tbl-math_funcs" class="hyperref">Table <span class="ref">1.4</span></a> belong to the <code>math</code> library
+and some do not.<span class="intersentencespace"></span> If we want to use these functions, we need to first type the
+statement <code>import math</code>.<span class="intersentencespace"></span> If we don’t write <code>import math</code>, we will get a
+<code>NameError</code> that tells us <code>math</code> is not defined.</p>
+<p>Here is how to read <a href="ch1_basicio_types_fragment.xhtml#tbl-math_funcs" class="hyperref">Table <span class="ref">1.4</span></a>.<span class="intersentencespace"></span> If the function is shown as <code>i =
+math.ceil(f)</code>, that means the function expects us to pass it a <code>float</code> (hence
+the <code>f</code> in parentheses), and the function will return an <code>int</code> (hence the <code>i</code> on
+the LHS of the equals).</p>
+<p>There are many more functions found in <code>math</code>, but these are the ones you’re
+most likely to use in the near future.<span class="intersentencespace"></span> Again, consult the online <a href="https://docs.python.org/" rel="noopener">Python
+Documentation</a> if there’s something specific you’re
+looking for that’s not mentioned in this subsection.</p>
+<div id="tbl-math_funcs" class="table"><table class="tabular">
+<tbody><tr class="top_border bottom_border"><td class="left_border align_left right_border">Function</td>
+<td class="align_left right_border">Returns</td>
+</tr><tr><td class="left_border align_left right_border"><code>i = round(f)</code></td>
+<td class="align_left right_border">The integer resulting from rounding <code>f</code>.<span class="intersentencespace"></span></td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border">Examples:</td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border"><code>round(5.2) == 5</code></td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border"><code>round(5.78) == 6</code></td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border"><code>round(6) == 6</code></td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border"><code>round(-1.2) == -1</code></td>
+</tr><tr><td class="left_border align_left right_border"><code>i = math.ceil(f)</code></td>
+<td class="align_left right_border">The smallest integer <span class="inline_math"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax_SVG" id="MathJax-Element-5-Frame" tabindex="0" style="font-size: 100%; display: inline-block;"><img src="images/texmath/67e69ce3d72b78ba2f370f1053b0b62d501b93e4.png" alt="epub/OEBPS/images/texmath/67e69ce3d72b78ba2f370f1053b0b62d501b93e4" style="height:1.0658999999999998em; vertical-align:-0.22485209400000003em;" /></span></span> <code>f</code>.<span class="intersentencespace"></span></td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border">Examples:</td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border"><code>math.ceil(5.2) == 6</code></td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border"><code>math.ceil(5.78) == 6</code></td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border"><code>math.ceil(6) == 6</code></td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border"><code>math.ceil(-1.2) == -1</code></td>
+</tr><tr><td class="left_border align_left right_border"><code>i = math.floor(f)</code></td>
+<td class="align_left right_border">The largest integer <span class="inline_math"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax_SVG" id="MathJax-Element-6-Frame" tabindex="0" style="font-size: 100%; display: inline-block;"><img src="images/texmath/70b00095eb554ba5dc104421aadce9f9f0f696c4.png" alt="epub/OEBPS/images/texmath/70b00095eb554ba5dc104421aadce9f9f0f696c4" style="height:1.0658999999999998em; vertical-align:-0.22485209400000003em;" /></span></span> <code>f</code>.<span class="intersentencespace"></span></td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border">Examples:</td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border"><code>math.floor(5.2) == 5</code></td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border"><code>math.floor(5.78) == 5</code></td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border"><code>math.floor(6) == 6</code></td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border"><code>math.floor(-1.2) == -2</code></td>
+</tr><tr><td class="left_border align_left right_border"><code>g = abs(f)</code></td>
+<td class="align_left right_border">The absolute value of <code>f</code>.<span class="intersentencespace"></span></td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border">Examples:</td>
+</tr><tr><td class="left_border align_left right_border"></td>
+<td class="align_left right_border"><code>abs(23.2) == 23.2</code></td>
+</tr><tr class="bottom_border"><td class="left_border align_left right_border"></td>
+<td class="align_left right_border"><code>abs(-23.2) == 23.2</code></td>
+</tr></tbody></table><div class="caption"><span class="header">Table 1.4: </span><span class="description">Math functions
+</span></div></div>
+<p>Let’s consider an example of how we might use some of these functions.</p>
+<p>Suppose we want to buy a whole bunch of fidget spinners in bulk and then re-sell
+them to make a profit.<span class="intersentencespace"></span> If we buy them in bulk, then we can get a good deal
+because they’ll be cheaper per fidget spinner.<span class="intersentencespace"></span> Let’s have users enter the
+number of fidget spinners they want and the number of spinners that come in a
+case.<span class="intersentencespace"></span> The program should tell them how many cases they’ll need to buy to get at
+least that many number of fidget spinners.</p>
+<p>To write this program, we’ll need to ask for two inputs: the number of spinners
+and the number of spinners per case.<span class="intersentencespace"></span> Then, we’ll need to calculate the number
+of cases needed and then output that number.<span class="intersentencespace"></span> <a href="ch1_basicio_types_fragment.xhtml#code-spinner_cases" class="hyperref">Listing <span class="ref">1.10</span></a>
+shows how to do this in Python code.</p>
+<div class="codelisting" id="code-spinner_cases"><div class="heading"><span class="number">Listing 1.10</span> 
+
+<span class="description"></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="n">spinners</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"How many spinners do you need? "</span><span class="p">))</span>
+<span class="lineno">2</span> <span class="n">spinners_per_case</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"How many spinners come in a case? "</span><span class="p">))</span>
+<span class="lineno">3</span> 
+<span class="lineno">4</span> <span class="n">cases</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">spinners</span> <span class="o">/</span> <span class="n">spinners_per_case</span><span class="p">)</span>
+<span class="lineno">5</span> 
+<span class="lineno">6</span> <span class="k">print</span><span class="p">(</span><span class="s">"You need to order </span><span class="si">%d</span><span class="s"> cases."</span> <span class="o">%</span> <span class="n">cases</span><span class="p">)</span>
+</pre></div></div></div><p>In line 4 of <a href="ch1_basicio_types_fragment.xhtml#code-spinner_cases" class="hyperref">Listing <span class="ref">1.10</span></a>, we divide <code>spinners</code> by
+<code>spinners_per_case</code> to get how many cases we’ll need.<span class="intersentencespace"></span> But this gives us a
+fractional number potentially.<span class="intersentencespace"></span> For example, if we wanted <code>18</code> spinners and <code>12</code>
+come in a case, that would be <code>1.5</code> cases, but we can’t order one case and then
+another half of a case.<span class="intersentencespace"></span> We actually need <code>2</code> cases.<span class="intersentencespace"></span> This is where <code>mail.ceil</code>
+comes in.<span class="intersentencespace"></span> We take the “fractional” number of cases needed and find the
+<em>ceiling</em> of it.<span class="intersentencespace"></span> This makes <code>cases</code> an integer that is greater than or equal to
+the number of fractional cases.</p>
+</div>
+<div id="subsec-rand_funcs" class="subsection"><h3><a href="ch1_basicio_types_fragment.xhtml#subsec-rand_funcs" class="heading hyperref"><span class="number">1.7.2 </span>Random functions</a></h3>
+<p class="noindent">The library <code>random</code> has functions that help us generate random numbers.<span class="intersentencespace"></span> This
+is useful for writing programs that involve random chance, for example, rolling
+dice, flipping coins, etc.<span class="intersentencespace"></span> There are several useful functions in <code>random</code>, but
+the two we’ll focus on right now are <code>random</code> and <code>randint</code>.</p>
+<p>Suppose <code>i</code>, <code>start</code>, and <code>end</code> are <code>int</code> variables and <code>f</code> is a <code>float</code> variable.</p>
+<div id="tbl-rand_funcs" class="table"><table class="tabular">
+<tbody><tr class="top_border bottom_border"><td class="left_border align_left right_border">Function</td>
+<td class="align_left right_border">Returns</td>
+</tr><tr><td class="left_border align_left right_border"><code>f = random.random()</code></td>
+<td class="align_left right_border">A float value between <code>0</code> and <code>1</code> inclusive.<span class="intersentencespace"></span></td>
+</tr><tr class="bottom_border"><td class="left_border align_left right_border"><code>i = random.randint(start, end)</code></td>
+<td class="align_left right_border">An integer value between <code>start</code> and <code>end</code> inclusive.<span class="intersentencespace"></span></td>
+</tr></tbody></table><div class="caption"><span class="header">Table 1.5: </span><span class="description">Math functions
+</span></div></div>
+<p><a href="ch1_basicio_types_fragment.xhtml#code-rand_ex" class="hyperref">Listing <span class="ref">1.11</span></a> shows an example of how one might use a <code>random</code>
+library function.</p>
+<div class="codelisting" id="code-rand_ex"><div class="heading"><span class="number">Listing 1.11</span> 
+
+<span class="description"></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="kn">import</span> <span class="nn">random</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="k">print</span><span class="p">(</span><span class="s">"Rolling a six-sided die......"</span><span class="p">)</span>
+<span class="lineno">4</span> <span class="n">die_roll</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="lineno">5</span> <span class="k">print</span><span class="p">(</span><span class="s">"You rolled a </span><span class="si">%d</span><span class="s">."</span> <span class="o">%</span> <span class="n">die_roll</span><span class="p">)</span>
+</pre></div></div></div><p>The code in <a href="ch1_basicio_types_fragment.xhtml#code-rand_ex" class="hyperref">Listing <span class="ref">1.11</span></a> may produce a different die roll every
+time you run the program.</p>
+</div></div>
+<div id="sec-comments" class="section"><h2><a href="ch1_basicio_types_fragment.xhtml#sec-comments" class="heading hyperref"><span class="number">1.8 </span>Comments</a></h2>
+<p class="noindent">As we go forward in learning Python, our programs will get longer and more
+intricate.<span class="intersentencespace"></span> It may be helpful to annotate our code with short comments to remind
+us what our code does.<span class="intersentencespace"></span> <a href="ch1_basicio_types_fragment.xhtml#code-age_w_comments" class="hyperref">Listing <span class="ref">1.12</span></a> shows a (somewhat
+silly) example.</p>
+<div class="codelisting" id="code-age_w_comments"><div class="heading"><span class="number">Listing 1.12</span> 
+
+<span class="description"></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="lineno">1</span> <span class="c"># Get the user's age.</span>
 <span class="lineno">2</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your age? "</span><span class="p">)</span>
 <span class="lineno">3</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
 <span class="lineno">4</span> 
@@ -796,8 +1017,8 @@ starts with <code>#</code> will be ignored by the Python interpreter.<span class
 for the programmer to read.<span class="intersentencespace"></span> Again, this is a somewhat silly example because our
 code is relatively simple and probably does not require comments.</p>
 <p>Programmers will also use comments at the beginning of a code file to document
-what the program does.<span class="intersentencespace"></span> Here is an example (see <a href="ch1_basicio_types_fragment.xhtml#code-comment_hdr" class="hyperref">Listing <span class="ref">1.10</span></a>).</p>
-<div class="codelisting" id="code-comment_hdr"><div class="heading"><span class="number">Listing 1.10:</span> 
+what the program does.<span class="intersentencespace"></span> Here is an example (see <a href="ch1_basicio_types_fragment.xhtml#code-comment_hdr" class="hyperref">Listing <span class="ref">1.13</span></a>).</p>
+<div class="codelisting" id="code-comment_hdr"><div class="heading"><span class="number">Listing 1.13:</span> 
 
 <span class="description">A header comment at the top of a code file</span>
 </div>
@@ -807,14 +1028,14 @@ what the program does.<span class="intersentencespace"></span> Here is an exampl
 <span class="c"># Description:</span>
 <span class="c">#   This program allows users to play Tic Tac Toe against</span>
 <span class="c">#   a computer opponent.  Users choose the row and column</span>
-<span class="c">#   to place their ‘X’ or ‘O’ on the game grid in each turn.</span>
+<span class="c">#   to place their ‘X' or ‘O' on the game grid in each turn.</span>
 </pre></div></div></div><p>Because placing a <code>#</code> symbol at the start of a line hides the code from Python,
 another use of comments is to hide old code.<span class="intersentencespace"></span> Sometimes, we want to save old
 code without deleting it.<span class="intersentencespace"></span> This can occur when we’re not sure if new code we’re
 trying out is going to work, and so we may not want to lose our old code in case
-we need to go back to it later.<span class="intersentencespace"></span> <a href="ch1_basicio_types_fragment.xhtml#code-comment_out" class="hyperref">Listing <span class="ref">1.11</span></a> demonstrates
+we need to go back to it later.<span class="intersentencespace"></span> <a href="ch1_basicio_types_fragment.xhtml#code-comment_out" class="hyperref">Listing <span class="ref">1.14</span></a> demonstrates
 this concept.</p>
-<div class="codelisting" id="code-comment_out"><div class="heading"><span class="number">Listing 1.11:</span> 
+<div class="codelisting" id="code-comment_out"><div class="heading"><span class="number">Listing 1.14:</span> 
 
 <span class="description">Commenting out code</span>
 </div>
@@ -823,30 +1044,145 @@ this concept.</p>
 </span><span class="lineno">2</span> <span class="hll"><span class="c">#age = int(age)</span>
 </span><span class="lineno">3</span> 
 <span class="lineno">4</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"What is your age? "</span><span class="p">))</span>
-</pre></div></div></div><p>Python will not execute lines 1 and 2 because they are “commented out.”
-It will, however, execute line 4.</p>
+</pre></div></div></div><p>Python will not execute lines 1 and 2 because they are “commented out.”<span class="intersentencespace"></span> It will, however, execute line 4.</p>
 <p>Another use for comments is to help us program.<span class="intersentencespace"></span> As human beings, we do not
 naturally think in code.<span class="intersentencespace"></span> Even experienced programmers struggle to think purely
 in terms of programming language code.<span class="intersentencespace"></span> One good way to program is to write
 comments first in plain English to help us organize our logic and thoughts, and
 then we write Python code beneath the comments.<span class="intersentencespace"></span> For example, we might start
 with:</p>
-<div class="code"><div class="highlight"><pre><span class="c"># Get the user’s age.</span>
+<div class="code"><div class="highlight"><pre><span class="c"># Get the user's age.</span>
 
-<span class="c"># Print how old they’ll be in a year.</span>
+<span class="c"># Print how old they'll be in a year.</span>
 </pre></div></div>
 <p>Then, we can fill in the details.</p>
-<div class="code"><div class="highlight"><pre><span class="c"># Get the user’s age.</span>
+<div class="code"><div class="highlight"><pre><span class="c"># Get the user's age.</span>
 <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your age? "</span><span class="p">)</span>
 <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
 
-<span class="c"># Print how old they’ll be in a year.</span>
+<span class="c"># Print how old they'll be in a year.</span>
 <span class="n">age</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"In one year, you will be"</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s">"years old."</span><span class="p">)</span>
 </pre></div></div>
 <p>Comments end up being very important later on in the book when we start creating
 our own functions (yes, we get to make our own functions eventually).<span class="intersentencespace"></span> Practice
 writing comments when you write your own code.</p>
+</div>
+<div id="sec-basicio_types_exercises" class="section"><h2><a href="ch1_basicio_types_fragment.xhtml#sec-basicio_types_exercises" class="heading hyperref"><span class="number">1.9 </span>Exercises</a></h2>
+<ol>
+<li>Write a program that creates as its output a face on the screen by arranging different symbols, letters, and/or numbers.<span class="intersentencespace"></span> Here is an example.
+<p class="noindent"></p><pre class="verbatim">    \\///
+     0 0
+      v
+     ---</pre>
+</li>
+<li>What is the output of the following program?<span class="intersentencespace"></span> <div class="code"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div></div>
+</li>
+<li>What is the output of the following program?<span class="intersentencespace"></span> <div class="code"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">b</span> <span class="o">**</span> <span class="n">a</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">c</span> <span class="o">%</span> <span class="mi">2</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div></div>
+</li>
+<li>What is the output of the following program?<span class="intersentencespace"></span> <div class="code"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">2</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div></div>
+</li>
+<li>What is the output of the following program if the user enters a <code>2</code> at the first prompt and a <code>3</code> at the second prompt?<span class="intersentencespace"></span> <div class="code"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter a whole number: "</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter another whole number: "</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div></div>
+<p>Be careful.<span class="intersentencespace"></span> Try to type this program into the Python Shell and see what you get.<span class="intersentencespace"></span></p>
+</li>
+<li>Write a program that asks users for two whole numbers.<span class="intersentencespace"></span> It should then add them and print the result.<span class="intersentencespace"></span> Here is an example of what the output should look like.<span class="intersentencespace"></span> <div class="code"><div class="highlight"><pre><span class="n">Enter</span> <span class="n">a</span> <span class="n">whole</span> <span class="n">number</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Enter</span> <span class="n">another</span> <span class="n">whole</span> <span class="n">number</span><span class="p">:</span> <span class="mi">3</span>
+
+<span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div></div>
+</li>
+<li>What is the output of the following program?<span class="intersentencespace"></span> <div class="code"><div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">"John"</span>
+<span class="n">t</span> <span class="o">=</span> <span class="s">"Smith"</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">t</span>
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div></div>
+</li>
+<li>What is the output of the following program?<span class="intersentencespace"></span> <div class="code"><div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">"John"</span>
+<span class="n">t</span> <span class="o">=</span> <span class="s">"Smith"</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span>
+</pre></div></div>
+</li>
+<li>What is the output of the following program?<span class="intersentencespace"></span> <div class="code"><div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">"John"</span>
+<span class="n">t</span> <span class="o">=</span> <span class="s">"Smith"</span>
+<span class="n">r</span> <span class="o">=</span> <span class="s">"</span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div></div>
+</li>
+<li>What is the output of the following program?<span class="intersentencespace"></span> <div class="code"><div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">"John"</span>
+<span class="n">t</span> <span class="o">=</span> <span class="s">"Smith"</span>
+<span class="n">r</span> <span class="o">=</span> <span class="s">"</span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s">"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">r</span> <span class="o">%</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span>
+</pre></div></div>
+</li>
+<li>What is the output of the following program?<span class="intersentencespace"></span> Write down the answer exactly how it would appear on-screen.<span class="intersentencespace"></span> <div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s"> </span><span class="si">%s</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Item"</span><span class="p">,</span> <span class="s">"Price"</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s"> </span><span class="si">%f</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Soda"</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s"> </span><span class="si">%f</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Pizza"</span><span class="p">,</span> <span class="mf">2.00</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s"> </span><span class="si">%f</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Hot Dog"</span><span class="p">,</span> <span class="mf">1.50</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%s</span><span class="s"> </span><span class="si">%f</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Crab Legs"</span><span class="p">,</span> <span class="mf">30.99</span><span class="p">))</span>
+</pre></div></div>
+</li>
+<li>What is the output of the following program?<span class="intersentencespace"></span> Write down the answer exactly how it would appear on-screen.<span class="intersentencespace"></span> <div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%-10s</span><span class="s"> </span><span class="si">%10s</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Item"</span><span class="p">,</span> <span class="s">"Price"</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%-10s</span><span class="s"> </span><span class="si">%10.2f</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Soda"</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%-10s</span><span class="s"> </span><span class="si">%10.2f</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Pizza"</span><span class="p">,</span> <span class="mf">2.00</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%-10s</span><span class="s"> </span><span class="si">%10.2f</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Hot Dog"</span><span class="p">,</span> <span class="mf">1.50</span><span class="p">))</span>   
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%-10s</span><span class="s"> </span><span class="si">%10.2f</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Crab Legs"</span><span class="p">,</span> <span class="mf">30.99</span><span class="p">))</span>
+</pre></div></div>
+</li>
+<li>What is the output of the following program?<span class="intersentencespace"></span> Write down the answer exactly how it would appear on-screen.<span class="intersentencespace"></span> <div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%-10s</span><span class="s"> </span><span class="si">%10s</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Item"</span><span class="p">,</span> <span class="s">"Price"</span><span class="p">))</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="s">"</span><span class="si">%-10s</span><span class="s"> </span><span class="si">%10.2f</span><span class="s">"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fmt</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Soda"</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fmt</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Pizza"</span><span class="p">,</span> <span class="mf">2.00</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fmt</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Hot Dog"</span><span class="p">,</span> <span class="mf">1.50</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fmt</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Crab Legs"</span><span class="p">,</span> <span class="mf">30.99</span><span class="p">))</span>
+</pre></div></div>
+</li>
+<li>What is the output of the following program?<span class="intersentencespace"></span> Write down the answer exactly how it would appear on-screen.<span class="intersentencespace"></span> <div class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="si">%-10s</span><span class="s"> </span><span class="si">%10s</span><span class="s">"</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Item"</span><span class="p">,</span> <span class="s">"Price"</span><span class="p">))</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="s">"</span><span class="si">%-10s</span><span class="s"> </span><span class="si">%10.2f</span><span class="s">"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fmt</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Soda"</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fmt</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Pizza"</span><span class="p">,</span> <span class="mf">2.00</span><span class="p">))</span>
+<span class="c">#print(fmt % ("Hot Dog", 1.50))</span>
+<span class="c">#print(fmt % ("Crab Legs", 30.99))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fmt</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Pretzel"</span><span class="p">,</span> <span class="mf">1.50</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fmt</span> <span class="o">%</span> <span class="p">(</span><span class="s">"Nachos"</span><span class="p">,</span> <span class="mf">2.25</span><span class="p">))</span>
+</pre></div></div>
+</li>
+<li>Write a program that asks the user for a single character.<span class="intersentencespace"></span> The program should then greet them in block letters “HI” consisting solely of that character.<span class="intersentencespace"></span> Here is an example of a running program.<span class="intersentencespace"></span> <div class="code"><div class="highlight"><pre><span class="n">Enter</span> <span class="n">a</span> <span class="n">character</span><span class="p">:</span> <span class="c">#</span>
+
+<span class="c">##  ##  #####</span>
+<span class="c">######    #</span>
+<span class="c">##  ##  #####</span>
+</pre></div></div>
+<p>Here is another example of a running program if the user were to type a different character.<span class="intersentencespace"></span> </p><div class="code"><div class="highlight"><pre><span class="n">Enter</span> <span class="n">a</span> <span class="n">character</span><span class="p">:</span> <span class="o">+</span>
+    
+<span class="o">++</span>  <span class="o">++</span>  <span class="o">+++++</span>
+<span class="o">++++++</span>    <span class="o">+</span>
+<span class="o">++</span>  <span class="o">++</span>  <span class="o">+++++</span>
+</pre></div></div>
+</li></ol>
 </div>
     
         </body>
