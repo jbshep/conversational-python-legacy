@@ -1664,38 +1664,30 @@ and punctuation.
 
 9. Write a program that asks for a number and then prints that number of rows of 5 asterisks.  For example, if the user enters 4, the program would print the following.
 
-    ```
-    ***** \\
-    ***** \\
-    ***** \\
-    *****
-    ```
+    ```*****``` \\
+    ```*****``` \\
+    ```*****``` \\
+    ```*****```
 
 10. Write a program that asks for two numbers x and y.  The program should print a rectangle of asterisks consisting of x rows and y columns.  For example, if the user enters 3 and 8, respectively, the program would print the following.
 
-    ```
-    ******** \\
-    ******** \\
-    ********
-    ```
+    ```********``` \\
+    ```********``` \\
+    ```********```
 
 11. Write a program that asks for a number and then prints a triangle of asterisks where the base has that number of asterisks.  For example, if the user enters 4, the program would print the following.
 
-    ```
-    * \\
-    ** \\
-    *** \\
-    ****
-    ```
+    ```*``` \\
+    ```**``` \\
+    ```***``` \\
+    ```****```
 
 12. Write a program that asks for a number and then prints an inverted triangle of asterisks where first row contains that number of asterisks.  For example, if the user enters 4, the program would print the following.
 
-    ```
-    **** \\
-    *** \\
-    ** \\
-    *
-    ```
+    ```****``` \\
+    ```***``` \\
+    ```**``` \\
+    ```*```
 
 13.	Python programs are capable of generating random numbers (well, "pseudo"-random numbers – more about that in the next chapter).  One example of how to do this is as follows.
 

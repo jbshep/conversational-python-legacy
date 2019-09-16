@@ -1124,7 +1124,7 @@ In line 4 of Listing~\ref{code:spinner_cases}, we divide `spinners` by
 `spinners_per_case` to get how many cases we'll need.  But this gives us a
 fractional number potentially.  For example, if we wanted `18` spinners and `12`
 come in a case, that would be `1.5` cases, but we can't order one case and then
-another half of a case.  We actually need `2` cases.  This is where `mail.ceil`
+another half of a case.  We actually need `2` cases.  This is where `math.ceil`
 comes in.  We take the "fractional" number of cases needed and find the
 *ceiling* of it.  This makes `cases` an integer that is greater than or equal to
 the number of fractional cases.
