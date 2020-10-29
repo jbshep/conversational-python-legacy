@@ -532,7 +532,7 @@ def roll():
 
 Listing~\ref{code:posintsum} defines a function named `posintsum` that prints
 the sum of the first `n` positive integers.  The listing also shows how you
-might call this function.  For example, `posintsum(3)` would calculate the
+might call this function.  For example, `posintsum(4)` would calculate the
 result of `1+2+3+4` as `10`.  As another example, `posintsum(10)` would
 calculate the result of `1+2+3+4+5+6+7+8+9+10` as `55`.  Note how we use a `for`
 loop and a variable named `total` to accomplish this before returning the result
