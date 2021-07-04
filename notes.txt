@@ -1,0 +1,38 @@
+have sections called
+    "math functions"  (ceil, floor, round... examples of when to use with mod)
+    "string functions"  (strip, len, upper, lower, replace, what about regex?)
+    "random functions" (random, randint, dice examples)
+    ... when?  Ch 1?  Ch 2? Beginning of Ch 4?
+change Sect 4.1 from "Introduction to Functions" to "Defining Functions"
+
+make our own strip() function after loops, strings, and functions are
+introduced
+
+    set left
+    set right
+    slice!
+
+
+def sliceit(s):
+    if s == "":
+        return ""
+
+    for left in range(0, len(s)):
+        if s[left] != " ":
+            break
+
+    for right in range(len(s)-1, -1, -1):
+        if s[right] != " ":
+            break
+
+    return s[left:right+1]
+
+# Add the dollar signs after we observe we can't tell if there are trailing
+# spaces in our output.
+print("$%s$" % sliceit(""))
+print("$%s$" % sliceit(" "))
+print("$%s$" % sliceit("abc"))
+print("$%s$" % sliceit("    abc  "))
+print("$%s$" % sliceit("    abc"))
+print("$%s$" % sliceit("abc  "))
+print("$%s$" % sliceit("  a   b   c  "))
